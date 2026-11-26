@@ -1,0 +1,938 @@
+{
+  "comparison": {
+    "gained_hits": [],
+    "lost_hits": [],
+    "metrics_after": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "metrics_before": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    }
+  },
+  "comparison_questions": 12,
+  "coverage": {
+    "v3": 7,
+    "v4": 12
+  },
+  "global_fallback_identical": 5,
+  "outcomes": {
+    "complete": 4,
+    "represented_company_missing_required_evidence": 8
+  },
+  "questions": {
+    "q003": {
+      "company_coverage": {
+        "v3": [
+          "northgate payments",
+          "northgate robotics"
+        ],
+        "v4": [
+          "northgate payments",
+          "northgate robotics"
+        ]
+      },
+      "outcome": "complete",
+      "question": "Which company had more employees at 31 December 2024: Northgate Payments or Northgate Robotics?",
+      "ranks": [
+        {
+          "v3_candidate": 1,
+          "v3_returned": 1,
+          "v4_returned": 1
+        },
+        {
+          "v3_candidate": 5,
+          "v3_returned": 5,
+          "v4_returned": 5
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_039.html",
+          12
+        ],
+        [
+          "doc_011.html",
+          12
+        ],
+        [
+          "doc_039.html",
+          0
+        ],
+        [
+          "doc_011.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          12
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_039.html",
+          12
+        ],
+        [
+          "doc_011.html",
+          12
+        ],
+        [
+          "doc_039.html",
+          0
+        ],
+        [
+          "doc_011.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          12
+        ]
+      ]
+    },
+    "q004": {
+      "company_coverage": {
+        "v3": [
+          "kestrel semiconductor"
+        ],
+        "v4": [
+          "halcyon freight",
+          "kestrel semiconductor"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had the higher net income in FY2024: Kestrel Semiconductor or Halcyon Freight?",
+      "ranks": [
+        {
+          "v3_candidate": 3,
+          "v3_returned": 3,
+          "v4_returned": 3
+        },
+        {
+          "v3_candidate": 9,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_029.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          1
+        ],
+        [
+          "doc_026.html",
+          2
+        ],
+        [
+          "doc_005.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_029.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          1
+        ],
+        [
+          "doc_026.html",
+          2
+        ],
+        [
+          "doc_030.html",
+          1
+        ]
+      ]
+    },
+    "q013": {
+      "company_coverage": {
+        "v3": [
+          "brightwater energy",
+          "orchid bay hotels"
+        ],
+        "v4": [
+          "brightwater energy",
+          "orchid bay hotels"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had the higher net income in FY2024: Brightwater Energy or Orchid Bay Hotels?",
+      "ranks": [
+        {
+          "v3_candidate": 1,
+          "v3_returned": 1,
+          "v4_returned": 1
+        },
+        {
+          "v3_candidate": 6,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_022.html",
+          1
+        ],
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ],
+        [
+          "doc_019.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_022.html",
+          1
+        ],
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ],
+        [
+          "doc_019.html",
+          0
+        ]
+      ]
+    },
+    "q017": {
+      "company_coverage": {
+        "v3": [
+          "brightwater energy",
+          "brightwater software"
+        ],
+        "v4": [
+          "brightwater energy",
+          "brightwater software"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had more total assets at 31 December 2025: Brightwater Energy or Brightwater Software?",
+      "ranks": [
+        {
+          "v3_candidate": 6,
+          "v3_returned": null,
+          "v4_returned": null
+        },
+        {
+          "v3_candidate": 7,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_032.html",
+          12
+        ],
+        [
+          "doc_032.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          12
+        ],
+        [
+          "doc_003.html",
+          12
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_032.html",
+          12
+        ],
+        [
+          "doc_032.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          12
+        ],
+        [
+          "doc_003.html",
+          12
+        ]
+      ]
+    },
+    "q021": {
+      "company_coverage": {
+        "v3": [
+          "northgate robotics"
+        ],
+        "v4": [
+          "northgate payments",
+          "northgate robotics"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company held more cash and cash equivalents at 31 December 2024: Northgate Robotics or Northgate Payments?",
+      "ranks": [
+        {
+          "v3_candidate": 10,
+          "v3_returned": null,
+          "v4_returned": null
+        },
+        {
+          "v3_candidate": 12,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_028.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          12
+        ],
+        [
+          "doc_028.html",
+          12
+        ],
+        [
+          "doc_013.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_028.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          12
+        ],
+        [
+          "doc_028.html",
+          12
+        ],
+        [
+          "doc_039.html",
+          12
+        ]
+      ]
+    },
+    "q022": {
+      "company_coverage": {
+        "v3": [
+          "northgate payments",
+          "orchid bay hotels"
+        ],
+        "v4": [
+          "northgate payments",
+          "orchid bay hotels"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had more total assets at 31 December 2024: Northgate Payments or Orchid Bay Hotels?",
+      "ranks": [
+        {
+          "v3_candidate": 7,
+          "v3_returned": null,
+          "v4_returned": null
+        },
+        {
+          "v3_candidate": 9,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_001.html",
+          12
+        ],
+        [
+          "doc_002.html",
+          12
+        ],
+        [
+          "doc_011.html",
+          12
+        ],
+        [
+          "doc_039.html",
+          12
+        ],
+        [
+          "doc_002.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_001.html",
+          12
+        ],
+        [
+          "doc_002.html",
+          12
+        ],
+        [
+          "doc_011.html",
+          12
+        ],
+        [
+          "doc_039.html",
+          12
+        ],
+        [
+          "doc_002.html",
+          0
+        ]
+      ]
+    },
+    "q023": {
+      "company_coverage": {
+        "v3": [
+          "lumen harbor foods"
+        ],
+        "v4": [
+          "lumen harbor foods",
+          "sablewood retail"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company held more cash and cash equivalents at 31 December 2024: Lumen Harbor Foods or Sablewood Retail?",
+      "ranks": [
+        {
+          "v3_candidate": 12,
+          "v3_returned": null,
+          "v4_returned": null
+        },
+        {
+          "v3_candidate": 14,
+          "v3_returned": null,
+          "v4_returned": 5
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_036.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          12
+        ],
+        [
+          "doc_036.html",
+          12
+        ],
+        [
+          "doc_040.html",
+          1
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_036.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          12
+        ],
+        [
+          "doc_036.html",
+          12
+        ],
+        [
+          "doc_018.html",
+          10
+        ]
+      ]
+    },
+    "q031": {
+      "company_coverage": {
+        "v3": [
+          "brightwater software"
+        ],
+        "v4": [
+          "brightwater energy",
+          "brightwater software"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had the higher net income in FY2024: Brightwater Software or Brightwater Energy?",
+      "ranks": [
+        {
+          "v3_candidate": 12,
+          "v3_returned": null,
+          "v4_returned": null
+        },
+        {
+          "v3_candidate": 21,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_034.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_027.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_027.html",
+          2
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_034.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_027.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ]
+      ]
+    },
+    "q037": {
+      "company_coverage": {
+        "v3": [
+          "northgate robotics"
+        ],
+        "v4": [
+          "brightwater software",
+          "northgate robotics"
+        ]
+      },
+      "outcome": "represented_company_missing_required_evidence",
+      "question": "Which company had the higher operating income in FY2024: Northgate Robotics or Brightwater Software?",
+      "ranks": [
+        {
+          "v3_candidate": 3,
+          "v3_returned": 3,
+          "v4_returned": 3
+        },
+        {
+          "v3_candidate": 22,
+          "v3_returned": null,
+          "v4_returned": null
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_014.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_028.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_014.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_034.html",
+          1
+        ]
+      ]
+    },
+    "q053": {
+      "company_coverage": {
+        "v3": [
+          "brightwater energy",
+          "corvane pharma"
+        ],
+        "v4": [
+          "brightwater energy",
+          "corvane pharma"
+        ]
+      },
+      "outcome": "complete",
+      "question": "Which company had more employees at 31 December 2024: Brightwater Energy or Corvane Pharma?",
+      "ranks": [
+        {
+          "v3_candidate": 1,
+          "v3_returned": 1,
+          "v4_returned": 1
+        },
+        {
+          "v3_candidate": 3,
+          "v3_returned": 3,
+          "v4_returned": 3
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_032.html",
+          12
+        ],
+        [
+          "doc_003.html",
+          12
+        ],
+        [
+          "doc_031.html",
+          12
+        ],
+        [
+          "doc_024.html",
+          12
+        ],
+        [
+          "doc_032.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_032.html",
+          12
+        ],
+        [
+          "doc_003.html",
+          12
+        ],
+        [
+          "doc_031.html",
+          12
+        ],
+        [
+          "doc_024.html",
+          12
+        ],
+        [
+          "doc_032.html",
+          0
+        ]
+      ]
+    },
+    "q056": {
+      "company_coverage": {
+        "v3": [
+          "kestrel semiconductor",
+          "lumen harbor foods"
+        ],
+        "v4": [
+          "kestrel semiconductor",
+          "lumen harbor foods"
+        ]
+      },
+      "outcome": "complete",
+      "question": "Which company held more cash and cash equivalents at 31 December 2025: Kestrel Semiconductor or Lumen Harbor Foods?",
+      "ranks": [
+        {
+          "v3_candidate": 3,
+          "v3_returned": 3,
+          "v4_returned": 3
+        },
+        {
+          "v3_candidate": 4,
+          "v3_returned": 4,
+          "v4_returned": 4
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_023.html",
+          12
+        ],
+        [
+          "doc_026.html",
+          12
+        ],
+        [
+          "doc_026.html",
+          10
+        ],
+        [
+          "doc_023.html",
+          10
+        ],
+        [
+          "doc_023.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_023.html",
+          12
+        ],
+        [
+          "doc_026.html",
+          12
+        ],
+        [
+          "doc_026.html",
+          10
+        ],
+        [
+          "doc_023.html",
+          10
+        ],
+        [
+          "doc_023.html",
+          0
+        ]
+      ]
+    },
+    "q058": {
+      "company_coverage": {
+        "v3": [
+          "corvane pharma",
+          "halcyon freight"
+        ],
+        "v4": [
+          "corvane pharma",
+          "halcyon freight"
+        ]
+      },
+      "outcome": "complete",
+      "question": "Which company had more total assets at 31 December 2025: Halcyon Freight or Corvane Pharma?",
+      "ranks": [
+        {
+          "v3_candidate": 3,
+          "v3_returned": 3,
+          "v4_returned": 3
+        },
+        {
+          "v3_candidate": 2,
+          "v3_returned": 2,
+          "v4_returned": 2
+        }
+      ],
+      "v3_top_five": [
+        [
+          "doc_016.html",
+          12
+        ],
+        [
+          "doc_031.html",
+          8
+        ],
+        [
+          "doc_016.html",
+          8
+        ],
+        [
+          "doc_031.html",
+          12
+        ],
+        [
+          "doc_016.html",
+          0
+        ]
+      ],
+      "v4_top_five": [
+        [
+          "doc_016.html",
+          12
+        ],
+        [
+          "doc_031.html",
+          8
+        ],
+        [
+          "doc_016.html",
+          8
+        ],
+        [
+          "doc_031.html",
+          12
+        ],
+        [
+          "doc_016.html",
+          0
+        ]
+      ]
+    }
+  },
+  "single_company_identical": 48
+}
