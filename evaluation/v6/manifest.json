@@ -1,0 +1,250 @@
+{
+  "experiment": "V6",
+  "code_revision": "70874d9279993ed00ae3f069ef9161e2fa78a2d6",
+  "v5_merge_commit": "3bb75f0b1590c5f49d0b13c767ebcecac50b24fd",
+  "configuration": {
+    "ranking": "Stable partition by existence of a query-matched rendered numeric row label; whole-corpus BM25 tie order",
+    "scope": "Resolved annual-report intent; every V5 eligible document type may rank",
+    "other_settings": "../v5/manifest.json"
+  },
+  "source_sha256": "2e4bc31f1e2a71c5a982f195f6eed1b12e8baab164a6b0c5d0554a58adaad585",
+  "protected_suffix_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "fixture_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "runtime": {
+    "python": "3.14.0",
+    "platform": "Darwin arm64",
+    "direct_dependencies": {
+      "langchain-core": "1.8.5",
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.2.0",
+      "langchain-deepseek": "1.2.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "rank-bm25": "0.2.2",
+      "python-dotenv": "1.2.4"
+    },
+    "lock_sha256": "57b96da74fd4130f65d1fdcd883ba3cc84619a569fa703dbd8e7dd4e9aad2511"
+  },
+  "offline": {
+    "metrics": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        44,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          22,
+          22
+        ]
+      },
+      "rejected": [
+        7,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "v5_diagnosis_counts": {
+      "comparison_incomplete": 8,
+      "eligible_below_top_five": 21,
+      "missing_evidence_in_rendered_rows": 19,
+      "no_contiguous_evidence_in_corpus": 0,
+      "only_other_document_types": 1,
+      "other_prose_misses": 2,
+      "related_numeric_row_absent": 14,
+      "related_row_without_requested_year": 1,
+      "some_other_document_types": 17
+    },
+    "parse_fields_correct": {
+      "companies": 60,
+      "fiscal_year": 60,
+      "doc_type": 60
+    },
+    "both_companies_retrieved": {
+      "v5": 12,
+      "v6": 12
+    },
+    "gained_hits": [
+      "q004",
+      "q013",
+      "q016",
+      "q017",
+      "q020",
+      "q021",
+      "q022",
+      "q023",
+      "q024",
+      "q031",
+      "q037",
+      "q040",
+      "q043",
+      "q045",
+      "q046",
+      "q050",
+      "q054",
+      "q055",
+      "q060"
+    ],
+    "lost_hits": [],
+    "tests_passed": 35,
+    "identical_runs": 2
+  },
+  "live": {
+    "runs": 1,
+    "accuracy": [
+      56,
+      60
+    ],
+    "by_category": {
+      "comparison": [
+        12,
+        12
+      ],
+      "fact": [
+        10,
+        12
+      ],
+      "table": [
+        20,
+        22
+      ],
+      "unanswerable": [
+        14,
+        14
+      ]
+    },
+    "gained_answers": [
+      "q004",
+      "q013",
+      "q016",
+      "q017",
+      "q020",
+      "q021",
+      "q022",
+      "q031",
+      "q037",
+      "q040",
+      "q043",
+      "q045",
+      "q046",
+      "q054",
+      "q055",
+      "q060"
+    ],
+    "lost_answers": [],
+    "incorrect_with_complete_evidence": [
+      "q024",
+      "q050"
+    ],
+    "points_v5": {
+      "1.1": [
+        8.0,
+        8
+      ],
+      "1.2": [
+        7.0,
+        7
+      ],
+      "2.1": [
+        5.0,
+        5
+      ],
+      "2.2": [
+        10.0,
+        10
+      ],
+      "2.3": [
+        1.63,
+        15
+      ],
+      "3": [
+        5.0,
+        10
+      ],
+      "4": [
+        13.33,
+        20
+      ]
+    },
+    "points_v6": {
+      "1.1": [
+        8.0,
+        8
+      ],
+      "1.2": [
+        7.0,
+        7
+      ],
+      "2.1": [
+        5.0,
+        5
+      ],
+      "2.2": [
+        10.0,
+        10
+      ],
+      "2.3": [
+        15.0,
+        15
+      ],
+      "3": [
+        5.0,
+        10
+      ],
+      "4": [
+        18.67,
+        20
+      ]
+    },
+    "student_usage": {
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "generator_usage": {
+      "llm_calls": 53,
+      "llm_input_tokens": 111588,
+      "llm_output_tokens": 178,
+      "cost_usd": 0.0168
+    },
+    "runner_seconds": 6.2,
+    "wall_seconds": 7.171,
+    "estimated_public_points": [
+      68.67,
+      75
+    ]
+  },
+  "artifacts_sha256": {
+    "offline.json": "f246d7845d01bc7d38d1d1d50550974192760501625722937892bb9a0d4be9b4",
+    "v5-misses.json": "a36be3ff25db741b0343112480840137d06729b32f6a764320ffd29202eaadd7",
+    "ranks.json": "68267d2c664be08825888f9488cff55f44ba726aff4f14d55978581efa5a91aa",
+    "results.csv": "e4e830d4d108158a7ae33b41de441e411849c35aab88feb54e2692a3a0554358",
+    "runner.txt": "06dcb9a4be7a68c4d21d02bbcf717a2b1886c4babdf9108831aa1bccd7fb3ae7"
+  }
+}

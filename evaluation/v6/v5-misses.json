@@ -1,0 +1,2262 @@
+{
+  "counts": {
+    "comparison_incomplete": 8,
+    "eligible_below_top_five": 21,
+    "missing_evidence_in_rendered_rows": 19,
+    "no_contiguous_evidence_in_corpus": 0,
+    "only_other_document_types": 1,
+    "other_prose_misses": 2,
+    "related_numeric_row_absent": 14,
+    "related_row_without_requested_year": 1,
+    "some_other_document_types": 17
+  },
+  "questions": {
+    "q004": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | FY2024A: 460.1 | FY2025A: 528.9 | FY2026E: 584.3 | FY2027E: 633.1",
+            "location": [
+              "doc_017.html",
+              1
+            ],
+            "rank": 3,
+            "score": 13.173908,
+            "value": "460.1"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": 3
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | 2025: 186.6 | 2024: 173.9",
+            "location": [
+              "doc_016.html",
+              7
+            ],
+            "rank": 9,
+            "score": 11.301934,
+            "value": "173.9"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Kestrel Semiconductor",
+          "Halcyon Freight"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company had the higher net income in FY2024: Kestrel Semiconductor or Halcyon Freight?",
+      "related_rows": [
+        {
+          "location": [
+            "doc_017.html",
+            1
+          ],
+          "text": "Net income | FY2024A: 460.1 | FY2025A: 528.9 | FY2026E: 584.3 | FY2027E: 633.1"
+        }
+      ],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_029.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_029.html"
+          },
+          "score": 14.554684
+        },
+        {
+          "location": [
+            "doc_017.html",
+            0
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_017.html"
+          },
+          "score": 13.389216
+        },
+        {
+          "location": [
+            "doc_017.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_017.html"
+          },
+          "score": 13.173908
+        },
+        {
+          "location": [
+            "doc_026.html",
+            2
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_026.html"
+          },
+          "score": 13.14149
+        },
+        {
+          "location": [
+            "doc_030.html",
+            1
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_030.html"
+          },
+          "score": 11.302954
+        }
+      ],
+      "returned_other_document_types": 4
+    },
+    "q013": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | FY2024A: 369.1 | FY2025A: 415.4 | FY2026E: 477.5 | FY2027E: 531.2",
+            "location": [
+              "doc_019.html",
+              1
+            ],
+            "rank": 1,
+            "score": 15.225103,
+            "value": "369.1"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": 1
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | FY2024A: 166.6 | FY2025A: 187.0 | FY2026E: 210.0 | FY2027E: 229.4",
+            "location": [
+              "doc_037.html",
+              1
+            ],
+            "rank": 6,
+            "score": 12.877259,
+            "value": "166.6"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Brightwater Energy",
+          "Orchid Bay Hotels"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company had the higher net income in FY2024: Brightwater Energy or Orchid Bay Hotels?",
+      "related_rows": [
+        {
+          "location": [
+            "doc_019.html",
+            1
+          ],
+          "text": "Net income | FY2024A: 369.1 | FY2025A: 415.4 | FY2026E: 477.5 | FY2027E: 531.2"
+        }
+      ],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_019.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_019.html"
+          },
+          "score": 15.225103
+        },
+        {
+          "location": [
+            "doc_022.html",
+            1
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_022.html"
+          },
+          "score": 14.813063
+        },
+        {
+          "location": [
+            "doc_037.html",
+            0
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_037.html"
+          },
+          "score": 13.971815
+        },
+        {
+          "location": [
+            "doc_006.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_006.html"
+          },
+          "score": 13.653539
+        },
+        {
+          "location": [
+            "doc_019.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_019.html"
+          },
+          "score": 12.945611
+        }
+      ],
+      "returned_other_document_types": 5
+    },
+    "q015": {
+      "category": "fact",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Whitlock Byrne LLP audited the consolidated financial statements for the year ended 31 December 2025 and issued an unqualified opinion.",
+            "location": [
+              "doc_023.html",
+              6
+            ],
+            "rank": 12,
+            "score": 8.047312,
+            "value": "Whitlock Byrne LLP"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": false,
+      "parsed": {
+        "companies": [
+          "Lumen Harbor Foods"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "Which audit firm audited Lumen Harbor Foods' financial statements for FY2025?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_023.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 13.229947
+        },
+        {
+          "location": [
+            "doc_036.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 13.229947
+        },
+        {
+          "location": [
+            "doc_015.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_015.html"
+          },
+          "score": 11.332281
+        },
+        {
+          "location": [
+            "doc_023.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 11.274643
+        },
+        {
+          "location": [
+            "doc_036.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 11.195563
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q016": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Gross profit | 2025: 2,083.5 | 2024: 1,805.4",
+            "location": [
+              "doc_031.html",
+              7
+            ],
+            "rank": 18,
+            "score": 4.264401,
+            "value": "1,805.4"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Corvane Pharma"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "What was Corvane Pharma's gross profit in FY2024, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_024.html",
+            1
+          ],
+          "metadata": {
+            "company": "Corvane Pharma Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_024.html"
+          },
+          "score": 11.832736
+        },
+        {
+          "location": [
+            "doc_031.html",
+            1
+          ],
+          "metadata": {
+            "company": "Corvane Pharma Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_031.html"
+          },
+          "score": 11.795077
+        },
+        {
+          "location": [
+            "doc_033.html",
+            0
+          ],
+          "metadata": {
+            "company": "Corvane Pharma Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_033.html"
+          },
+          "score": 10.561374
+        },
+        {
+          "location": [
+            "doc_009.html",
+            2
+          ],
+          "metadata": {
+            "company": "Corvane Pharma Ltd.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_009.html"
+          },
+          "score": 10.114779
+        },
+        {
+          "location": [
+            "doc_009.html",
+            1
+          ],
+          "metadata": {
+            "company": "Corvane Pharma Ltd.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_009.html"
+          },
+          "score": 9.811231
+        }
+      ],
+      "returned_other_document_types": 3
+    },
+    "q017": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Total assets | 31 December 2025: 3,627.6 | 31 December 2024: 3,505.7",
+            "location": [
+              "doc_032.html",
+              8
+            ],
+            "rank": 6,
+            "score": 15.746321,
+            "value": "3,627.6"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Total assets | 31 December 2025: 1,326.9 | 31 December 2024: 1,059.9",
+            "location": [
+              "doc_020.html",
+              8
+            ],
+            "rank": 7,
+            "score": 15.737532,
+            "value": "1,326.9"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Brightwater Energy",
+          "Brightwater Software"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "Which company had more total assets at 31 December 2025: Brightwater Energy or Brightwater Software?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_032.html",
+            12
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_032.html"
+          },
+          "score": 19.045557
+        },
+        {
+          "location": [
+            "doc_032.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_032.html"
+          },
+          "score": 17.73148
+        },
+        {
+          "location": [
+            "doc_003.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_003.html"
+          },
+          "score": 17.73148
+        },
+        {
+          "location": [
+            "doc_020.html",
+            12
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_020.html"
+          },
+          "score": 16.264193
+        },
+        {
+          "location": [
+            "doc_003.html",
+            12
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_003.html"
+          },
+          "score": 15.828774
+        }
+      ],
+      "returned_other_document_types": 0
+    },
+    "q018": {
+      "category": "fact",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Turning to capital allocation, the board has approved a new share repurchase programme of up to USD 75 million, to be executed over the next 18 months, in addition to our regular dividend.",
+            "location": [
+              "doc_025.html",
+              2
+            ],
+            "rank": 8,
+            "score": 12.329659,
+            "value": "75"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": false,
+      "parsed": {
+        "companies": [
+          "Northgate Payments"
+        ],
+        "doc_type": "earnings_call",
+        "fiscal_year": 2025
+      },
+      "question": "On its Q4 FY2025 earnings call, how large a share repurchase programme did Northgate Payments announce, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_012.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_012.html"
+          },
+          "score": 19.63056
+        },
+        {
+          "location": [
+            "doc_025.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_025.html"
+          },
+          "score": 15.903622
+        },
+        {
+          "location": [
+            "doc_039.html",
+            2
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_039.html"
+          },
+          "score": 12.917069
+        },
+        {
+          "location": [
+            "doc_011.html",
+            2
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_011.html"
+          },
+          "score": 12.748284
+        },
+        {
+          "location": [
+            "doc_039.html",
+            1
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_039.html"
+          },
+          "score": 12.667002
+        }
+      ],
+      "returned_other_document_types": 4
+    },
+    "q020": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Midstream | 2025: 716.6 | 2024: 659.1",
+            "location": [
+              "doc_032.html",
+              11
+            ],
+            "rank": 9,
+            "score": 8.834855,
+            "value": "716.6"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Brightwater Energy"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "How much revenue did Brightwater Energy's Midstream segment generate in FY2025, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_019.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_019.html"
+          },
+          "score": 15.802436
+        },
+        {
+          "location": [
+            "doc_032.html",
+            2
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_032.html"
+          },
+          "score": 13.837949
+        },
+        {
+          "location": [
+            "doc_003.html",
+            2
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_003.html"
+          },
+          "score": 13.563931
+        },
+        {
+          "location": [
+            "doc_003.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_003.html"
+          },
+          "score": 12.67036
+        },
+        {
+          "location": [
+            "doc_032.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_032.html"
+          },
+          "score": 11.665803
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q021": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Cash and cash equivalents at end of year | 2024: 215.7 | 2023: 248.5",
+            "location": [
+              "doc_028.html",
+              10
+            ],
+            "rank": 10,
+            "score": 14.56764,
+            "value": "215.7"
+          },
+          "matching_chunks_in_corpus": 5,
+          "returned_rank": null
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Cash and cash equivalents at end of year | 2024: 114.5 | 2023: 96.8",
+            "location": [
+              "doc_039.html",
+              10
+            ],
+            "rank": 12,
+            "score": 14.56764,
+            "value": "114.5"
+          },
+          "matching_chunks_in_corpus": 5,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Northgate Robotics",
+          "Northgate Payments"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company held more cash and cash equivalents at 31 December 2024: Northgate Robotics or Northgate Payments?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_028.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_028.html"
+          },
+          "score": 19.600644
+        },
+        {
+          "location": [
+            "doc_038.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_038.html"
+          },
+          "score": 19.600644
+        },
+        {
+          "location": [
+            "doc_038.html",
+            12
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_038.html"
+          },
+          "score": 18.559355
+        },
+        {
+          "location": [
+            "doc_028.html",
+            12
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_028.html"
+          },
+          "score": 18.559355
+        },
+        {
+          "location": [
+            "doc_039.html",
+            12
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_039.html"
+          },
+          "score": 15.224525
+        }
+      ],
+      "returned_other_document_types": 0
+    },
+    "q022": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Total assets | 31 December 2024: 841.1 | 31 December 2023: 725.7",
+            "location": [
+              "doc_039.html",
+              8
+            ],
+            "rank": 7,
+            "score": 13.641138,
+            "value": "841.1"
+          },
+          "matching_chunks_in_corpus": 4,
+          "returned_rank": null
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Total assets | 31 December 2024: 1,416.9 | 31 December 2023: 1,261.1",
+            "location": [
+              "doc_001.html",
+              8
+            ],
+            "rank": 9,
+            "score": 13.641138,
+            "value": "1,416.9"
+          },
+          "matching_chunks_in_corpus": 4,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Northgate Payments",
+          "Orchid Bay Hotels"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company had more total assets at 31 December 2024: Northgate Payments or Orchid Bay Hotels?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_001.html",
+            12
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_001.html"
+          },
+          "score": 15.569673
+        },
+        {
+          "location": [
+            "doc_002.html",
+            12
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_002.html"
+          },
+          "score": 15.569673
+        },
+        {
+          "location": [
+            "doc_011.html",
+            12
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_011.html"
+          },
+          "score": 14.562482
+        },
+        {
+          "location": [
+            "doc_039.html",
+            12
+          ],
+          "metadata": {
+            "company": "Northgate Payments Corp.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_039.html"
+          },
+          "score": 14.562482
+        },
+        {
+          "location": [
+            "doc_002.html",
+            0
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_002.html"
+          },
+          "score": 14.066694
+        }
+      ],
+      "returned_other_document_types": 0
+    },
+    "q023": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Cash and cash equivalents at beginning of year | 2025: 445.1 | 2024: 378.3",
+            "location": [
+              "doc_023.html",
+              10
+            ],
+            "rank": 12,
+            "score": 14.56764,
+            "value": "445.1"
+          },
+          "matching_chunks_in_corpus": 5,
+          "returned_rank": null
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Cash and cash equivalents at end of year | 2024: 507.2 | 2023: 456.2",
+            "location": [
+              "doc_018.html",
+              10
+            ],
+            "rank": 14,
+            "score": 14.56764,
+            "value": "507.2"
+          },
+          "matching_chunks_in_corpus": 5,
+          "returned_rank": 5
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Lumen Harbor Foods",
+          "Sablewood Retail"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company held more cash and cash equivalents at 31 December 2024: Lumen Harbor Foods or Sablewood Retail?",
+      "related_rows": [
+        {
+          "location": [
+            "doc_018.html",
+            10
+          ],
+          "text": "Cash and cash equivalents at beginning of year | 2024: 456.2 | 2023: 450.3"
+        }
+      ],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_036.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 22.858564
+        },
+        {
+          "location": [
+            "doc_023.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 22.858564
+        },
+        {
+          "location": [
+            "doc_023.html",
+            12
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 20.153135
+        },
+        {
+          "location": [
+            "doc_036.html",
+            12
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 20.153135
+        },
+        {
+          "location": [
+            "doc_018.html",
+            10
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_018.html"
+          },
+          "score": 14.56764
+        }
+      ],
+      "returned_other_document_types": 0
+    },
+    "q024": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Asia Pacific | 2024: 349.0 | 2023: 316.2",
+            "location": [
+              "doc_001.html",
+              11
+            ],
+            "rank": 13,
+            "score": 11.003827,
+            "value": "316.2"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Orchid Bay Hotels"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2023
+      },
+      "question": "How much revenue did Orchid Bay Hotels generate in Asia Pacific in FY2023, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_037.html",
+            0
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_037.html"
+          },
+          "score": 22.376078
+        },
+        {
+          "location": [
+            "doc_002.html",
+            2
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_002.html"
+          },
+          "score": 20.217125
+        },
+        {
+          "location": [
+            "doc_001.html",
+            2
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_001.html"
+          },
+          "score": 19.604767
+        },
+        {
+          "location": [
+            "doc_001.html",
+            1
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_001.html"
+          },
+          "score": 18.443073
+        },
+        {
+          "location": [
+            "doc_002.html",
+            1
+          ],
+          "metadata": {
+            "company": "Orchid Bay Hotels Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_002.html"
+          },
+          "score": 17.726263
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q031": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | FY2024A: 200.3 | FY2025A: 235.5 | FY2026E: 266.4 | FY2027E: 293.9",
+            "location": [
+              "doc_021.html",
+              1
+            ],
+            "rank": 12,
+            "score": 11.986865,
+            "value": "200.3"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": null
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Net income | FY2024A: 369.1 | FY2025A: 415.4 | FY2026E: 477.5 | FY2027E: 531.2",
+            "location": [
+              "doc_019.html",
+              1
+            ],
+            "rank": 21,
+            "score": 9.727905,
+            "value": "369.1"
+          },
+          "matching_chunks_in_corpus": 6,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Brightwater Software",
+          "Brightwater Energy"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company had the higher net income in FY2024: Brightwater Software or Brightwater Energy?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_034.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_034.html"
+          },
+          "score": 16.855312
+        },
+        {
+          "location": [
+            "doc_021.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_021.html"
+          },
+          "score": 16.820689
+        },
+        {
+          "location": [
+            "doc_027.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_027.html"
+          },
+          "score": 16.156028
+        },
+        {
+          "location": [
+            "doc_020.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_020.html"
+          },
+          "score": 16.156028
+        },
+        {
+          "location": [
+            "doc_006.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Energy Corp.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_006.html"
+          },
+          "score": 13.432024
+        }
+      ],
+      "returned_other_document_types": 3
+    },
+    "q037": {
+      "category": "comparison",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Operating income | FY2024A: 307.6 | FY2025A: 353.1 | FY2026E: 404.2 | FY2027E: 436.2",
+            "location": [
+              "doc_013.html",
+              1
+            ],
+            "rank": 3,
+            "score": 12.394793,
+            "value": "307.6"
+          },
+          "matching_chunks_in_corpus": 4,
+          "returned_rank": 3
+        },
+        {
+          "eligible_evidence": {
+            "excerpt": "Operating income | FY2024A: 260.1 | FY2025A: 296.7 | FY2026E: 335.7 | FY2027E: 370.4",
+            "location": [
+              "doc_021.html",
+              1
+            ],
+            "rank": 22,
+            "score": 7.391592,
+            "value": "260.1"
+          },
+          "matching_chunks_in_corpus": 4,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Northgate Robotics",
+          "Brightwater Software"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "Which company had the higher operating income in FY2024: Northgate Robotics or Brightwater Software?",
+      "related_rows": [
+        {
+          "location": [
+            "doc_013.html",
+            1
+          ],
+          "text": "Operating income | FY2024A: 307.6 | FY2025A: 353.1 | FY2026E: 404.2 | FY2027E: 436.2"
+        }
+      ],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_014.html",
+            1
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_014.html"
+          },
+          "score": 14.646031
+        },
+        {
+          "location": [
+            "doc_013.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_013.html"
+          },
+          "score": 13.962752
+        },
+        {
+          "location": [
+            "doc_013.html",
+            1
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_013.html"
+          },
+          "score": 12.394793
+        },
+        {
+          "location": [
+            "doc_038.html",
+            0
+          ],
+          "metadata": {
+            "company": "Northgate Robotics Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_038.html"
+          },
+          "score": 12.28213
+        },
+        {
+          "location": [
+            "doc_034.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_034.html"
+          },
+          "score": 10.499747
+        }
+      ],
+      "returned_other_document_types": 4
+    },
+    "q040": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Inventories | 31 December 2025: 162.6 | 31 December 2024: 149.7",
+            "location": [
+              "doc_026.html",
+              8
+            ],
+            "rank": 18,
+            "score": 8.920817,
+            "value": "162.6"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Kestrel Semiconductor"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "What was the value of Kestrel Semiconductor's inventories at 31 December 2025, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_026.html",
+            2
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_026.html"
+          },
+          "score": 14.755945
+        },
+        {
+          "location": [
+            "doc_026.html",
+            6
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_026.html"
+          },
+          "score": 13.939711
+        },
+        {
+          "location": [
+            "doc_005.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_005.html"
+          },
+          "score": 13.761127
+        },
+        {
+          "location": [
+            "doc_017.html",
+            0
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_017.html"
+          },
+          "score": 13.732068
+        },
+        {
+          "location": [
+            "doc_026.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_026.html"
+          },
+          "score": 13.702687
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q043": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Intermodal | 2025: 586.6 | 2024: 529.9",
+            "location": [
+              "doc_016.html",
+              11
+            ],
+            "rank": 10,
+            "score": 8.722687,
+            "value": "586.6"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Halcyon Freight"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "How much revenue did Halcyon Freight's Intermodal segment generate in FY2025, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_035.html",
+            0
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_035.html"
+          },
+          "score": 16.536811
+        },
+        {
+          "location": [
+            "doc_016.html",
+            2
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_016.html"
+          },
+          "score": 14.149446
+        },
+        {
+          "location": [
+            "doc_008.html",
+            2
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_008.html"
+          },
+          "score": 14.060726
+        },
+        {
+          "location": [
+            "doc_016.html",
+            1
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_016.html"
+          },
+          "score": 13.11563
+        },
+        {
+          "location": [
+            "doc_030.html",
+            1
+          ],
+          "metadata": {
+            "company": "Halcyon Freight Inc.",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_030.html"
+          },
+          "score": 11.75642
+        }
+      ],
+      "returned_other_document_types": 2
+    },
+    "q045": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Bakery | 2024: 634.6 | 2023: 616.9",
+            "location": [
+              "doc_036.html",
+              11
+            ],
+            "rank": 12,
+            "score": 8.805158,
+            "value": "634.6"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Lumen Harbor Foods"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "How much revenue did Lumen Harbor Foods' Bakery segment generate in FY2024, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_023.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 19.514412
+        },
+        {
+          "location": [
+            "doc_036.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 16.452247
+        },
+        {
+          "location": [
+            "doc_023.html",
+            2
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 15.804014
+        },
+        {
+          "location": [
+            "doc_040.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "earnings_call",
+            "fiscal_year": 2025,
+            "source": "doc_040.html"
+          },
+          "score": 15.582383
+        },
+        {
+          "location": [
+            "doc_036.html",
+            2
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 15.439313
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q046": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Gross profit | 2024: 932.2 | 2023: 897.8",
+            "location": [
+              "doc_018.html",
+              7
+            ],
+            "rank": 18,
+            "score": 4.392033,
+            "value": "897.8"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Sablewood Retail"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2023
+      },
+      "question": "What was Sablewood Retail's gross profit in FY2023, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_004.html",
+            1
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_004.html"
+          },
+          "score": 11.609646
+        },
+        {
+          "location": [
+            "doc_018.html",
+            1
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_018.html"
+          },
+          "score": 11.469926
+        },
+        {
+          "location": [
+            "doc_010.html",
+            0
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_010.html"
+          },
+          "score": 10.96154
+        },
+        {
+          "location": [
+            "doc_004.html",
+            4
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_004.html"
+          },
+          "score": 9.826771
+        },
+        {
+          "location": [
+            "doc_018.html",
+            4
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_018.html"
+          },
+          "score": 9.72596
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q050": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Europe, Middle East and Africa | 2024: 565.1 | 2023: 493.5",
+            "location": [
+              "doc_027.html",
+              11
+            ],
+            "rank": 7,
+            "score": 13.882268,
+            "value": "493.5"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Brightwater Software"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2023
+      },
+      "question": "How much revenue did Brightwater Software generate in Europe, Middle East and Africa in FY2023, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_027.html",
+            2
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_027.html"
+          },
+          "score": 22.307923
+        },
+        {
+          "location": [
+            "doc_020.html",
+            2
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_020.html"
+          },
+          "score": 21.822088
+        },
+        {
+          "location": [
+            "doc_021.html",
+            0
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_021.html"
+          },
+          "score": 18.353983
+        },
+        {
+          "location": [
+            "doc_027.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_027.html"
+          },
+          "score": 17.78924
+        },
+        {
+          "location": [
+            "doc_020.html",
+            1
+          ],
+          "metadata": {
+            "company": "Brightwater Software Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_020.html"
+          },
+          "score": 15.612316
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q054": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Inventories | 31 December 2025: 297.4 | 31 December 2024: 287.6",
+            "location": [
+              "doc_023.html",
+              8
+            ],
+            "rank": 21,
+            "score": 8.799839,
+            "value": "297.4"
+          },
+          "matching_chunks_in_corpus": 1,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Lumen Harbor Foods"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2025
+      },
+      "question": "What was the value of Lumen Harbor Foods' inventories at 31 December 2025, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_023.html",
+            2
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 18.293601
+        },
+        {
+          "location": [
+            "doc_015.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_015.html"
+          },
+          "score": 18.118897
+        },
+        {
+          "location": [
+            "doc_023.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_023.html"
+          },
+          "score": 17.74311
+        },
+        {
+          "location": [
+            "doc_036.html",
+            1
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 17.73181
+        },
+        {
+          "location": [
+            "doc_036.html",
+            0
+          ],
+          "metadata": {
+            "company": "Lumen Harbor Foods plc",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_036.html"
+          },
+          "score": 16.962515
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q055": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Cash and cash equivalents at beginning of year | 2024: 456.2 | 2023: 450.3",
+            "location": [
+              "doc_018.html",
+              10
+            ],
+            "rank": 6,
+            "score": 15.239445,
+            "value": "456.2"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Sablewood Retail"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2023
+      },
+      "question": "How much cash and cash equivalents did Sablewood Retail hold at 31 December 2023, in USD millions?",
+      "related_rows": [
+        {
+          "location": [
+            "doc_004.html",
+            10
+          ],
+          "text": "Cash and cash equivalents at beginning of year | 2025: 507.2 | 2024: 456.2"
+        }
+      ],
+      "related_rows_without_requested_year": [
+        {
+          "location": [
+            "doc_004.html",
+            10
+          ],
+          "text": "Cash and cash equivalents at beginning of year | 2025: 507.2 | 2024: 456.2"
+        }
+      ],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_010.html",
+            0
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_010.html"
+          },
+          "score": 19.063802
+        },
+        {
+          "location": [
+            "doc_018.html",
+            1
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_018.html"
+          },
+          "score": 16.749208
+        },
+        {
+          "location": [
+            "doc_018.html",
+            0
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_018.html"
+          },
+          "score": 16.632478
+        },
+        {
+          "location": [
+            "doc_004.html",
+            0
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_004.html"
+          },
+          "score": 16.632478
+        },
+        {
+          "location": [
+            "doc_004.html",
+            10
+          ],
+          "metadata": {
+            "company": "Sablewood Retail Inc.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_004.html"
+          },
+          "score": 15.239445
+        }
+      ],
+      "returned_other_document_types": 1
+    },
+    "q060": {
+      "category": "table",
+      "evidence_groups": [
+        {
+          "eligible_evidence": {
+            "excerpt": "Total equity | 31 December 2024: 2,083.1 | 31 December 2023: 1,691.2",
+            "location": [
+              "doc_005.html",
+              9
+            ],
+            "rank": 10,
+            "score": 8.822783,
+            "value": "2,083.1"
+          },
+          "matching_chunks_in_corpus": 2,
+          "returned_rank": null
+        }
+      ],
+      "missing_groups_in_rendered_rows": true,
+      "parsed": {
+        "companies": [
+          "Kestrel Semiconductor"
+        ],
+        "doc_type": "annual_report",
+        "fiscal_year": 2024
+      },
+      "question": "What was Kestrel Semiconductor's total equity at 31 December 2024, in USD millions?",
+      "related_rows": [],
+      "related_rows_without_requested_year": [],
+      "resolution": "resolved",
+      "returned": [
+        {
+          "location": [
+            "doc_026.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2025,
+            "source": "doc_026.html"
+          },
+          "score": 11.948443
+        },
+        {
+          "location": [
+            "doc_017.html",
+            0
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "research_report",
+            "fiscal_year": 2025,
+            "source": "doc_017.html"
+          },
+          "score": 10.904344
+        },
+        {
+          "location": [
+            "doc_005.html",
+            2
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_005.html"
+          },
+          "score": 10.597838
+        },
+        {
+          "location": [
+            "doc_005.html",
+            1
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_005.html"
+          },
+          "score": 9.567498
+        },
+        {
+          "location": [
+            "doc_005.html",
+            12
+          ],
+          "metadata": {
+            "company": "Kestrel Semiconductor Ltd.",
+            "doc_type": "annual_report",
+            "fiscal_year": 2024,
+            "source": "doc_005.html"
+          },
+          "score": 9.236453
+        }
+      ],
+      "returned_other_document_types": 1
+    }
+  }
+}
