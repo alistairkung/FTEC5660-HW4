@@ -1,0 +1,1306 @@
+{
+  "comparison": {
+    "gained_hits": [
+      "q030",
+      "q036",
+      "q038",
+      "q051",
+      "q056",
+      "q057",
+      "q058"
+    ],
+    "lost_hits": [],
+    "metrics_after": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "metrics_before": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        18,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          2,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          6,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    }
+  },
+  "hits_by_subject_count": {
+    "multiple": {
+      "total": 12,
+      "v2": 2,
+      "v3": 4
+    },
+    "single": {
+      "total": 34,
+      "v2": 16,
+      "v3": 21
+    }
+  },
+  "questions": {
+    "q001": {
+      "eligible_chunks": 330,
+      "evidence_ranks": [],
+      "resolution": "unresolved",
+      "subjects": [
+        "Northgate Robotic Systems"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Brightwater Software Inc."
+      ]
+    },
+    "q002": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Software"
+      ],
+      "top_five_companies": [
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc."
+      ]
+    },
+    "q003": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        },
+        {
+          "v2": 5,
+          "v3": 5
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Payments",
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q004": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 3,
+          "v3": 3
+        },
+        {
+          "v2": 11,
+          "v3": 9
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor",
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q005": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q006": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q007": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q008": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd."
+      ]
+    },
+    "q009": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Sablewood Retail"
+      ],
+      "top_five_companies": [
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc."
+      ]
+    },
+    "q010": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 5,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Software"
+      ],
+      "top_five_companies": [
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc."
+      ]
+    },
+    "q011": {
+      "eligible_chunks": 330,
+      "evidence_ranks": [],
+      "resolution": "unresolved",
+      "subjects": [
+        "Halcyon Air Cargo"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q012": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 4,
+          "v3": 4
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q013": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        },
+        {
+          "v2": 6,
+          "v3": 6
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy",
+        "Orchid Bay Hotels"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q014": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 5,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q015": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 25,
+          "v3": 12
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Lumen Harbor Foods"
+      ],
+      "top_five_companies": [
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q016": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 160,
+          "v3": 18
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd."
+      ]
+    },
+    "q017": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 11,
+          "v3": 6
+        },
+        {
+          "v2": 15,
+          "v3": 7
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy",
+        "Brightwater Software"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Software Inc.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q018": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 13,
+          "v3": 8
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Payments"
+      ],
+      "top_five_companies": [
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp."
+      ]
+    },
+    "q019": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q020": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 20,
+          "v3": 9
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q021": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 10,
+          "v3": 10
+        },
+        {
+          "v2": 23,
+          "v3": 12
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics",
+        "Northgate Payments"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q022": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 20,
+          "v3": 7
+        },
+        {
+          "v2": 25,
+          "v3": 9
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Payments",
+        "Orchid Bay Hotels"
+      ],
+      "top_five_companies": [
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Orchid Bay Hotels Ltd."
+      ]
+    },
+    "q023": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 15,
+          "v3": 12
+        },
+        {
+          "v2": 26,
+          "v3": 14
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Lumen Harbor Foods",
+        "Sablewood Retail"
+      ],
+      "top_five_companies": [
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q024": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 14,
+          "v3": 13
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Orchid Bay Hotels"
+      ],
+      "top_five_companies": [
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd."
+      ]
+    },
+    "q025": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd."
+      ]
+    },
+    "q026": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 4,
+          "v3": 4
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q027": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 2,
+          "v3": 2
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q028": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q029": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Sablewood Retail"
+      ],
+      "top_five_companies": [
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc."
+      ]
+    },
+    "q030": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 15,
+          "v3": 2
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q031": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 15,
+          "v3": 12
+        },
+        {
+          "v2": 29,
+          "v3": 21
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Software",
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc."
+      ]
+    },
+    "q032": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Orchid Bay Hotels"
+      ],
+      "top_five_companies": [
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd."
+      ]
+    },
+    "q033": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q034": {
+      "eligible_chunks": 330,
+      "evidence_ranks": [],
+      "resolution": "unresolved",
+      "subjects": [
+        "Kestrel Microdevices"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Northgate Robotics Inc.",
+        "Corvane Pharma Ltd.",
+        "Lumen Harbor Foods plc",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q035": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q036": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 18,
+          "v3": 4
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Payments"
+      ],
+      "top_five_companies": [
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp."
+      ]
+    },
+    "q037": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 4,
+          "v3": 3
+        },
+        {
+          "v2": 58,
+          "v3": 22
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics",
+        "Brightwater Software"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q038": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 6,
+          "v3": 5
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q039": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q040": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 128,
+          "v3": 18
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q041": {
+      "eligible_chunks": 330,
+      "evidence_ranks": [],
+      "resolution": "unresolved",
+      "subjects": [
+        "Brightwater Mining"
+      ],
+      "top_five_companies": [
+        "Brightwater Software Inc.",
+        "Northgate Payments Corp.",
+        "Orchid Bay Hotels Ltd.",
+        "Sablewood Retail Inc.",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q042": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 4,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q043": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 17,
+          "v3": 10
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q044": {
+      "eligible_chunks": 330,
+      "evidence_ranks": [],
+      "resolution": "unresolved",
+      "subjects": [
+        "Orchid Bay Resorts"
+      ],
+      "top_five_companies": [
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd.",
+        "Orchid Bay Hotels Ltd."
+      ]
+    },
+    "q045": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 15,
+          "v3": 12
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Lumen Harbor Foods"
+      ],
+      "top_five_companies": [
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q046": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 135,
+          "v3": 18
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Sablewood Retail"
+      ],
+      "top_five_companies": [
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc."
+      ]
+    },
+    "q047": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 3,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd."
+      ]
+    },
+    "q048": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 2,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q049": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q050": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 41,
+          "v3": 7
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Software"
+      ],
+      "top_five_companies": [
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc.",
+        "Brightwater Software Inc."
+      ]
+    },
+    "q051": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 17,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Robotics"
+      ],
+      "top_five_companies": [
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc.",
+        "Northgate Robotics Inc."
+      ]
+    },
+    "q052": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    },
+    "q053": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 1,
+          "v3": 1
+        },
+        {
+          "v2": 3,
+          "v3": 3
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Brightwater Energy",
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Brightwater Energy Corp.",
+        "Brightwater Energy Corp.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Brightwater Energy Corp."
+      ]
+    },
+    "q054": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 140,
+          "v3": 21
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Lumen Harbor Foods"
+      ],
+      "top_five_companies": [
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q055": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 18,
+          "v3": 6
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Sablewood Retail"
+      ],
+      "top_five_companies": [
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc.",
+        "Sablewood Retail Inc."
+      ]
+    },
+    "q056": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 5,
+          "v3": 3
+        },
+        {
+          "v2": 7,
+          "v3": 4
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor",
+        "Lumen Harbor Foods"
+      ],
+      "top_five_companies": [
+        "Lumen Harbor Foods plc",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Lumen Harbor Foods plc",
+        "Lumen Harbor Foods plc"
+      ]
+    },
+    "q057": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 13,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Northgate Payments"
+      ],
+      "top_five_companies": [
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp.",
+        "Northgate Payments Corp."
+      ]
+    },
+    "q058": {
+      "eligible_chunks": 66,
+      "evidence_ranks": [
+        {
+          "v2": 9,
+          "v3": 3
+        },
+        {
+          "v2": 7,
+          "v3": 2
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Halcyon Freight",
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Halcyon Freight Inc.",
+        "Corvane Pharma Ltd.",
+        "Halcyon Freight Inc.",
+        "Corvane Pharma Ltd.",
+        "Halcyon Freight Inc."
+      ]
+    },
+    "q059": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 4,
+          "v3": 1
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Corvane Pharma"
+      ],
+      "top_five_companies": [
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd.",
+        "Corvane Pharma Ltd."
+      ]
+    },
+    "q060": {
+      "eligible_chunks": 33,
+      "evidence_ranks": [
+        {
+          "v2": 16,
+          "v3": 10
+        }
+      ],
+      "resolution": "resolved",
+      "subjects": [
+        "Kestrel Semiconductor"
+      ],
+      "top_five_companies": [
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd.",
+        "Kestrel Semiconductor Ltd."
+      ]
+    }
+  },
+  "resolution": {
+    "resolved": 55,
+    "unresolved": 5
+  }
+}

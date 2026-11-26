@@ -1,0 +1,162 @@
+{
+  "experiment": "V3",
+  "code_revision": "116cbf940f3311950c8e85b9aeb57ab15c69cec8",
+  "v2_merge_commit": "57e4918fffe98d1bbc2861d27b79a5658e80c1e7",
+  "configuration": {
+    "change": "Company metadata candidate selection",
+    "subjects": "V2 parse_query",
+    "normalization": "NFKC, casefolding, whitespace collapse, terminal period and one trailing legal suffix removed for lookup; distinct full normalized names sharing a key are ambiguous",
+    "fallback": "Global ranking when no subject or any missing or ambiguous key",
+    "score": "Existing full-corpus BM25 and its tie order, restricted to the union of resolved positions, then top five"
+  },
+  "hw4_sha256": "38af2e06d954bd0367d8e986868fcff4fd5d404c30f71164f47b8be4171896a0",
+  "protected_suffix_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "fixture_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "runtime": {
+    "python": "3.14.0",
+    "platform": "Darwin arm64",
+    "dependency_lock": "../b0/requirements.lock",
+    "direct_dependencies": {
+      "langchain-core": "1.8.5",
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.2.0",
+      "langchain-deepseek": "1.2.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "rank-bm25": "0.2.2",
+      "python-dotenv": "1.2.4"
+    }
+  },
+  "offline": {
+    "metrics": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "resolution": {
+      "resolved": 55,
+      "unresolved": 5
+    },
+    "hits_by_subject_count": {
+      "multiple": {
+        "total": 12,
+        "v2": 2,
+        "v3": 4
+      },
+      "single": {
+        "total": 34,
+        "v2": 16,
+        "v3": 21
+      }
+    },
+    "parse_fields_correct": {
+      "companies": 60,
+      "fiscal_year": 60,
+      "doc_type": 60
+    },
+    "parse_outputs_identical": 60,
+    "gained_hits": [
+      "q030",
+      "q036",
+      "q038",
+      "q051",
+      "q056",
+      "q057",
+      "q058"
+    ],
+    "lost_hits": [],
+    "identical_runs": 2,
+    "tests_passed": 24
+  },
+  "live": {
+    "runs": 1,
+    "accuracy": [
+      40,
+      60
+    ],
+    "by_category": {
+      "comparison": [
+        4,
+        12
+      ],
+      "fact": [
+        10,
+        12
+      ],
+      "table": [
+        12,
+        22
+      ],
+      "unanswerable": [
+        14,
+        14
+      ]
+    },
+    "incorrect_with_all_evidence": [],
+    "correct_with_incomplete_evidence": [
+      "q055"
+    ],
+    "generator_usage": {
+      "llm_calls": 60,
+      "llm_input_tokens": 108035,
+      "llm_output_tokens": 187,
+      "cost_usd": 0.0163
+    },
+    "student_usage": {
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "runner_seconds": 10.7,
+    "wall_seconds": 11.787,
+    "estimated_public_points": [
+      44.96,
+      75
+    ]
+  },
+  "artifacts_sha256": {
+    "offline.json": "db02649823976628526078026b0d2510c4baac6df8e04c8986588ab5045f3add",
+    "ranks.json": "a79727efe96db93bbca90c8198306871ac7b44cfff0bddecb73ff2e3ee4a866c",
+    "results.csv": "341d354b2b507c80093705f44d4406dd1757328c1e714f3dfc076ee7981a7178",
+    "runner.txt": "faa938beb981f5c4a38c2992088bf7ded4d45cd72de92209d9be22e044d40106"
+  }
+}
