@@ -102,6 +102,60 @@ def allocate_comparison(index: LexicalIndex, ranking: list[int]) -> list[int]:
     return [position for position in unique_positions if position in selected]
 
 
+def company_phrase(name: str) -> str:
+    return rf"(?<!\w){re.escape(name)}(?!\w)"
+
+
+def clearly_absent_subject(index: LexicalIndex, question: str, subject: str) -> bool:
+    name = squash(subject).removesuffix(".")
+    text = squash(question)
+    phrase = company_phrase(name)
+    subject_role = rf"{phrase}[’']s?\s|\bdid\s+{phrase}\.?\s+(?!and\b|or\b)[a-z]+"
+    if not re.search(subject_role, text):
+        return False
+    # A known name elsewhere in the question or a literal mention in the corpus
+    # can indicate a partial parse, an alias, or supporting material.
+    if any(re.search(company_phrase(key), text) for key in index.company_positions if key):
+        return False
+    indexed_positions = sum(len(positions) for identities in index.company_positions.values()
+                            for positions in identities.values())
+    return indexed_positions == len(index.chunks) and not any(
+        re.search(phrase, squash(chunk.page_content)) for chunk in index.chunks
+    )
+
+
+def abstention_reason(
+    index: LexicalIndex, question: str, parsed: dict, resolution: str
+) -> str | None:
+    subjects = parsed["companies"]
+    if resolution == "unresolved" and len(subjects) == 1:
+        if clearly_absent_subject(index, question, subjects[0]):
+            return "absent_company"
+
+    year = parsed.get("fiscal_year")
+    if resolution != "resolved" or parsed.get("doc_type") != "annual_report" or year is None:
+        return None
+    if {int(match[1]) for match in FISCAL_YEAR.finditer(question)} != {year}:
+        return None
+
+    year_text = re.compile(rf"(?<!\d){year}(?!\d)|\bFY\s*['’]?{year % 100:02d}\b", re.I)
+    for subject in subjects:
+        positions, _ = company_candidates(index, [subject])
+        if not positions:
+            continue
+        company_chunks = [index.chunks[position] for position in positions]
+        report_years = [chunk.metadata.get("fiscal_year") for chunk in company_chunks
+                        if chunk.metadata.get("doc_type") == "annual_report"]
+        # Protect the oldest report's implicit prior-year comparative column and
+        # explicit historical references anywhere in the company's indexed text.
+        if (report_years and all(type(value) is int for value in report_years)
+                and year < min(report_years) - 1
+                and not any(chunk.metadata.get("fiscal_year") == year
+                            or year_text.search(chunk.page_content) for chunk in company_chunks)):
+            return "unsupported_historical_period"
+    return None
+
+
 def report_metadata(file_name: str, soup: BeautifulSoup) -> dict[str, str | int]:
     title = soup.title.get_text(" ", strip=True)
     company = soup.h1.get_text(" ", strip=True).split(" (", 1)[0]
@@ -333,8 +387,11 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     Return [] when the corpus cannot answer the question: the generator then answers NOT_FOUND.
     """
     ### YOUR CODE HERE
-    subjects = parse_query(question)["companies"]
-    eligible, _ = company_candidates(index, subjects)
+    parsed = parse_query(question)
+    subjects = parsed["companies"]
+    eligible, resolution = company_candidates(index, subjects)
+    if abstention_reason(index, question, parsed, resolution) is not None:
+        return []
     ranking = ranked_positions(index, question)
     if eligible is not None:
         ranking = [position for position in ranking if position in eligible]
