@@ -33,6 +33,38 @@ load_dotenv()
 # Your code: add imports, constants and helper functions here.
 # =============================================================================
 
+from dataclasses import dataclass
+
+from bs4 import BeautifulSoup
+from langchain_text_splitters.character import RecursiveCharacterTextSplitter
+from rank_bm25 import BM25Okapi
+
+
+@dataclass
+class LexicalIndex:
+    chunks: list[Document]
+    ranker: BM25Okapi | None
+
+
+def report_metadata(file_name: str, soup: BeautifulSoup) -> dict[str, str | int]:
+    title = soup.title.get_text(" ", strip=True)
+    company = soup.h1.get_text(" ", strip=True).split(" (", 1)[0]
+    report_types = (
+        ("annual_report", r"Annual Report\s+(\d{4})"),
+        ("earnings_call", r"Full Year\s+(\d{4})\s+Earnings Call"),
+        ("research_report", r"FY\s*(\d{4})\s+results review"),
+    )
+    for doc_type, pattern in report_types:
+        match = re.search(pattern, title, re.IGNORECASE)
+        if match:
+            return {
+                "source": file_name,
+                "company": company,
+                "fiscal_year": int(match[1]),
+                "doc_type": doc_type,
+            }
+    raise ValueError(f"Unrecognised report title in {file_name}: {title!r}")
+
 
 def table_to_text(table_html: str) -> str:
     """Task 1.1: turn one HTML <table> into text that keeps every value with its row and its column.
@@ -53,7 +85,10 @@ def chunk_document(file_name: str, html: str) -> list[Document]:
     "doc_type" (one of DOC_TYPES). Do not call the LLM here.
     """
     ### YOUR CODE HERE
-    return []
+    soup = BeautifulSoup(html, "html.parser")
+    metadata = report_metadata(file_name, soup)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS)
+    return splitter.create_documents([soup.get_text()], [metadata])
 
 
 def parse_query(question: str) -> dict:
@@ -65,22 +100,26 @@ def parse_query(question: str) -> dict:
     return {}
 
 
-def build_index(chunks: list[Document]) -> Any:
+def build_index(chunks: list[Document]) -> LexicalIndex:
     """Task 2: index the chunks of the whole corpus (the output of chunk_document), once per run.
 
     Return anything retrieve() needs: a BM25 or TF-IDF index, the chunks grouped by metadata, ...
     """
     ### YOUR CODE HERE
-    return None
+    tokens = [chunk.page_content.lower().split() for chunk in chunks]
+    ranker = BM25Okapi(tokens) if any(tokens) else None
+    return LexicalIndex(list(chunks), ranker)
 
 
-def retrieve(index: Any, question: str) -> list[Document]:
+def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     """Tasks 2 and 3: at most MAX_RETRIEVED of the chunks given to build_index, best first.
 
     Return [] when the corpus cannot answer the question: the generator then answers NOT_FOUND.
     """
     ### YOUR CODE HERE
-    return []
+    if index.ranker is None:
+        return index.chunks[:MAX_RETRIEVED]
+    return index.ranker.get_top_n(question.lower().split(), index.chunks, n=MAX_RETRIEVED)
 
 
 # =============================================================================
