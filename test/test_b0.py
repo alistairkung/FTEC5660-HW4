@@ -65,9 +65,9 @@ class PublicEvaluation(unittest.TestCase):
         self.assertEqual(metrics["documents_passed"], [40, 40])
         self.assertEqual(metrics["valid_nonempty"], [46, 46])
         self.assertEqual(metrics["table_mean"], 1.0)
-        self.assertEqual(metrics["recall"], [25, 46])
+        self.assertEqual(metrics["recall"], [44, 46])
         self.assertEqual(metrics["recall_by_category"],
-                         {"fact": [10, 12], "table": [11, 22], "comparison": [4, 12]})
+                         {"fact": [10, 12], "table": [22, 22], "comparison": [12, 12]})
         self.assertEqual(metrics["rejected"], [7, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
