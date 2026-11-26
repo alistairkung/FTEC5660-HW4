@@ -1,0 +1,159 @@
+{
+  "experiment": "V5",
+  "code_revision": "da7e63fd4b5889c8abd113efecd7eb2a98621663",
+  "v4_merge_commit": "f9859ca2b31b5f4d2f29de915e6326d8ebfdf720",
+  "configuration": {
+    "changed_component": "deterministic retrieval-time abstention",
+    "absent_subject": "Reject a single unresolved name in a possessive or did-subject role only with complete company metadata, no known company mention in the question, and no literal subject mention in any chunk.",
+    "historical_period": "Reject a single recognized annual-report year earlier than the earliest report year minus one for any fully resolved subject, unless that year is found in that subject’s metadata or chunk text.",
+    "other_settings": "../v4/manifest.json"
+  },
+  "source_sha256": "e98d5a1e574e4085de302bba3585d5b5a008202d70d895067f42989d40123989",
+  "protected_suffix_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "fixture_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "runtime": {
+    "python": "3.14.0",
+    "platform": "Darwin arm64",
+    "direct_dependencies": {
+      "langchain-core": "1.8.5",
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.2.0",
+      "langchain-deepseek": "1.2.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "rank-bm25": "0.2.2",
+      "python-dotenv": "1.2.4"
+    },
+    "lock_sha256": "57b96da74fd4130f65d1fdcd883ba3cc84619a569fa703dbd8e7dd4e9aad2511"
+  },
+  "offline": {
+    "metrics": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        7,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "task_3_points": 5.0,
+    "parse_fields_correct": {
+      "companies": 60,
+      "fiscal_year": 60,
+      "doc_type": 60
+    },
+    "rejected_by_class": {
+      "absent_company": [
+        5,
+        5
+      ],
+      "undisclosed_metric": [
+        0,
+        4
+      ],
+      "unsupported_historical_period": [
+        2,
+        5
+      ]
+    },
+    "successful_abstentions": [
+      "q001",
+      "q006",
+      "q011",
+      "q032",
+      "q034",
+      "q041",
+      "q044"
+    ],
+    "false_abstentions": [],
+    "gained_hits": [],
+    "lost_hits": [],
+    "retained_rankings_identical": 53,
+    "identical_runs": 2,
+    "tests_passed": 31
+  },
+  "live": {
+    "runs": 1,
+    "accuracy": [
+      40,
+      60
+    ],
+    "by_category": {
+      "comparison": [
+        5,
+        12
+      ],
+      "fact": [
+        10,
+        12
+      ],
+      "table": [
+        11,
+        22
+      ],
+      "unanswerable": [
+        14,
+        14
+      ]
+    },
+    "changed_question_correctness": [],
+    "student_usage": {
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "generator_usage": {
+      "llm_calls": 53,
+      "llm_input_tokens": 94341,
+      "llm_output_tokens": 169,
+      "cost_usd": 0.0143
+    },
+    "runner_seconds": 6.2,
+    "wall_seconds": 6.93,
+    "estimated_public_points": [
+      49.96,
+      75
+    ]
+  },
+  "artifact_sha256": {
+    "offline.json": "7cab993ba49a3c490905dbc62c5ad2e2dd5a10d97b26d2b872eb56566b5d95c5",
+    "abstentions.json": "b5af2cc439e67a0d965485162b0a0dfa5368a47e31b3e5bd36277d36d7abf9b9",
+    "results.csv": "75a5260952ab2a620de4327a4b9d17b2ec317777d4e8905bd4fb34250b2e8366",
+    "runner.txt": "e7c1c48a3a33755ad6c3a112faecb17174ca38de8ea03f70d2445f6d537421be"
+  }
+}
