@@ -1,0 +1,269 @@
+{
+  "live": {
+    "questions": {
+      "q001": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q002": {"b":{"answer":"1574.7","correct":true,"prompt_sha256":"15b85f751225aab4df2b2ca1da1e065d8114207a45dce81da9bed5f7a2121a0c"},"c":{"answer":"1574.7","correct":true,"prompt_sha256":"15b85f751225aab4df2b2ca1da1e065d8114207a45dce81da9bed5f7a2121a0c"},"fresh_combined":{"answer":"1574.7","correct":true,"prompt_sha256":"15b85f751225aab4df2b2ca1da1e065d8114207a45dce81da9bed5f7a2121a0c"},"measured_combined":{"answer":"1574.7","correct":true,"prompt_sha256":"15b85f751225aab4df2b2ca1da1e065d8114207a45dce81da9bed5f7a2121a0c"},"v6":{"answer":"1574.7","correct":true,"prompt_sha256":"15b85f751225aab4df2b2ca1da1e065d8114207a45dce81da9bed5f7a2121a0c"}},
+      "q003": {"b":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"3ff14a27c15af260f13cb448658515442c2cec6e9d11d7a4dbe5f9259a44f344"},"c":{"answer":"Northgate Robotics","correct":true,"prompt_sha256":"3ff14a27c15af260f13cb448658515442c2cec6e9d11d7a4dbe5f9259a44f344"},"fresh_combined":{"answer":"Northgate Robotics","correct":true,"prompt_sha256":"3ff14a27c15af260f13cb448658515442c2cec6e9d11d7a4dbe5f9259a44f344"},"measured_combined":{"answer":"Northgate Robotics","correct":true,"prompt_sha256":"3ff14a27c15af260f13cb448658515442c2cec6e9d11d7a4dbe5f9259a44f344"},"v6":{"answer":"Northgate Robotics","correct":true,"prompt_sha256":"3ff14a27c15af260f13cb448658515442c2cec6e9d11d7a4dbe5f9259a44f344"}},
+      "q004": {"b":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"3e80497e27cb00bcf190b562ce94b8d2d639a6f38843733f71e0bfcf4d4dc195"},"c":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"3e80497e27cb00bcf190b562ce94b8d2d639a6f38843733f71e0bfcf4d4dc195"},"fresh_combined":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"3e80497e27cb00bcf190b562ce94b8d2d639a6f38843733f71e0bfcf4d4dc195"},"measured_combined":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"3e80497e27cb00bcf190b562ce94b8d2d639a6f38843733f71e0bfcf4d4dc195"},"v6":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"3e80497e27cb00bcf190b562ce94b8d2d639a6f38843733f71e0bfcf4d4dc195"}},
+      "q005": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8d6678e1e6132cea4a81e07cc364080fb115f98a018be8e8258bf13927198695"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8d6678e1e6132cea4a81e07cc364080fb115f98a018be8e8258bf13927198695"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8d6678e1e6132cea4a81e07cc364080fb115f98a018be8e8258bf13927198695"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8d6678e1e6132cea4a81e07cc364080fb115f98a018be8e8258bf13927198695"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8d6678e1e6132cea4a81e07cc364080fb115f98a018be8e8258bf13927198695"}},
+      "q006": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q007": {"b":{"answer":"BUY","correct":true,"prompt_sha256":"4a08e7420260ba308f47c4f8915b06887f01462a49dc32d071586ecf69e2b405"},"c":{"answer":"BUY","correct":true,"prompt_sha256":"4a08e7420260ba308f47c4f8915b06887f01462a49dc32d071586ecf69e2b405"},"fresh_combined":{"answer":"BUY","correct":true,"prompt_sha256":"4a08e7420260ba308f47c4f8915b06887f01462a49dc32d071586ecf69e2b405"},"measured_combined":{"answer":"BUY","correct":true,"prompt_sha256":"4a08e7420260ba308f47c4f8915b06887f01462a49dc32d071586ecf69e2b405"},"v6":{"answer":"BUY","correct":true,"prompt_sha256":"4a08e7420260ba308f47c4f8915b06887f01462a49dc32d071586ecf69e2b405"}},
+      "q008": {"b":{"answer":"8.5","correct":true,"prompt_sha256":"6f40a2fcdf98bc865f17b8e44992c4084ab3bff06c54848c6ba3e58767267963"},"c":{"answer":"8.5","correct":true,"prompt_sha256":"6f40a2fcdf98bc865f17b8e44992c4084ab3bff06c54848c6ba3e58767267963"},"fresh_combined":{"answer":"8.5","correct":true,"prompt_sha256":"6f40a2fcdf98bc865f17b8e44992c4084ab3bff06c54848c6ba3e58767267963"},"measured_combined":{"answer":"8.5","correct":true,"prompt_sha256":"6f40a2fcdf98bc865f17b8e44992c4084ab3bff06c54848c6ba3e58767267963"},"v6":{"answer":"8.5","correct":true,"prompt_sha256":"6f40a2fcdf98bc865f17b8e44992c4084ab3bff06c54848c6ba3e58767267963"}},
+      "q009": {"b":{"answer":"2390.3","correct":true,"prompt_sha256":"acb08704d207eac37f420219133b5db186fe3cf74e6102884551be155f0942bf"},"c":{"answer":"2390.3","correct":true,"prompt_sha256":"acb08704d207eac37f420219133b5db186fe3cf74e6102884551be155f0942bf"},"fresh_combined":{"answer":"2390.3","correct":true,"prompt_sha256":"acb08704d207eac37f420219133b5db186fe3cf74e6102884551be155f0942bf"},"measured_combined":{"answer":"2390.3","correct":true,"prompt_sha256":"acb08704d207eac37f420219133b5db186fe3cf74e6102884551be155f0942bf"},"v6":{"answer":"2390.3","correct":true,"prompt_sha256":"acb08704d207eac37f420219133b5db186fe3cf74e6102884551be155f0942bf"}},
+      "q010": {"b":{"answer":"Yara Castillo","correct":true,"prompt_sha256":"b8b0e072b7edfc0802137f705fd0db9deca04051a43c7bdfbfa4eac1b234d793"},"c":{"answer":"Yara Castillo","correct":true,"prompt_sha256":"04186e14cdaf71ef53028568a719f2b78dc6bfcdee59a3a5d012f1dd9dda0b35"},"fresh_combined":{"answer":"Yara Castillo","correct":true,"prompt_sha256":"04186e14cdaf71ef53028568a719f2b78dc6bfcdee59a3a5d012f1dd9dda0b35"},"measured_combined":{"answer":"Yara Castillo","correct":true,"prompt_sha256":"04186e14cdaf71ef53028568a719f2b78dc6bfcdee59a3a5d012f1dd9dda0b35"},"v6":{"answer":"Yara Castillo","correct":true,"prompt_sha256":"b8b0e072b7edfc0802137f705fd0db9deca04051a43c7bdfbfa4eac1b234d793"}},
+      "q011": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q012": {"b":{"answer":"838.4","correct":true,"prompt_sha256":"3fb81d2096680115150f151557d55c71432045d186e7e3a8f05163f9752e087d"},"c":{"answer":"838.4","correct":true,"prompt_sha256":"3fb81d2096680115150f151557d55c71432045d186e7e3a8f05163f9752e087d"},"fresh_combined":{"answer":"838.4","correct":true,"prompt_sha256":"3fb81d2096680115150f151557d55c71432045d186e7e3a8f05163f9752e087d"},"measured_combined":{"answer":"838.4","correct":true,"prompt_sha256":"3fb81d2096680115150f151557d55c71432045d186e7e3a8f05163f9752e087d"},"v6":{"answer":"838.4","correct":true,"prompt_sha256":"3fb81d2096680115150f151557d55c71432045d186e7e3a8f05163f9752e087d"}},
+      "q013": {"b":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"37128a147bf05884ccbfe52621a8e9d751a542bf870719bba7f27be853e9a5ff"},"c":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"37128a147bf05884ccbfe52621a8e9d751a542bf870719bba7f27be853e9a5ff"},"fresh_combined":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"37128a147bf05884ccbfe52621a8e9d751a542bf870719bba7f27be853e9a5ff"},"measured_combined":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"37128a147bf05884ccbfe52621a8e9d751a542bf870719bba7f27be853e9a5ff"},"v6":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"37128a147bf05884ccbfe52621a8e9d751a542bf870719bba7f27be853e9a5ff"}},
+      "q014": {"b":{"answer":"Rachel Nyberg","correct":true,"prompt_sha256":"45a6fca0b6ca6e771d21285b5c2fbfa47035e25b7025192d3531f36da567344b"},"c":{"answer":"Rachel Nyberg","correct":true,"prompt_sha256":"b78a33d481cda7cccfa290685b4752ee446b8676c050ee8ac4b7f49dfd445906"},"fresh_combined":{"answer":"Rachel Nyberg","correct":true,"prompt_sha256":"b78a33d481cda7cccfa290685b4752ee446b8676c050ee8ac4b7f49dfd445906"},"measured_combined":{"answer":"Rachel Nyberg","correct":true,"prompt_sha256":"b78a33d481cda7cccfa290685b4752ee446b8676c050ee8ac4b7f49dfd445906"},"v6":{"answer":"Rachel Nyberg","correct":true,"prompt_sha256":"45a6fca0b6ca6e771d21285b5c2fbfa47035e25b7025192d3531f36da567344b"}},
+      "q015": {"b":{"answer":"NOT_FOUND","correct":false,"prompt_sha256":"be2c016a74654207deb4d0d355409dc44e26e85dd9406354e7216b9f652f4510"},"c":{"answer":"Whitlock Byrne LLP","correct":true,"prompt_sha256":"2951f1434a62e6f777b1d38ab9764da98570073667a4ecc2434f42514b6f972e"},"fresh_combined":{"answer":"Whitlock Byrne LLP","correct":true,"prompt_sha256":"2951f1434a62e6f777b1d38ab9764da98570073667a4ecc2434f42514b6f972e"},"measured_combined":{"answer":"Whitlock Byrne LLP","correct":true,"prompt_sha256":"2951f1434a62e6f777b1d38ab9764da98570073667a4ecc2434f42514b6f972e"},"v6":{"answer":"NOT_FOUND","correct":false,"prompt_sha256":"be2c016a74654207deb4d0d355409dc44e26e85dd9406354e7216b9f652f4510"}},
+      "q016": {"b":{"answer":"1805.4","correct":true,"prompt_sha256":"d4c2263b9d6e84747d050a67f9c304520a4b49331faa72d1fa514c7b62294679"},"c":{"answer":"1805.4","correct":true,"prompt_sha256":"d4c2263b9d6e84747d050a67f9c304520a4b49331faa72d1fa514c7b62294679"},"fresh_combined":{"answer":"1805.4","correct":true,"prompt_sha256":"d4c2263b9d6e84747d050a67f9c304520a4b49331faa72d1fa514c7b62294679"},"measured_combined":{"answer":"1805.4","correct":true,"prompt_sha256":"d4c2263b9d6e84747d050a67f9c304520a4b49331faa72d1fa514c7b62294679"},"v6":{"answer":"1805.4","correct":true,"prompt_sha256":"d4c2263b9d6e84747d050a67f9c304520a4b49331faa72d1fa514c7b62294679"}},
+      "q017": {"b":{"answer":"Brightwater Energy Corp.","correct":true,"prompt_sha256":"3a67acfa973e5bcbdd552fe5ffb6d0343ffa902a97a3830597a53d3118710a9a"},"c":{"answer":"Brightwater Energy Corp.","correct":true,"prompt_sha256":"3a67acfa973e5bcbdd552fe5ffb6d0343ffa902a97a3830597a53d3118710a9a"},"fresh_combined":{"answer":"Brightwater Energy Corp.","correct":true,"prompt_sha256":"3a67acfa973e5bcbdd552fe5ffb6d0343ffa902a97a3830597a53d3118710a9a"},"measured_combined":{"answer":"Brightwater Energy Corp.","correct":true,"prompt_sha256":"3a67acfa973e5bcbdd552fe5ffb6d0343ffa902a97a3830597a53d3118710a9a"},"v6":{"answer":"Brightwater Energy Corp.","correct":true,"prompt_sha256":"3a67acfa973e5bcbdd552fe5ffb6d0343ffa902a97a3830597a53d3118710a9a"}},
+      "q018": {"b":{"answer":"NOT_FOUND","correct":false,"prompt_sha256":"b6c5a351652349fe483e64f31902b50971e22a1606d51c75399029740ce9ed01"},"c":{"answer":"75","correct":true,"prompt_sha256":"603f32ab3f794575846e8606619558db10307fff5eb95b1ea5f8d9ecc52c959d"},"fresh_combined":{"answer":"75","correct":true,"prompt_sha256":"603f32ab3f794575846e8606619558db10307fff5eb95b1ea5f8d9ecc52c959d"},"measured_combined":{"answer":"75","correct":true,"prompt_sha256":"603f32ab3f794575846e8606619558db10307fff5eb95b1ea5f8d9ecc52c959d"},"v6":{"answer":"NOT_FOUND","correct":false,"prompt_sha256":"b6c5a351652349fe483e64f31902b50971e22a1606d51c75399029740ce9ed01"}},
+      "q019": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"013f209c03fe36c5ad63d605dab85781f94e4c69ed9cd674358bf5ec473a4e87"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"013f209c03fe36c5ad63d605dab85781f94e4c69ed9cd674358bf5ec473a4e87"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"013f209c03fe36c5ad63d605dab85781f94e4c69ed9cd674358bf5ec473a4e87"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"013f209c03fe36c5ad63d605dab85781f94e4c69ed9cd674358bf5ec473a4e87"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"013f209c03fe36c5ad63d605dab85781f94e4c69ed9cd674358bf5ec473a4e87"}},
+      "q020": {"b":{"answer":"716.6","correct":true,"prompt_sha256":"4d7c92f64c820ec16c7cbdc7f7575517084edebc61462a78bab65828f4e1e10a"},"c":{"answer":"716.6","correct":true,"prompt_sha256":"ab84723f4bd54a5577e7b1447c6c7aa08f5bbf45f980974e9b5162da61f604df"},"fresh_combined":{"answer":"716.6","correct":true,"prompt_sha256":"4d7c92f64c820ec16c7cbdc7f7575517084edebc61462a78bab65828f4e1e10a"},"measured_combined":{"answer":"716.6","correct":true,"prompt_sha256":"4d7c92f64c820ec16c7cbdc7f7575517084edebc61462a78bab65828f4e1e10a"},"v6":{"answer":"716.6","correct":true,"prompt_sha256":"ab84723f4bd54a5577e7b1447c6c7aa08f5bbf45f980974e9b5162da61f604df"}},
+      "q021": {"b":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"8e236c090462b6d40eee3617a8461000e9ba02309f7ead6042316446acaf669c"},"c":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"8e236c090462b6d40eee3617a8461000e9ba02309f7ead6042316446acaf669c"},"fresh_combined":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"8e236c090462b6d40eee3617a8461000e9ba02309f7ead6042316446acaf669c"},"measured_combined":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"8e236c090462b6d40eee3617a8461000e9ba02309f7ead6042316446acaf669c"},"v6":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"8e236c090462b6d40eee3617a8461000e9ba02309f7ead6042316446acaf669c"}},
+      "q022": {"b":{"answer":"Orchid Bay Hotels Ltd.","correct":true,"prompt_sha256":"ed2d1f1cc26bb0e41a7f0af0afbc2d889554ecc1a9cb751e1426d2b4a267273f"},"c":{"answer":"Orchid Bay Hotels Ltd.","correct":true,"prompt_sha256":"ed2d1f1cc26bb0e41a7f0af0afbc2d889554ecc1a9cb751e1426d2b4a267273f"},"fresh_combined":{"answer":"Orchid Bay Hotels Ltd.","correct":true,"prompt_sha256":"ed2d1f1cc26bb0e41a7f0af0afbc2d889554ecc1a9cb751e1426d2b4a267273f"},"measured_combined":{"answer":"Orchid Bay Hotels Ltd.","correct":true,"prompt_sha256":"ed2d1f1cc26bb0e41a7f0af0afbc2d889554ecc1a9cb751e1426d2b4a267273f"},"v6":{"answer":"Orchid Bay Hotels Ltd.","correct":true,"prompt_sha256":"ed2d1f1cc26bb0e41a7f0af0afbc2d889554ecc1a9cb751e1426d2b4a267273f"}},
+      "q023": {"b":{"answer":"Sablewood Retail","correct":true,"prompt_sha256":"5975cb4ebd2b0adf8d91b8a6186f7f8188965849282e42ab7d2c34167a76a7fd"},"c":{"answer":"Sablewood Retail","correct":true,"prompt_sha256":"5975cb4ebd2b0adf8d91b8a6186f7f8188965849282e42ab7d2c34167a76a7fd"},"fresh_combined":{"answer":"Sablewood Retail","correct":true,"prompt_sha256":"5975cb4ebd2b0adf8d91b8a6186f7f8188965849282e42ab7d2c34167a76a7fd"},"measured_combined":{"answer":"Sablewood Retail","correct":true,"prompt_sha256":"5975cb4ebd2b0adf8d91b8a6186f7f8188965849282e42ab7d2c34167a76a7fd"},"v6":{"answer":"Sablewood Retail","correct":true,"prompt_sha256":"5975cb4ebd2b0adf8d91b8a6186f7f8188965849282e42ab7d2c34167a76a7fd"}},
+      "q024": {"b":{"answer":"316.2","correct":true,"prompt_sha256":"4b36a5ce3294b21e542b1d282e367602477dc74168b3c3a87a70079163cb3b46"},"c":{"answer":"227.5","correct":false,"prompt_sha256":"e0ab991825a20804badf5429b4e55dddabd9f3587167ec221c0cb74b5ba618ff"},"fresh_combined":{"answer":"316.2","correct":true,"prompt_sha256":"4b36a5ce3294b21e542b1d282e367602477dc74168b3c3a87a70079163cb3b46"},"measured_combined":{"answer":"316.2","correct":true,"prompt_sha256":"4b36a5ce3294b21e542b1d282e367602477dc74168b3c3a87a70079163cb3b46"},"v6":{"answer":"349.0","correct":false,"prompt_sha256":"e0ab991825a20804badf5429b4e55dddabd9f3587167ec221c0cb74b5ba618ff"}},
+      "q025": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"97a4e6df1ab00ec084730b8030312f8c300b9cf0fd8905d5ba0f0780ca13f78f"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"97a4e6df1ab00ec084730b8030312f8c300b9cf0fd8905d5ba0f0780ca13f78f"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"97a4e6df1ab00ec084730b8030312f8c300b9cf0fd8905d5ba0f0780ca13f78f"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"97a4e6df1ab00ec084730b8030312f8c300b9cf0fd8905d5ba0f0780ca13f78f"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"97a4e6df1ab00ec084730b8030312f8c300b9cf0fd8905d5ba0f0780ca13f78f"}},
+      "q026": {"b":{"answer":"446.9","correct":true,"prompt_sha256":"4c05a237a183e9f2e43f65bee10c578cee65dde23d0c80fe75fc028a6c2ca0f4"},"c":{"answer":"446.9","correct":true,"prompt_sha256":"4c05a237a183e9f2e43f65bee10c578cee65dde23d0c80fe75fc028a6c2ca0f4"},"fresh_combined":{"answer":"446.9","correct":true,"prompt_sha256":"4c05a237a183e9f2e43f65bee10c578cee65dde23d0c80fe75fc028a6c2ca0f4"},"measured_combined":{"answer":"446.9","correct":true,"prompt_sha256":"4c05a237a183e9f2e43f65bee10c578cee65dde23d0c80fe75fc028a6c2ca0f4"},"v6":{"answer":"446.9","correct":true,"prompt_sha256":"4c05a237a183e9f2e43f65bee10c578cee65dde23d0c80fe75fc028a6c2ca0f4"}},
+      "q027": {"b":{"answer":"Memphis","correct":true,"prompt_sha256":"b0b2676e949253ee833da5e423203db56b82b497ef3108610f615553ec359f12"},"c":{"answer":"Memphis","correct":true,"prompt_sha256":"b0b2676e949253ee833da5e423203db56b82b497ef3108610f615553ec359f12"},"fresh_combined":{"answer":"Memphis","correct":true,"prompt_sha256":"b0b2676e949253ee833da5e423203db56b82b497ef3108610f615553ec359f12"},"measured_combined":{"answer":"Memphis","correct":true,"prompt_sha256":"b0b2676e949253ee833da5e423203db56b82b497ef3108610f615553ec359f12"},"v6":{"answer":"Memphis","correct":true,"prompt_sha256":"b0b2676e949253ee833da5e423203db56b82b497ef3108610f615553ec359f12"}},
+      "q028": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4d209f88a71b1ece011e70829c1178eb6ee72e01187e1c08ecd2bc761263902c"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4d209f88a71b1ece011e70829c1178eb6ee72e01187e1c08ecd2bc761263902c"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4d209f88a71b1ece011e70829c1178eb6ee72e01187e1c08ecd2bc761263902c"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4d209f88a71b1ece011e70829c1178eb6ee72e01187e1c08ecd2bc761263902c"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4d209f88a71b1ece011e70829c1178eb6ee72e01187e1c08ecd2bc761263902c"}},
+      "q029": {"b":{"answer":"2605.8","correct":true,"prompt_sha256":"7aed9c8870483e609433be2c560d97048f518c79d7211ff12fd5693df67e775d"},"c":{"answer":"2605.8","correct":true,"prompt_sha256":"7aed9c8870483e609433be2c560d97048f518c79d7211ff12fd5693df67e775d"},"fresh_combined":{"answer":"2605.8","correct":true,"prompt_sha256":"7aed9c8870483e609433be2c560d97048f518c79d7211ff12fd5693df67e775d"},"measured_combined":{"answer":"2605.8","correct":true,"prompt_sha256":"7aed9c8870483e609433be2c560d97048f518c79d7211ff12fd5693df67e775d"},"v6":{"answer":"2605.8","correct":true,"prompt_sha256":"7aed9c8870483e609433be2c560d97048f518c79d7211ff12fd5693df67e775d"}},
+      "q030": {"b":{"answer":"363.2","correct":true,"prompt_sha256":"e057939fb2ac0c4d3c6baa866f9dec713002f07d2a8312e2ca389e9ff48b20ac"},"c":{"answer":"363.2","correct":true,"prompt_sha256":"e057939fb2ac0c4d3c6baa866f9dec713002f07d2a8312e2ca389e9ff48b20ac"},"fresh_combined":{"answer":"363.2","correct":true,"prompt_sha256":"e057939fb2ac0c4d3c6baa866f9dec713002f07d2a8312e2ca389e9ff48b20ac"},"measured_combined":{"answer":"363.2","correct":true,"prompt_sha256":"e057939fb2ac0c4d3c6baa866f9dec713002f07d2a8312e2ca389e9ff48b20ac"},"v6":{"answer":"363.2","correct":true,"prompt_sha256":"e057939fb2ac0c4d3c6baa866f9dec713002f07d2a8312e2ca389e9ff48b20ac"}},
+      "q031": {"b":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"9f9cf59cde288f4c76cf505d3807654875afd65e733be24c85eafc596cac89a7"},"c":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"9f9cf59cde288f4c76cf505d3807654875afd65e733be24c85eafc596cac89a7"},"fresh_combined":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"9f9cf59cde288f4c76cf505d3807654875afd65e733be24c85eafc596cac89a7"},"measured_combined":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"9f9cf59cde288f4c76cf505d3807654875afd65e733be24c85eafc596cac89a7"},"v6":{"answer":"Brightwater Energy","correct":true,"prompt_sha256":"9f9cf59cde288f4c76cf505d3807654875afd65e733be24c85eafc596cac89a7"}},
+      "q032": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q033": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4834ab1323ab5b25ede7058e84031e292db91538e6d67feb0722d1afc1825ce1"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4834ab1323ab5b25ede7058e84031e292db91538e6d67feb0722d1afc1825ce1"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4834ab1323ab5b25ede7058e84031e292db91538e6d67feb0722d1afc1825ce1"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4834ab1323ab5b25ede7058e84031e292db91538e6d67feb0722d1afc1825ce1"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"4834ab1323ab5b25ede7058e84031e292db91538e6d67feb0722d1afc1825ce1"}},
+      "q034": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q035": {"b":{"answer":"61.16","correct":true,"prompt_sha256":"ba7032bc1f7996fa5a85d8d5c6bfb041550850cd1e359113d6bdf179e42ffe8c"},"c":{"answer":"61.16","correct":true,"prompt_sha256":"ba7032bc1f7996fa5a85d8d5c6bfb041550850cd1e359113d6bdf179e42ffe8c"},"fresh_combined":{"answer":"61.16","correct":true,"prompt_sha256":"ba7032bc1f7996fa5a85d8d5c6bfb041550850cd1e359113d6bdf179e42ffe8c"},"measured_combined":{"answer":"61.16","correct":true,"prompt_sha256":"ba7032bc1f7996fa5a85d8d5c6bfb041550850cd1e359113d6bdf179e42ffe8c"},"v6":{"answer":"61.16","correct":true,"prompt_sha256":"ba7032bc1f7996fa5a85d8d5c6bfb041550850cd1e359113d6bdf179e42ffe8c"}},
+      "q036": {"b":{"answer":"236.6","correct":true,"prompt_sha256":"512f0b3aaa3aaefa4b4c5bcdb15ef9fc43cf3607d9ffb11b72472de58262a898"},"c":{"answer":"236.6","correct":true,"prompt_sha256":"512f0b3aaa3aaefa4b4c5bcdb15ef9fc43cf3607d9ffb11b72472de58262a898"},"fresh_combined":{"answer":"236.6","correct":true,"prompt_sha256":"512f0b3aaa3aaefa4b4c5bcdb15ef9fc43cf3607d9ffb11b72472de58262a898"},"measured_combined":{"answer":"236.6","correct":true,"prompt_sha256":"512f0b3aaa3aaefa4b4c5bcdb15ef9fc43cf3607d9ffb11b72472de58262a898"},"v6":{"answer":"236.6","correct":true,"prompt_sha256":"512f0b3aaa3aaefa4b4c5bcdb15ef9fc43cf3607d9ffb11b72472de58262a898"}},
+      "q037": {"b":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"0ed08aa44a48a7a184957874ed4d93734c36325e25f305ef5f10ab1203f37f3e"},"c":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"0ed08aa44a48a7a184957874ed4d93734c36325e25f305ef5f10ab1203f37f3e"},"fresh_combined":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"0ed08aa44a48a7a184957874ed4d93734c36325e25f305ef5f10ab1203f37f3e"},"measured_combined":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"0ed08aa44a48a7a184957874ed4d93734c36325e25f305ef5f10ab1203f37f3e"},"v6":{"answer":"Northgate Robotics Inc.","correct":true,"prompt_sha256":"0ed08aa44a48a7a184957874ed4d93734c36325e25f305ef5f10ab1203f37f3e"}},
+      "q038": {"b":{"answer":"173.9","correct":true,"prompt_sha256":"d60a1f95162d1d8a26ad28c6b9ddc3d8664e4a2915c15a638d583d2e479df58e"},"c":{"answer":"173.9","correct":true,"prompt_sha256":"d60a1f95162d1d8a26ad28c6b9ddc3d8664e4a2915c15a638d583d2e479df58e"},"fresh_combined":{"answer":"173.9","correct":true,"prompt_sha256":"d60a1f95162d1d8a26ad28c6b9ddc3d8664e4a2915c15a638d583d2e479df58e"},"measured_combined":{"answer":"173.9","correct":true,"prompt_sha256":"d60a1f95162d1d8a26ad28c6b9ddc3d8664e4a2915c15a638d583d2e479df58e"},"v6":{"answer":"173.9","correct":true,"prompt_sha256":"d60a1f95162d1d8a26ad28c6b9ddc3d8664e4a2915c15a638d583d2e479df58e"}},
+      "q039": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"fc3009e411392841909559aac84fe40fda996ed7d61ee012048b171b79b2c7a5"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"fc3009e411392841909559aac84fe40fda996ed7d61ee012048b171b79b2c7a5"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"fc3009e411392841909559aac84fe40fda996ed7d61ee012048b171b79b2c7a5"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"fc3009e411392841909559aac84fe40fda996ed7d61ee012048b171b79b2c7a5"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"fc3009e411392841909559aac84fe40fda996ed7d61ee012048b171b79b2c7a5"}},
+      "q040": {"b":{"answer":"162.6","correct":true,"prompt_sha256":"bb7b6e6a2665167912f5061da59d5f9fd34853b7e4b1acf63a77624aa32720d0"},"c":{"answer":"162.6","correct":true,"prompt_sha256":"bb7b6e6a2665167912f5061da59d5f9fd34853b7e4b1acf63a77624aa32720d0"},"fresh_combined":{"answer":"162.6","correct":true,"prompt_sha256":"bb7b6e6a2665167912f5061da59d5f9fd34853b7e4b1acf63a77624aa32720d0"},"measured_combined":{"answer":"162.6","correct":true,"prompt_sha256":"bb7b6e6a2665167912f5061da59d5f9fd34853b7e4b1acf63a77624aa32720d0"},"v6":{"answer":"162.6","correct":true,"prompt_sha256":"bb7b6e6a2665167912f5061da59d5f9fd34853b7e4b1acf63a77624aa32720d0"}},
+      "q041": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q042": {"b":{"answer":"William Petrov","correct":true,"prompt_sha256":"c1a87293089384c4f566ba21c276120670dee71e21b098d3965b9b65f9dc07c1"},"c":{"answer":"William Petrov","correct":true,"prompt_sha256":"421f17ffa9f613556e014d2a0897ce0edea83ede5f87baa18022294e52022e02"},"fresh_combined":{"answer":"William Petrov","correct":true,"prompt_sha256":"421f17ffa9f613556e014d2a0897ce0edea83ede5f87baa18022294e52022e02"},"measured_combined":{"answer":"William Petrov","correct":true,"prompt_sha256":"421f17ffa9f613556e014d2a0897ce0edea83ede5f87baa18022294e52022e02"},"v6":{"answer":"William Petrov","correct":true,"prompt_sha256":"c1a87293089384c4f566ba21c276120670dee71e21b098d3965b9b65f9dc07c1"}},
+      "q043": {"b":{"answer":"586.6","correct":true,"prompt_sha256":"f113f05e3ad1e6c3f3619ce75ac17d14d75a8add0c80eaead28c6af5f74c7226"},"c":{"answer":"586.6","correct":true,"prompt_sha256":"97a78aa9e89ba6cade392e1e9e4b32b3e79174c28616d5baa5b1b0729ea9069b"},"fresh_combined":{"answer":"586.6","correct":true,"prompt_sha256":"f113f05e3ad1e6c3f3619ce75ac17d14d75a8add0c80eaead28c6af5f74c7226"},"measured_combined":{"answer":"586.6","correct":true,"prompt_sha256":"f113f05e3ad1e6c3f3619ce75ac17d14d75a8add0c80eaead28c6af5f74c7226"},"v6":{"answer":"586.6","correct":true,"prompt_sha256":"97a78aa9e89ba6cade392e1e9e4b32b3e79174c28616d5baa5b1b0729ea9069b"}},
+      "q044": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":null}},
+      "q045": {"b":{"answer":"634.6","correct":true,"prompt_sha256":"ac6a674090764116de7f33c84c634f47615aecc4c8b6ee8e23248e0e515cbf4d"},"c":{"answer":"634.6","correct":true,"prompt_sha256":"dfe06b35639a6dbb1c8cfdd849dc8f6d430290372ff15cdaf4d3ad4b596882d8"},"fresh_combined":{"answer":"634.6","correct":true,"prompt_sha256":"ac6a674090764116de7f33c84c634f47615aecc4c8b6ee8e23248e0e515cbf4d"},"measured_combined":{"answer":"634.6","correct":true,"prompt_sha256":"ac6a674090764116de7f33c84c634f47615aecc4c8b6ee8e23248e0e515cbf4d"},"v6":{"answer":"634.6","correct":true,"prompt_sha256":"dfe06b35639a6dbb1c8cfdd849dc8f6d430290372ff15cdaf4d3ad4b596882d8"}},
+      "q046": {"b":{"answer":"897.8","correct":true,"prompt_sha256":"7abac085cdb17d10a5650a8d0f38cc0024fb1b6494b079d7feff5a7fff607c85"},"c":{"answer":"897.8","correct":true,"prompt_sha256":"7abac085cdb17d10a5650a8d0f38cc0024fb1b6494b079d7feff5a7fff607c85"},"fresh_combined":{"answer":"897.8","correct":true,"prompt_sha256":"7abac085cdb17d10a5650a8d0f38cc0024fb1b6494b079d7feff5a7fff607c85"},"measured_combined":{"answer":"897.8","correct":true,"prompt_sha256":"7abac085cdb17d10a5650a8d0f38cc0024fb1b6494b079d7feff5a7fff607c85"},"v6":{"answer":"897.8","correct":true,"prompt_sha256":"7abac085cdb17d10a5650a8d0f38cc0024fb1b6494b079d7feff5a7fff607c85"}},
+      "q047": {"b":{"answer":"2711.4","correct":true,"prompt_sha256":"40b51c7bdacf8d9d8c2dfe4e96ea008f3d56e540899a488bdec9967eb9020f24"},"c":{"answer":"2711.4","correct":true,"prompt_sha256":"40b51c7bdacf8d9d8c2dfe4e96ea008f3d56e540899a488bdec9967eb9020f24"},"fresh_combined":{"answer":"2711.4","correct":true,"prompt_sha256":"40b51c7bdacf8d9d8c2dfe4e96ea008f3d56e540899a488bdec9967eb9020f24"},"measured_combined":{"answer":"2711.4","correct":true,"prompt_sha256":"40b51c7bdacf8d9d8c2dfe4e96ea008f3d56e540899a488bdec9967eb9020f24"},"v6":{"answer":"2711.4","correct":true,"prompt_sha256":"40b51c7bdacf8d9d8c2dfe4e96ea008f3d56e540899a488bdec9967eb9020f24"}},
+      "q048": {"b":{"answer":"Thomas Kaur","correct":true,"prompt_sha256":"e5f76bb25ff520a4de844e1c8c6c7806d5a320369b85854566c4d973a115ff7a"},"c":{"answer":"Thomas Kaur","correct":true,"prompt_sha256":"e5f76bb25ff520a4de844e1c8c6c7806d5a320369b85854566c4d973a115ff7a"},"fresh_combined":{"answer":"Thomas Kaur","correct":true,"prompt_sha256":"e5f76bb25ff520a4de844e1c8c6c7806d5a320369b85854566c4d973a115ff7a"},"measured_combined":{"answer":"Thomas Kaur","correct":true,"prompt_sha256":"e5f76bb25ff520a4de844e1c8c6c7806d5a320369b85854566c4d973a115ff7a"},"v6":{"answer":"Thomas Kaur","correct":true,"prompt_sha256":"e5f76bb25ff520a4de844e1c8c6c7806d5a320369b85854566c4d973a115ff7a"}},
+      "q049": {"b":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8f04108fb92895256f3cc1d5e3825b3f892efd30333e317f2f0f2a3880911e63"},"c":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8f04108fb92895256f3cc1d5e3825b3f892efd30333e317f2f0f2a3880911e63"},"fresh_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8f04108fb92895256f3cc1d5e3825b3f892efd30333e317f2f0f2a3880911e63"},"measured_combined":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8f04108fb92895256f3cc1d5e3825b3f892efd30333e317f2f0f2a3880911e63"},"v6":{"answer":"NOT_FOUND","correct":true,"prompt_sha256":"8f04108fb92895256f3cc1d5e3825b3f892efd30333e317f2f0f2a3880911e63"}},
+      "q050": {"b":{"answer":"493.5","correct":true,"prompt_sha256":"af1898fc3a4cfb438faecacc0c90c95d9994459811c6af55d0f0135e7dbe628c"},"c":{"answer":"158.1","correct":false,"prompt_sha256":"39dcac346ada562ff57b0f08ad69dbffc2d4da0004116e3b78f6320117503df2"},"fresh_combined":{"answer":"493.5","correct":true,"prompt_sha256":"af1898fc3a4cfb438faecacc0c90c95d9994459811c6af55d0f0135e7dbe628c"},"measured_combined":{"answer":"493.5","correct":true,"prompt_sha256":"af1898fc3a4cfb438faecacc0c90c95d9994459811c6af55d0f0135e7dbe628c"},"v6":{"answer":"158.1","correct":false,"prompt_sha256":"39dcac346ada562ff57b0f08ad69dbffc2d4da0004116e3b78f6320117503df2"}},
+      "q051": {"b":{"answer":"492.1","correct":true,"prompt_sha256":"b863a6e349feb481b7ebeb7a47d678127438f9d8eca972cbab9aa8b630a997cd"},"c":{"answer":"492.1","correct":true,"prompt_sha256":"b863a6e349feb481b7ebeb7a47d678127438f9d8eca972cbab9aa8b630a997cd"},"fresh_combined":{"answer":"492.1","correct":true,"prompt_sha256":"b863a6e349feb481b7ebeb7a47d678127438f9d8eca972cbab9aa8b630a997cd"},"measured_combined":{"answer":"492.1","correct":true,"prompt_sha256":"b863a6e349feb481b7ebeb7a47d678127438f9d8eca972cbab9aa8b630a997cd"},"v6":{"answer":"492.1","correct":true,"prompt_sha256":"b863a6e349feb481b7ebeb7a47d678127438f9d8eca972cbab9aa8b630a997cd"}},
+      "q052": {"b":{"answer":"3175.5","correct":true,"prompt_sha256":"797532fcdd47d74e2e264cea7e034144e78e33a48e6a650335c286e8ecf2024e"},"c":{"answer":"3175.5","correct":true,"prompt_sha256":"797532fcdd47d74e2e264cea7e034144e78e33a48e6a650335c286e8ecf2024e"},"fresh_combined":{"answer":"3175.5","correct":true,"prompt_sha256":"797532fcdd47d74e2e264cea7e034144e78e33a48e6a650335c286e8ecf2024e"},"measured_combined":{"answer":"3175.5","correct":true,"prompt_sha256":"797532fcdd47d74e2e264cea7e034144e78e33a48e6a650335c286e8ecf2024e"},"v6":{"answer":"3175.5","correct":true,"prompt_sha256":"797532fcdd47d74e2e264cea7e034144e78e33a48e6a650335c286e8ecf2024e"}},
+      "q053": {"b":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"cc1d97001c3fc00e703c6d7e6da67db20263306ceabdea985a2e262301b37ae5"},"c":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"cc1d97001c3fc00e703c6d7e6da67db20263306ceabdea985a2e262301b37ae5"},"fresh_combined":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"cc1d97001c3fc00e703c6d7e6da67db20263306ceabdea985a2e262301b37ae5"},"measured_combined":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"cc1d97001c3fc00e703c6d7e6da67db20263306ceabdea985a2e262301b37ae5"},"v6":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"cc1d97001c3fc00e703c6d7e6da67db20263306ceabdea985a2e262301b37ae5"}},
+      "q054": {"b":{"answer":"297.4","correct":true,"prompt_sha256":"0d631b6592aed6874a75136bd41b72436f49cbd34ec997524f0c5b8cb22fd89b"},"c":{"answer":"297.4","correct":true,"prompt_sha256":"0d631b6592aed6874a75136bd41b72436f49cbd34ec997524f0c5b8cb22fd89b"},"fresh_combined":{"answer":"297.4","correct":true,"prompt_sha256":"0d631b6592aed6874a75136bd41b72436f49cbd34ec997524f0c5b8cb22fd89b"},"measured_combined":{"answer":"297.4","correct":true,"prompt_sha256":"0d631b6592aed6874a75136bd41b72436f49cbd34ec997524f0c5b8cb22fd89b"},"v6":{"answer":"297.4","correct":true,"prompt_sha256":"0d631b6592aed6874a75136bd41b72436f49cbd34ec997524f0c5b8cb22fd89b"}},
+      "q055": {"b":{"answer":"456.2","correct":true,"prompt_sha256":"90e5d6891c8a0e5e2ca44cc75510b1c2c422441363f1264ab0c7a7d6748a5343"},"c":{"answer":"456.2","correct":true,"prompt_sha256":"90e5d6891c8a0e5e2ca44cc75510b1c2c422441363f1264ab0c7a7d6748a5343"},"fresh_combined":{"answer":"456.2","correct":true,"prompt_sha256":"90e5d6891c8a0e5e2ca44cc75510b1c2c422441363f1264ab0c7a7d6748a5343"},"measured_combined":{"answer":"456.2","correct":true,"prompt_sha256":"90e5d6891c8a0e5e2ca44cc75510b1c2c422441363f1264ab0c7a7d6748a5343"},"v6":{"answer":"456.2","correct":true,"prompt_sha256":"90e5d6891c8a0e5e2ca44cc75510b1c2c422441363f1264ab0c7a7d6748a5343"}},
+      "q056": {"b":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"f4a5d229650a9e67732300a4378be8da1a8226dfd4ecb10f97d364bc150c54c6"},"c":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"f4a5d229650a9e67732300a4378be8da1a8226dfd4ecb10f97d364bc150c54c6"},"fresh_combined":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"f4a5d229650a9e67732300a4378be8da1a8226dfd4ecb10f97d364bc150c54c6"},"measured_combined":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"f4a5d229650a9e67732300a4378be8da1a8226dfd4ecb10f97d364bc150c54c6"},"v6":{"answer":"Kestrel Semiconductor","correct":true,"prompt_sha256":"f4a5d229650a9e67732300a4378be8da1a8226dfd4ecb10f97d364bc150c54c6"}},
+      "q057": {"b":{"answer":"153.8","correct":true,"prompt_sha256":"cf463d254d2d11d59d55e264d20440aeeded6028b8f151a860efb08fe292c6d3"},"c":{"answer":"153.8","correct":true,"prompt_sha256":"cf463d254d2d11d59d55e264d20440aeeded6028b8f151a860efb08fe292c6d3"},"fresh_combined":{"answer":"153.8","correct":true,"prompt_sha256":"cf463d254d2d11d59d55e264d20440aeeded6028b8f151a860efb08fe292c6d3"},"measured_combined":{"answer":"153.8","correct":true,"prompt_sha256":"cf463d254d2d11d59d55e264d20440aeeded6028b8f151a860efb08fe292c6d3"},"v6":{"answer":"153.8","correct":true,"prompt_sha256":"cf463d254d2d11d59d55e264d20440aeeded6028b8f151a860efb08fe292c6d3"}},
+      "q058": {"b":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"f2adc82256aa94541f326c425a49980ca904b872d31b6e94ca56bdd0d59bbcaa"},"c":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"f2adc82256aa94541f326c425a49980ca904b872d31b6e94ca56bdd0d59bbcaa"},"fresh_combined":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"f2adc82256aa94541f326c425a49980ca904b872d31b6e94ca56bdd0d59bbcaa"},"measured_combined":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"f2adc82256aa94541f326c425a49980ca904b872d31b6e94ca56bdd0d59bbcaa"},"v6":{"answer":"Corvane Pharma","correct":true,"prompt_sha256":"f2adc82256aa94541f326c425a49980ca904b872d31b6e94ca56bdd0d59bbcaa"}},
+      "q059": {"b":{"answer":"William Lambert","correct":true,"prompt_sha256":"b729d803acd0eae3897b14d13be69bad64ae5f7d358397109c9c8bf3e145f770"},"c":{"answer":"William Lambert","correct":true,"prompt_sha256":"f4b50d2875459fe74798f577f65aecd5dcc98a16dd150b79c7a038f47b212171"},"fresh_combined":{"answer":"William Lambert","correct":true,"prompt_sha256":"f4b50d2875459fe74798f577f65aecd5dcc98a16dd150b79c7a038f47b212171"},"measured_combined":{"answer":"William Lambert","correct":true,"prompt_sha256":"f4b50d2875459fe74798f577f65aecd5dcc98a16dd150b79c7a038f47b212171"},"v6":{"answer":"William Lambert","correct":true,"prompt_sha256":"b729d803acd0eae3897b14d13be69bad64ae5f7d358397109c9c8bf3e145f770"}},
+      "q060": {"b":{"answer":"2083.1","correct":true,"prompt_sha256":"08c45def367e3a2801fffcfe92fbe66a92dc92542b3b4cbc1425413d31a54198"},"c":{"answer":"2083.1","correct":true,"prompt_sha256":"08c45def367e3a2801fffcfe92fbe66a92dc92542b3b4cbc1425413d31a54198"},"fresh_combined":{"answer":"2083.1","correct":true,"prompt_sha256":"08c45def367e3a2801fffcfe92fbe66a92dc92542b3b4cbc1425413d31a54198"},"measured_combined":{"answer":"2083.1","correct":true,"prompt_sha256":"08c45def367e3a2801fffcfe92fbe66a92dc92542b3b4cbc1425413d31a54198"},"v6":{"answer":"2083.1","correct":true,"prompt_sha256":"08c45def367e3a2801fffcfe92fbe66a92dc92542b3b4cbc1425413d31a54198"}}
+    },
+    "categories": {
+      "b": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          22,
+          22
+        ],
+        "unanswerable": [
+          14,
+          14
+        ]
+      },
+      "c": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          12,
+          12
+        ],
+        "table": [
+          20,
+          22
+        ],
+        "unanswerable": [
+          14,
+          14
+        ]
+      },
+      "fresh_combined": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          12,
+          12
+        ],
+        "table": [
+          22,
+          22
+        ],
+        "unanswerable": [
+          14,
+          14
+        ]
+      },
+      "measured_combined": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          12,
+          12
+        ],
+        "table": [
+          22,
+          22
+        ],
+        "unanswerable": [
+          14,
+          14
+        ]
+      },
+      "v6": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          20,
+          22
+        ],
+        "unanswerable": [
+          14,
+          14
+        ]
+      }
+    },
+    "correct": 60,
+    "deltas": {
+      "b": {
+        "changed_answers_on_identical_prompts": [
+          "q003"
+        ],
+        "gained": [
+          "q015",
+          "q018"
+        ],
+        "lost": []
+      },
+      "c": {
+        "changed_answers_on_identical_prompts": [],
+        "gained": [
+          "q024",
+          "q050"
+        ],
+        "lost": []
+      },
+      "measured_combined": {
+        "changed_answers_on_identical_prompts": [],
+        "gained": [],
+        "lost": []
+      },
+      "v6": {
+        "changed_answers_on_identical_prompts": [],
+        "gained": [
+          "q015",
+          "q018",
+          "q024",
+          "q050"
+        ],
+        "lost": []
+      }
+    },
+    "generator_usage": {
+      "cost_usd": 0.0165,
+      "estimated_usd": 0.01652715,
+      "llm_calls": 53,
+      "llm_input_tokens": 109473,
+      "llm_output_tokens": 177
+    },
+    "lecturer_seconds": 6.4,
+    "points": {
+      "1.1": 8.0,
+      "1.2": 7.0,
+      "2.1": 5.0,
+      "2.2": 10.0,
+      "2.3": 15.0,
+      "3": 5.0,
+      "4": 20.0
+    },
+    "student_usage": {
+      "cost_usd": 0.0,
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0
+    },
+    "total": 70.0
+  },
+  "replay": {
+    "byte_identical_prompts": 53,
+    "empty_inputs": 7,
+    "metrics": {
+      "chunks": 650,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        46,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          12,
+          12
+        ],
+        "fact": [
+          12,
+          12
+        ],
+        "table": [
+          22,
+          22
+        ]
+      },
+      "rejected": [
+        7,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "parent_child_counts": [
+      330,
+      320
+    ],
+    "questions": 60
+  }
+}
