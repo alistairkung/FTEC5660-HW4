@@ -1,0 +1,14 @@
+{
+  "baseline_commit": "000abfc9ff66db483bf6ffc0f323185af8dec485",
+  "baseline_source_sha256": "6e65ab615bfece13e6717b4171148f188a6ae042bbf714e49d670f6dcafa0379",
+  "candidate_assembly_sha256": "34fb3fe5e46f8fd6bca9bc6936b45bac9f4a6c32b1aad3e7094ad66c45f56a31",
+  "heading_assembly_sha256": "9ce7934e9bdc0835f81c812a1d21481994fe564ada73ed6665707b53e6ad9d7e",
+  "previous_freeze_sha256": "53a665b1d4416831c14cfda72bc1411780563f811f2f3ee3e707bc6df712c5ad",
+  "protected_source_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "public_fixture_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "source_sha256": {
+    "officer_policy.py": "e812665697f4da153f2523c3e4be55a25aee022ecc95605600f17ae78ab2a891",
+    "review.py": "d176e052545a8f4201f4f2abf5862395e6e82e0183adcdc48dd91928e3a3ff18",
+    "test_officer.py": "c89c76a224b1f37c6e3ef8cd834c40d4664c65441b2ca68d6522244982f8387b"
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "approved_decisions_sha256": "116f6cf5ceee0f584ed8a520a87c5ba0b267e5976804cb07067b964fc9184c17",
+  "approved_scores_sha256": "20317cbdbe830959c8c4ef805c43eb38252520d77e977dbcf2849a756c6bd0c1",
+  "questions": {
+    "q001": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_007.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "e1c1e587d3eda62aa7251fe814b768b09be17fc56b7fb8325f979fe9d74e5586",
+      "route": "officer_intent_exemption"
+    },
+    "q002": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          0
+        ],
+        [
+          "doc_018.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "42630197dd5684801bfaf68e95feb9d41f46b65a5cff97af462a5de1cfe5a555",
+      "route": "existing"
+    },
+    "q003": {
+      "evidence_hit": null,
+      "locations": [],
+      "prompt_sha256": null,
+      "route": "officer_intent_exemption"
+    },
+    "q004": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          0
+        ],
+        [
+          "doc_018.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "79549a08522cc2b9748365e2af167f5616c2cc18dc478be9c325f5bd41a99654",
+      "route": "existing"
+    },
+    "q005": {
+      "evidence_hit": null,
+      "locations": [],
+      "prompt_sha256": null,
+      "route": "existing"
+    },
+    "q006": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_005.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "71fb267d5fe4726e3b1af60f0229fb81740ad12d3fd1f5458362413922591ed0",
+      "route": "existing"
+    },
+    "q007": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_007.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "f30d372df492b849e508dffbaeea1b1469b82c84f2d3611cda91be680d1f929e",
+      "route": "existing"
+    },
+    "q008": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_007.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_012.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "681a27757c86a9b10ba19d91bfd63ddf167769aae6ec117b66413afb02b2dfaa",
+      "route": "existing"
+    },
+    "q009": {
+      "evidence_hit": null,
+      "locations": [
+        [
+          "doc_004.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_014.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "51423851bb1ff10c1e7f3e47427d5d930f0072fb2ab7d39ffbafd5cb0e0fa323",
+      "route": "existing"
+    },
+    "q010": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_014.html",
+          0
+        ],
+        [
+          "doc_004.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "39ba1cd2eb13008baaf84e10ee1ca0aca4396fc66c9ab1c88b712226691a175e",
+      "route": "existing"
+    },
+    "q011": {
+      "evidence_hit": false,
+      "locations": [
+        [
+          "doc_004.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          1
+        ],
+        [
+          "doc_014.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "86affe3c85a1505b2daf8c5c90516504c85feb3d889f0b8020499ba31fa42760",
+      "route": "existing"
+    },
+    "q012": {
+      "evidence_hit": null,
+      "locations": [
+        [
+          "doc_015.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          0
+        ],
+        [
+          "doc_018.html",
+          0
+        ],
+        [
+          "doc_002.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "73caac51d2c375d670fca2f5ef1952f40f41e3db8b903731df15be7abc64a265",
+      "route": "existing"
+    },
+    "q013": {
+      "evidence_hit": null,
+      "locations": [
+        [
+          "doc_011.html",
+          0
+        ],
+        [
+          "doc_009.html",
+          0
+        ],
+        [
+          "doc_016.html",
+          0
+        ],
+        [
+          "doc_005.html",
+          0
+        ],
+        [
+          "doc_005.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "4e49c6e2ca295a19694fee8cd33c789f5e8549f8f38d00a3b1d937cd3f5a5903",
+      "route": "officer_intent_exemption"
+    },
+    "q014": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "e25d25c9dfa4d11d74a11b7abfd87e6bc44f83621ad3969f7f8f5b028f01a1ed",
+      "route": "existing"
+    },
+    "q015": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "147dced175bdeb0bb87ed783db952102f2a5f477299c5a1f8edce3635f438ce5",
+      "route": "existing"
+    },
+    "q016": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "92d31e7d9a60566fdfd9d9eddaafd7acb21ba8320692232f89fe1844cc29373a",
+      "route": "existing"
+    },
+    "q017": {
+      "evidence_hit": null,
+      "locations": [],
+      "prompt_sha256": null,
+      "route": "verified_historical_gap"
+    },
+    "q018": {
+      "evidence_hit": null,
+      "locations": [
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "7f49c91e7cc048cbde0feda85eb12b6d91b033329f9f09de20b5c5eadef9d6c6",
+      "route": "existing"
+    },
+    "q019": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_011.html",
+          0
+        ],
+        [
+          "doc_005.html",
+          1
+        ],
+        [
+          "doc_016.html",
+          1
+        ],
+        [
+          "doc_016.html",
+          0
+        ],
+        [
+          "doc_005.html",
+          0
+        ]
+      ],
+      "prompt_sha256": "e85ba113071e2a10b596a335940f1027cfc9feea1d11e3438fd19cfec20d4d7f",
+      "route": "existing"
+    },
+    "q020": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_007.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_012.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "75f153dc722422a764d350f082a08e0419072679609135bc37b0768b64f593a2",
+      "route": "existing"
+    },
+    "q021": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_004.html",
+          0
+        ],
+        [
+          "doc_014.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ],
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "6a09033977e30156c29665925aabd149202fc722b24f581f4916daa5c8701745",
+      "route": "existing"
+    },
+    "q022": {
+      "evidence_hit": true,
+      "locations": [
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ]
+      ],
+      "prompt_sha256": "8451f0649c2a70a94a4a053b228cd65040b8f9af830f3048fb8e10915a84cc39",
+      "route": "existing"
+    }
+  },
+  "seal_sha256": "76e979ca89953cfb4797f8c90cb9c2057c3bf253a3b56a7cdca47e803f48c4c9"
+}

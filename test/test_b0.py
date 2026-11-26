@@ -68,7 +68,7 @@ class PublicEvaluation(unittest.TestCase):
         self.assertEqual(metrics["recall"], [46, 46])
         self.assertEqual(metrics["recall_by_category"],
                          {"fact": [12, 12], "table": [22, 22], "comparison": [12, 12]})
-        self.assertEqual(metrics["rejected"], [7, 14])
+        self.assertEqual(metrics["rejected"], [10, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
         frozen = json.loads((Path(hw4.__file__).parent / "evaluation/v2/offline.json").read_text())

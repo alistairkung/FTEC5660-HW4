@@ -1,0 +1,668 @@
+{
+  "answers_correct": 60,
+  "category_accuracy": {
+    "comparison": [
+      12,
+      12
+    ],
+    "fact": [
+      12,
+      12
+    ],
+    "table": [
+      22,
+      22
+    ],
+    "unanswerable": [
+      14,
+      14
+    ]
+  },
+  "deltas": {
+    "changed_answers_on_identical_prompts": [],
+    "gained_correct_answers": [],
+    "lost_correct_answers": []
+  },
+  "execution": {
+    "command": [
+      "python",
+      "hw4.py",
+      "--data-folder",
+      "public_test",
+      "--output",
+      "evaluation/v8/verification/native/results.csv"
+    ],
+    "deadline_seconds": 120,
+    "exit_code": 0,
+    "process_wall_seconds": 5.562355249887332,
+    "source_sha256": "9ca0116dbab2c96baa916e6c0e9cf0a01e276110b930704917a6fab98531001e",
+    "timed_out": false
+  },
+  "generator_failures": [],
+  "generator_usage": {
+    "cost_usd": 0.0155,
+    "estimated_usd": 0.015529949999999999,
+    "llm_calls": 50,
+    "llm_input_tokens": 102861,
+    "llm_output_tokens": 168
+  },
+  "lecturer_seconds": 4.7,
+  "points": {
+    "1.1": 8.0,
+    "1.2": 7.0,
+    "2.1": 5.0,
+    "2.2": 10.0,
+    "2.3": 15.0,
+    "3": 7.14,
+    "4": 20.0
+  },
+  "questions": {
+    "q001": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q002": {
+      "answer": "1574.7",
+      "baseline_answer": "1574.7",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 1574.7,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q003": {
+      "answer": "Northgate Robotics",
+      "baseline_answer": "Northgate Robotics",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Northgate Robotics",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q004": {
+      "answer": "Kestrel Semiconductor",
+      "baseline_answer": "Kestrel Semiconductor",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Kestrel Semiconductor",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q005": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q006": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q007": {
+      "answer": "BUY",
+      "baseline_answer": "BUY",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Buy",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q008": {
+      "answer": "8.5",
+      "baseline_answer": "8.5",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 8.5,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q009": {
+      "answer": "2390.3",
+      "baseline_answer": "2390.3",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 2390.3,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q010": {
+      "answer": "Yara Castillo",
+      "baseline_answer": "Yara Castillo",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Yara Castillo",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q011": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q012": {
+      "answer": "838.4",
+      "baseline_answer": "838.4",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 838.4,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q013": {
+      "answer": "Brightwater Energy",
+      "baseline_answer": "Brightwater Energy",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Brightwater Energy",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q014": {
+      "answer": "Rachel Nyberg",
+      "baseline_answer": "Rachel Nyberg",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Rachel Nyberg",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q015": {
+      "answer": "Whitlock Byrne LLP",
+      "baseline_answer": "Whitlock Byrne LLP",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Whitlock Byrne",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q016": {
+      "answer": "1805.4",
+      "baseline_answer": "1805.4",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 1805.4,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q017": {
+      "answer": "Brightwater Energy Corp.",
+      "baseline_answer": "Brightwater Energy Corp.",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Brightwater Energy",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q018": {
+      "answer": "75",
+      "baseline_answer": "75",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 75,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q019": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q020": {
+      "answer": "716.6",
+      "baseline_answer": "716.6",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 716.6,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q021": {
+      "answer": "Northgate Robotics Inc.",
+      "baseline_answer": "Northgate Robotics Inc.",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Northgate Robotics",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q022": {
+      "answer": "Orchid Bay Hotels Ltd.",
+      "baseline_answer": "Orchid Bay Hotels Ltd.",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Orchid Bay Hotels",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q023": {
+      "answer": "Sablewood Retail",
+      "baseline_answer": "Sablewood Retail",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Sablewood Retail",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q024": {
+      "answer": "316.2",
+      "baseline_answer": "316.2",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 316.2,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q025": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q026": {
+      "answer": "446.9",
+      "baseline_answer": "446.9",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 446.9,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q027": {
+      "answer": "Memphis",
+      "baseline_answer": "Memphis",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Memphis",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q028": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q029": {
+      "answer": "2605.8",
+      "baseline_answer": "2605.8",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 2605.8,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q030": {
+      "answer": "363.2",
+      "baseline_answer": "363.2",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 363.2,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q031": {
+      "answer": "Brightwater Energy",
+      "baseline_answer": "Brightwater Energy",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Brightwater Energy",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q032": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q033": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q034": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q035": {
+      "answer": "61.16",
+      "baseline_answer": "61.16",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 61.16,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q036": {
+      "answer": "236.6",
+      "baseline_answer": "236.6",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 236.6,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q037": {
+      "answer": "Northgate Robotics Inc.",
+      "baseline_answer": "Northgate Robotics Inc.",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Northgate Robotics",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q038": {
+      "answer": "173.9",
+      "baseline_answer": "173.9",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 173.9,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q039": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q040": {
+      "answer": "162.6",
+      "baseline_answer": "162.6",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 162.6,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q041": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q042": {
+      "answer": "William Petrov",
+      "baseline_answer": "William Petrov",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "William Petrov",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q043": {
+      "answer": "586.6",
+      "baseline_answer": "586.6",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 586.6,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q044": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q045": {
+      "answer": "634.6",
+      "baseline_answer": "634.6",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 634.6,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q046": {
+      "answer": "897.8",
+      "baseline_answer": "897.8",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 897.8,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q047": {
+      "answer": "2711.4",
+      "baseline_answer": "2711.4",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 2711.4,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q048": {
+      "answer": "Thomas Kaur",
+      "baseline_answer": "Thomas Kaur",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Thomas Kaur",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q049": {
+      "answer": "NOT_FOUND",
+      "baseline_answer": "NOT_FOUND",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": null,
+      "expected": "NOT_FOUND",
+      "retained": false,
+      "same_nonempty_prompt": false
+    },
+    "q050": {
+      "answer": "493.5",
+      "baseline_answer": "493.5",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 493.5,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q051": {
+      "answer": "492.1",
+      "baseline_answer": "492.1",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 492.1,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q052": {
+      "answer": "3175.5",
+      "baseline_answer": "3175.5",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 3175.5,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q053": {
+      "answer": "Corvane Pharma",
+      "baseline_answer": "Corvane Pharma",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Corvane Pharma",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q054": {
+      "answer": "297.4",
+      "baseline_answer": "297.4",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 297.4,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q055": {
+      "answer": "456.2",
+      "baseline_answer": "456.2",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 456.2,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q056": {
+      "answer": "Kestrel Semiconductor",
+      "baseline_answer": "Kestrel Semiconductor",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Kestrel Semiconductor",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q057": {
+      "answer": "153.8",
+      "baseline_answer": "153.8",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 153.8,
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q058": {
+      "answer": "Corvane Pharma",
+      "baseline_answer": "Corvane Pharma",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "Corvane Pharma",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q059": {
+      "answer": "William Lambert",
+      "baseline_answer": "William Lambert",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": "William Lambert",
+      "retained": true,
+      "same_nonempty_prompt": true
+    },
+    "q060": {
+      "answer": "2083.1",
+      "baseline_answer": "2083.1",
+      "baseline_correct": true,
+      "correct": true,
+      "evidence_hit": true,
+      "expected": 2083.1,
+      "retained": true,
+      "same_nonempty_prompt": true
+    }
+  },
+  "student_usage": {
+    "cost_usd": 0.0,
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0
+  },
+  "total": 72.14
+}
