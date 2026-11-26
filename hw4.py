@@ -33,6 +33,7 @@ load_dotenv()
 # Your code: add imports, constants and helper functions here.
 # =============================================================================
 
+from collections.abc import Iterator
 from dataclasses import dataclass
 from textwrap import wrap
 
@@ -46,6 +47,7 @@ class LexicalIndex:
     chunks: list[Document]
     ranker: BM25Okapi | None
     company_positions: dict[str, dict[str, list[int]]]
+    children: dict[tuple[str, str], Document]
 
 
 # Strip a single trailing legal suffix while preserving punctuation inside names.
@@ -86,22 +88,25 @@ def row_terms(text: str) -> str:
     return " ".join(re.findall(r"[^\W\d_]+", squash(text)))
 
 
+def has_matched_financial_row(chunk: Document, query: str) -> bool:
+    for line in chunk.page_content.splitlines():
+        label, separator, fields = line.partition("|")
+        terms = row_terms(label) if separator else ""
+        if terms and f" {terms} " in query and any(
+            FINANCIAL_CELL.fullmatch(field) for field in fields.split("|")
+        ):
+            return True
+    return False
+
+
 def rank_financial_rows(index: LexicalIndex, ranking: list[int], question: str) -> list[int]:
     """Prefer chunks with a literal query mention of a numeric table row label."""
     query = f" {row_terms(question)} "
     matching = []
     remaining = []
     for position in ranking:
-        for line in index.chunks[position].page_content.splitlines():
-            label, separator, cells = line.partition("|")
-            terms = row_terms(label) if separator else ""
-            if terms and f" {terms} " in query and any(
-                FINANCIAL_CELL.fullmatch(cell) for cell in cells.split("|")
-            ):
-                matching.append(position)
-                break
-        else:
-            remaining.append(position)
+        group = matching if has_matched_financial_row(index.chunks[position], query) else remaining
+        group.append(position)
     return matching + remaining
 
 
@@ -355,6 +360,220 @@ def table_to_text(table_html: str) -> str:
     return "\n".join(bounded_lines)
 
 
+@dataclass(frozen=True)
+class Topic:
+    aliases: re.Pattern[str]
+    disclosure: re.Pattern[str]
+
+
+AUDIT = Topic(
+    re.compile(r"\b(?:audit(?:s|ed|or|ors|ing)?|account(?:ing|ancy) firms?|statutory assurance)\b"),
+    re.compile(r"\b(?:audited|audits|appoint\w*|engag\w*|succeed\w*|replac\w*|signed|"
+               r"served|opinion|was|were|is)\b"),
+)
+BUYBACK = Topic(
+    re.compile(r"\b(?:buy[- ]?backs?|repurchas(?:e|es|ed|ing)|stock reacquisition)\b"),
+    re.compile(r"\b(?:approv\w*|authori[sz]\w*|announc\w*|launch\w*|capp?ed|up to)\b"),
+)
+OFFICERS = (
+    Topic(re.compile(r"\b(?:cfo|chief financial officer|finance chief)\b"),
+          re.compile(r"\b(?:appoint\w*|serv\w*|succeed\w*|became|is|was|named|title)\b")),
+    Topic(re.compile(r"\b(?:ceo|chief executive officer|chief executive)\b"),
+          re.compile(r"\b(?:appoint\w*|serv\w*|succeed\w*|became|is|was|named|title)\b")),
+)
+TOPICS = (AUDIT, BUYBACK, *OFFICERS)
+
+CURRENCY_AMOUNT = re.compile(
+    r"(?:\b(?:usd|hkd|eur|gbp)\s*|[$€£]\s*)\d|\b\d[\d,.]*\s+(?:million|billion|shares)\b"
+)
+HYPOTHETICAL_OR_NEGATED = re.compile(r"\b(?:not|never|no|may|might|could|if|whether)\b")
+# Keep reference-only occurrences in inventories, conversation prompts and question sentences weak.
+REFERENCE_ONLY = re.compile(
+    r"^(?:who|what|which|how|where|when)\b|"
+    r"\b(?:index|agenda|table of contents|refer to|see page|for example|unrelated company)\b"
+)
+AUDIT_FIRM_SUFFIX = re.compile(r"\b(?:llp|llc|ltd|plc|partners|associates)\b")
+MAY_DATE = re.compile(r"\b\d{1,2} may\b|\bmay \d{1,2}\b")
+MAX_HEADING_WORDS = 8
+
+
+def sentence_windows(text: str) -> tuple[tuple[str, str], ...]:
+    """Return narrow prose windows with an adjacent heading when visible in the same chunk."""
+    windows: list[tuple[str, str]] = []
+    heading = ""
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if len(line.split()) <= MAX_HEADING_WORDS and not re.search(r"[.?!;:|]", line):
+            heading = line
+        for sentence in re.split(r"(?<=[.!?])\s+", line):
+            windows.append((heading, sentence))
+    return tuple(windows)
+
+
+def prose_signal(
+    text: str, topic: Topic, requested_year: int | None
+) -> tuple[int, int, int]:
+    """Return evidence support, stated year and location of the topic match."""
+    terms = topic.aliases
+    best = (0, 0, 0)
+    for heading, sentence in sentence_windows(text):
+        local_match = bool(terms.search(sentence))
+        if not local_match and not terms.search(heading):
+            continue
+        if sentence.endswith("?") or REFERENCE_ONLY.search(sentence):
+            continue
+        if HYPOTHETICAL_OR_NEGATED.search(MAY_DATE.sub("", sentence)) or not topic.disclosure.search(sentence):
+            continue
+        if topic is BUYBACK and not CURRENCY_AMOUNT.search(sentence):
+            continue
+        support = 2 if topic is AUDIT and AUDIT_FIRM_SUFFIX.search(sentence) else 1
+        year = bool(requested_year and re.search(rf"(?<!\d){requested_year}(?!\d)", sentence))
+        best = max(best, (support, int(year), int(local_match)))
+    return best
+
+
+def promote_prose(
+    index: LexicalIndex, question: str, parsed: dict, eligible_order: list[int], parents: list[Document]
+) -> list[Document]:
+    """Promote one original prose passage, using the unpartitioned V6 BM25 order for ties."""
+    query = squash(question)
+    topics = [topic for topic in TOPICS if topic.aliases.search(query)]
+    if len(topics) != 1:
+        return parents
+    kind = parsed["doc_type"]
+    if kind == "annual_report" and has_matched_financial_row(parents[0], f" {row_terms(question)} "):
+        return parents
+
+    year = parsed["fiscal_year"]
+    best_score = (0, 0, 0, 0, 0)
+    best = None
+    for position in eligible_order:
+        chunk = index.chunks[position]
+        support, stated_year, local_match = prose_signal(chunk.page_content.casefold(), topics[0], year)
+        if not support:
+            continue
+        score = (support, stated_year, int(year is not None and chunk.metadata["fiscal_year"] == year),
+                 int(chunk.metadata["doc_type"] == kind), local_match)
+        if score > best_score:
+            best_score, best = score, chunk
+    if best is None or best is parents[0]:
+        return parents
+    return [best, *[chunk for chunk in parents if chunk is not best]][:MAX_RETRIEVED]
+
+
+CELL_CHILD = "_research_scoped_cell"
+YEAR = re.compile(r"(?<!\d)((?:19|20)\d{2})([AEFP])?(?![A-Za-z\d])", re.I)
+ESTIMATE = re.compile(r"\b(?:forecast|estimates?|projected|guidance)\b", re.I)
+SCOPED_CAPTION = re.compile(
+    r"^([\w][\w -]*?)\s+by\s+(?:(?:business|geographic(?:al)?|delivery|sales)\s+)?"
+    r"(?:regions?|segments?|markets?|divisions?|channels?)\b", re.I,
+)
+CELL_UNIT = re.compile(
+    r"\b(?:usd|hkd|eur|gbp|jpy|cny|thousands?|millions?|billions?|units?|shares?|employees)\b|[$€£¥%]",
+    re.I,
+)
+CONSTANT_CURRENCY = re.compile(r"\bconstant[\s-]+currency\b", re.I)
+COMPOUND_REQUEST = re.compile(
+    r"\b(?:and|or|versus|vs|plus|also|alongside|combined|sum|difference|both|each|respectively|"
+    r"change|growth|increas\w*|decreas\w*|ratio|margin|share|percent(?:age)?)\b"
+)
+
+
+@dataclass(frozen=True)
+class Cell:
+    label: str
+    column: str
+    field: str
+    caption: str
+    metric: str
+
+    def actual_year(self) -> int | None:
+        periods = YEAR.findall(self.column)
+        if len(periods) != 1 or ESTIMATE.search(self.column):
+            return None
+        number, suffix = periods[0]
+        return int(number) if suffix.upper() in {"", "A"} else None
+
+    @property
+    def text(self) -> str:
+        return f"{self.caption}\n{self.label} | {self.field}"
+
+
+def cells(text: str) -> Iterator[Cell]:
+    """Read V6-rendered numeric cells, keeping scope only within a local caption."""
+    caption = metric = ""
+    for line in text.splitlines():
+        match = SCOPED_CAPTION.match(line)
+        if match:
+            caption, metric = line, match[1]
+            continue
+        label, separator, fields = line.partition("|")
+        if not separator:
+            caption = metric = ""
+            continue
+        for raw in fields.split("|"):
+            if FINANCIAL_CELL.fullmatch(raw):
+                field = raw.strip()
+                column = field.partition(":")[0].strip()
+                yield Cell(label.strip(), column, field, caption, metric)
+
+
+def query_phrase(value: str, terms: str) -> bool:
+    phrase = row_terms(value)
+    return bool(phrase) and f" {phrase} " in terms
+
+
+def query_terms(question: str, subjects: list[str]) -> str:
+    terms = f" {row_terms(question)} "
+    for subject in subjects:
+        terms = terms.replace(f" {row_terms(subject)} ", " ")
+    return terms
+
+
+def metric_outside_scope(cell: Cell, terms: str) -> bool:
+    without_scope = terms.replace(f" {row_terms(cell.label)} ", " ", 1)
+    return query_phrase(cell.metric, without_scope)
+
+
+def explicit_year(question: str, parsed: dict) -> int | None:
+    year = parsed.get("fiscal_year")
+    if year is not None and {int(match[1]) for match in FISCAL_YEAR.finditer(question)} == {year}:
+        return year
+    return None
+
+
+def narrow_financial_passage(
+    index: LexicalIndex, question: str, parsed: dict, parents: list[Document]
+) -> list[Document]:
+    """Replace the earliest eligible parent with a child emitted during ingestion."""
+    year = explicit_year(question, parsed)
+    if not index.children or parsed["doc_type"] != "annual_report" or year is None:
+        return parents
+    terms = query_terms(question, parsed["companies"])
+    if not terms.startswith((" what was ", " what were ", " what is ", " what are ", " how much ")):
+        return parents
+
+    requested_basis = bool(CONSTANT_CURRENCY.search(question))
+    for slot, parent in enumerate(parents):
+        matched = [cell for cell in cells(parent.page_content)
+                   if cell.actual_year() == year and query_phrase(cell.label, terms)
+                   and metric_outside_scope(cell, terms)]
+        if len(matched) != 1:
+            continue
+        cell = matched[0]
+        unbound = terms
+        for name in (cell.label, cell.metric):
+            unbound = unbound.replace(f" {row_terms(name)} ", " ", 1)
+        if COMPOUND_REQUEST.search(unbound):
+            continue
+        child = index.children.get((parent.metadata["source"], cell.text))
+        if child is not None and (not requested_basis or CONSTANT_CURRENCY.search(child.page_content)):
+            return [*parents[:slot], child, *parents[slot + 1:]]
+    return parents
+
+
 def chunk_document(file_name: str, html: str) -> list[Document]:
     """Task 1.2: split one document into chunks of at most MAX_CHUNK_CHARS characters.
 
@@ -364,10 +583,20 @@ def chunk_document(file_name: str, html: str) -> list[Document]:
     ### YOUR CODE HERE
     soup = BeautifulSoup(html, "html.parser")
     metadata = report_metadata(file_name, soup)
+    child_texts: dict[str, None] = {}
     for table in soup.find_all("table"):
-        table.replace_with("\n" + table_to_text(str(table)) + "\n")
+        rendered = table_to_text(str(table))
+        table.replace_with("\n" + rendered + "\n")
+        if metadata["doc_type"] == "annual_report":
+            for cell in cells(rendered):
+                # Keep the full parent when the label, header and caption cannot carry the unit.
+                if (cell.metric and cell.actual_year() is not None and len(cell.text) <= MAX_CHUNK_CHARS
+                        and CELL_UNIT.search(cell.text)):
+                    child_texts[cell.text] = None
     splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS, chunk_overlap=200)
-    return splitter.create_documents([soup.get_text()], [metadata])
+    parents = splitter.create_documents([soup.get_text()], [metadata])
+    children = [Document(page_content=text, metadata={**metadata, CELL_CHILD: True}) for text in child_texts]
+    return parents + children
 
 
 def parse_query(question: str) -> dict:
@@ -398,16 +627,23 @@ def build_index(chunks: list[Document]) -> LexicalIndex:
     Return anything retrieve() needs: a BM25 or TF-IDF index, the chunks grouped by metadata, ...
     """
     ### YOUR CODE HERE
-    tokens = [chunk.page_content.lower().split() for chunk in chunks]
+    parents = []
+    children = {}
+    for chunk in chunks:
+        if chunk.metadata.get(CELL_CHILD):
+            children[(chunk.metadata["source"], chunk.page_content)] = chunk
+        else:
+            parents.append(chunk)
+    tokens = [chunk.page_content.lower().split() for chunk in parents]
     ranker = BM25Okapi(tokens) if any(tokens) else None
     companies: dict[str, dict[str, list[int]]] = {}
-    for position, chunk in enumerate(chunks):
+    for position, chunk in enumerate(parents):
         company = chunk.metadata.get("company")
         if isinstance(company, str) and company.strip():
             identity = squash(company).removesuffix(".")
             key = COMPANY_SUFFIX.sub("", identity)
             companies.setdefault(key, {}).setdefault(identity, []).append(position)
-    return LexicalIndex(list(chunks), ranker, companies)
+    return LexicalIndex(parents, ranker, companies, children)
 
 
 def retrieve(index: LexicalIndex, question: str) -> list[Document]:
@@ -422,13 +658,19 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     if abstention_reason(index, question, parsed, resolution) is not None:
         return []
     ranking = ranked_positions(index, question)
-    if eligible is not None:
-        ranking = [position for position in ranking if position in eligible]
-        if parsed.get("doc_type") == "annual_report":
-            ranking = rank_financial_rows(index, ranking, question)
-        if len(subjects) > 1:
-            ranking = allocate_comparison(index, ranking)
-    return [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
+    if eligible is None:
+        return [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
+    eligible_order = [position for position in ranking if position in eligible]
+    ranking = eligible_order
+    if parsed.get("doc_type") == "annual_report":
+        ranking = rank_financial_rows(index, ranking, question)
+    if len(subjects) > 1:
+        ranking = allocate_comparison(index, ranking)
+    parents = [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
+    if not parents or len(subjects) != 1 or not parsed.get("doc_type"):
+        return parents
+    parents = promote_prose(index, question, parsed, eligible_order, parents)
+    return narrow_financial_passage(index, question, parsed, parents)
 
 
 # =============================================================================

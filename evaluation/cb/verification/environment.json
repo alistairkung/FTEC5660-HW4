@@ -1,0 +1,9 @@
+{
+  "architecture": "arm64",
+  "dependency_check": "all installed packages are compatible",
+  "install_lock": "evaluation/b0/requirements.lock",
+  "installed_versions_sha256": "57b96da74fd4130f65d1fdcd883ba3cc84619a569fa703dbd8e7dd4e9aad2511",
+  "package_count": 59,
+  "platform": "Darwin",
+  "python": "3.14.0"
+}
