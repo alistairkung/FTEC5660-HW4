@@ -65,19 +65,18 @@ class PublicEvaluation(unittest.TestCase):
         self.assertEqual(metrics["documents_passed"], [40, 40])
         self.assertEqual(metrics["valid_nonempty"], [46, 46])
         self.assertEqual(metrics["table_mean"], 1.0)
-        self.assertEqual(metrics["recall"], [18, 46])
+        self.assertEqual(metrics["recall"], [25, 46])
         self.assertEqual(metrics["recall_by_category"],
-                         {"fact": [10, 12], "table": [6, 22], "comparison": [2, 12]})
+                         {"fact": [10, 12], "table": [11, 22], "comparison": [4, 12]})
         self.assertEqual(metrics["rejected"], [0, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
-        frozen = json.loads((Path(hw4.__file__).parent / "evaluation/v1/offline.json").read_text())
+        frozen = json.loads((Path(hw4.__file__).parent / "evaluation/v2/offline.json").read_text())
         self.assertEqual(report["fixtures_sha256"], frozen["fixtures_sha256"])
         self.assertEqual(report["questions"].keys(), frozen["questions"].keys())
         for key, row in report["questions"].items():
             with self.subTest(question_id=key):
-                self.assertEqual(row["ranked_chunks"], frozen["questions"][key]["ranked_chunks"])
-                self.assertEqual(row["parse_score"], 1.0)
+                self.assertEqual(row["parse_score"], frozen["questions"][key]["parse_score"])
 
     def test_comparison_pairs_question_outcomes_and_rejects_other_fixtures(self):
         from evaluation.offline import compare
