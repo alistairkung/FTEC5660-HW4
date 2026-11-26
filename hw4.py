@@ -76,6 +76,35 @@ def ranked_positions(index: LexicalIndex, question: str) -> list[int]:
     return index.ranker.get_top_n(question.lower().split(), positions, n=len(positions))
 
 
+FINANCIAL_CELL = re.compile(
+    r"^\s*[^:|]+:\s*\(?[+−-]?\s*(?:[$€£]\s*)?"
+    r"(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\s*%?\)?\s*$"
+)
+
+
+def row_terms(text: str) -> str:
+    return " ".join(re.findall(r"[^\W\d_]+", squash(text)))
+
+
+def rank_financial_rows(index: LexicalIndex, ranking: list[int], question: str) -> list[int]:
+    """Prefer chunks with a literal query mention of a numeric table row label."""
+    query = f" {row_terms(question)} "
+    matching = []
+    remaining = []
+    for position in ranking:
+        for line in index.chunks[position].page_content.splitlines():
+            label, separator, cells = line.partition("|")
+            terms = row_terms(label) if separator else ""
+            if terms and f" {terms} " in query and any(
+                FINANCIAL_CELL.fullmatch(cell) for cell in cells.split("|")
+            ):
+                matching.append(position)
+                break
+        else:
+            remaining.append(position)
+    return matching + remaining
+
+
 def allocate_comparison(index: LexicalIndex, ranking: list[int]) -> list[int]:
     """Reserve the first chunk per company when all companies fit in the budget."""
     first_by_company: dict[str, int] = {}
@@ -395,6 +424,8 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     ranking = ranked_positions(index, question)
     if eligible is not None:
         ranking = [position for position in ranking if position in eligible]
+        if parsed.get("doc_type") == "annual_report":
+            ranking = rank_financial_rows(index, ranking, question)
         if len(subjects) > 1:
             ranking = allocate_comparison(index, ranking)
     return [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
