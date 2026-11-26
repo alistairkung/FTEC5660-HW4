@@ -34,8 +34,9 @@ load_dotenv()
 # =============================================================================
 
 from dataclasses import dataclass
+from textwrap import wrap
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from langchain_text_splitters.character import RecursiveCharacterTextSplitter
 from rank_bm25 import BM25Okapi
 
@@ -66,6 +67,33 @@ def report_metadata(file_name: str, soup: BeautifulSoup) -> dict[str, str | int]
     raise ValueError(f"Unrecognised report title in {file_name}: {title!r}")
 
 
+def cell_span(cell: Tag, attribute: str) -> int:
+    try:
+        span = max(1, int(cell.get(attribute, 1)))
+        return min(span, 1000) if attribute == "colspan" else span
+    except (TypeError, ValueError):
+        return 1
+
+
+def table_headers(rows: list[list[Tag]]) -> dict[int, str]:
+    """Associate each physical column with its sequence of group and leaf headers."""
+    labels: dict[int, list[str]] = {}
+    occupied_until: dict[int, int] = {}
+    for level, cells in enumerate(rows):
+        column = 0
+        for cell in cells:
+            while occupied_until.get(column, 0) > level:
+                column += 1
+            end = column + cell_span(cell, "colspan")
+            text = " ".join(cell.get_text().split())
+            for i in range(column, end):
+                occupied_until[i] = level + cell_span(cell, "rowspan")
+                if text:
+                    labels.setdefault(i, []).append(text)
+            column = end
+    return {i: " ".join(parts) for i, parts in labels.items()}
+
+
 def table_to_text(table_html: str) -> str:
     """Task 1.1: turn one HTML <table> into text that keeps every value with its row and its column.
 
@@ -75,7 +103,53 @@ def table_to_text(table_html: str) -> str:
     LLM here.
     """
     ### YOUR CODE HERE
-    return ""
+    table = BeautifulSoup(table_html, "html.parser").find("table")
+    if table is None:
+        return ""
+    for br in table.find_all("br"):
+        br.replace_with(" ")
+    lines = [table.caption.get_text().strip()] if table.caption else []
+    header_rows: list[list[Tag]] = []
+    headers: dict[int, str] = {}
+    for row in table.find_all("tr"):
+        cells = row.find_all(["th", "td"], recursive=False)
+        if not cells:
+            continue
+        values = [" ".join(cell.get_text().split()) for cell in cells]
+        if row.find_parent("thead") or (len(cells) > 1 and all(
+                cell.name == "th" and cell.get("scope") != "row" for cell in cells)):
+            header_rows.append(cells)
+            lines.append(" | ".join(filter(None, values)))
+            continue
+        if header_rows:
+            headers = table_headers(header_rows)
+            header_rows.clear()
+
+        label = line = values[0]
+        column = cell_span(cells[0], "colspan")
+        for cell, value in zip(cells[1:], values[1:]):
+            end = column + cell_span(cell, "colspan")
+            names = dict.fromkeys(headers[i] for i in range(column, end) if i in headers)
+            column = end
+            if not value:
+                continue
+            field = f"{' / '.join(names)}: {value}" if names else value
+            candidate = f"{line} | {field}" if line else field
+            if len(candidate) > MAX_LINE_CHARS and line != label:
+                lines.append(line)
+                candidate = f"{label} | {field}" if label else field
+            line = candidate
+        if line:
+            lines.append(line)
+    # An indivisible label/header/value triple can itself exceed the scoring limit.
+    # Preserve its text across lines in that case.
+    bounded_lines = []
+    for line in lines:
+        if len(line) > MAX_LINE_CHARS:
+            bounded_lines.extend(wrap(line, MAX_LINE_CHARS, break_on_hyphens=False))
+        else:
+            bounded_lines.append(line)
+    return "\n".join(bounded_lines)
 
 
 def chunk_document(file_name: str, html: str) -> list[Document]:
@@ -87,6 +161,8 @@ def chunk_document(file_name: str, html: str) -> list[Document]:
     ### YOUR CODE HERE
     soup = BeautifulSoup(html, "html.parser")
     metadata = report_metadata(file_name, soup)
+    for table in soup.find_all("table"):
+        table.replace_with("\n" + table_to_text(str(table)) + "\n")
     splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS, chunk_overlap=200)
     return splitter.create_documents([soup.get_text()], [metadata])
 

@@ -17,7 +17,7 @@ class BaselineContracts(unittest.TestCase):
     def test_flattened_text_and_overlap(self):
         text = "x" * 1300 + "y" * 200 + "z" * 300
         html = ("<title>Annual Report 2030</title><h1>Example</h1>"
-                "<table><tr><td>Debt</td><td>(1,020.0)</td></tr></table>" + text)
+                "<p>Debt</p><span>(1,020.0)</span>" + text)
         chunks = hw4.chunk_document("opaque.html", html)
         flattened = "Annual Report 2030ExampleDebt(1,020.0)" + text
         # The splitter prefers the spaces in the title before splitting the long word.
@@ -55,18 +55,19 @@ class BaselineContracts(unittest.TestCase):
         self.assertEqual(hw4.table_to_text("<table></table>"), "")
 
 
-class PublicBaseline(unittest.TestCase):
+class PublicEvaluation(unittest.TestCase):
     def test_offline_scorecard(self):
         from evaluation.offline import evaluate
 
         report = evaluate(Path(hw4.__file__).parent / "public_test")
         metrics = report["metrics"]
-        self.assertEqual((metrics["chunks"], metrics["longest_chunk"]), (278, 1499))
+        self.assertEqual((metrics["chunks"], metrics["longest_chunk"]), (330, 1499))
         self.assertEqual(metrics["documents_passed"], [40, 40])
         self.assertEqual(metrics["valid_nonempty"], [46, 46])
-        self.assertEqual(metrics["recall"], [13, 46])
+        self.assertEqual(metrics["table_mean"], 1.0)
+        self.assertEqual(metrics["recall"], [18, 46])
         self.assertEqual(metrics["recall_by_category"],
-                         {"fact": [10, 12], "table": [3, 22], "comparison": [0, 12]})
+                         {"fact": [10, 12], "table": [6, 22], "comparison": [2, 12]})
         self.assertEqual(metrics["rejected"], [0, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
