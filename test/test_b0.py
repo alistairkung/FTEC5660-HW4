@@ -1,4 +1,5 @@
 import hashlib
+import json
 import unittest
 from pathlib import Path
 
@@ -51,7 +52,6 @@ class BaselineContracts(unittest.TestCase):
             self.assertTrue(all(any(c is original for original in docs) for c in results))
         self.assertEqual(len(hw4.retrieve(index, "unseen")), 5)
         self.assertEqual(hw4.retrieve(hw4.build_index([]), "unseen"), [])
-        self.assertEqual(hw4.parse_query("What happened in FY2030?"), {})
         self.assertEqual(hw4.table_to_text("<table></table>"), "")
 
 
@@ -71,6 +71,13 @@ class PublicEvaluation(unittest.TestCase):
         self.assertEqual(metrics["rejected"], [0, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
+        frozen = json.loads((Path(hw4.__file__).parent / "evaluation/v1/offline.json").read_text())
+        self.assertEqual(report["fixtures_sha256"], frozen["fixtures_sha256"])
+        self.assertEqual(report["questions"].keys(), frozen["questions"].keys())
+        for key, row in report["questions"].items():
+            with self.subTest(question_id=key):
+                self.assertEqual(row["ranked_chunks"], frozen["questions"][key]["ranked_chunks"])
+                self.assertEqual(row["parse_score"], 1.0)
 
     def test_comparison_pairs_question_outcomes_and_rejects_other_fixtures(self):
         from evaluation.offline import compare

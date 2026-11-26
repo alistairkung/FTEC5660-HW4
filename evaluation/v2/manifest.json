@@ -1,0 +1,85 @@
+{
+  "experiment": "V2",
+  "code_revision": "2f83400034ecc3f4417577c2cf2510046a9b3846",
+  "v1_merge": "7a08e1d3dc9dec63eb8b32c9fdd1b70d7946a817",
+  "hw4_sha256": "de0cc2e501867f85a1c4f019edd535959f13411435d7627bccb760a4553da886",
+  "protected_suffix_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "configuration": {
+    "changed_component": "parse_query only",
+    "input": "question text only; no corpus/index state",
+    "company_extraction": "capitalized spans, grammatical roles and coordinated names",
+    "year": "explicit fiscal or calendar-year expressions; prefer requested period over dated source",
+    "document_type": "explicit earnings call, then research cues, else annual report",
+    "retrieval_and_generator": "../v1/manifest.json"
+  },
+  "runtime": {
+    "python": "3.14.0",
+    "platform": "Darwin arm64",
+    "direct_dependencies": {
+      "langchain-core": "1.8.5",
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.2.0",
+      "langchain-deepseek": "1.2.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "rank-bm25": "0.2.2",
+      "python-dotenv": "1.2.4"
+    },
+    "lock": "../b0/requirements.lock",
+    "lock_sha256": "57b96da74fd4130f65d1fdcd883ba3cc84619a569fa703dbd8e7dd4e9aad2511"
+  },
+  "fixtures_git_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "parse": {
+    "questions": 60,
+    "correct_fields": {
+      "companies": 60,
+      "fiscal_year": 60,
+      "doc_type": 60
+    },
+    "mean_lecturer_score": 1.0,
+    "exact_matches": 60,
+    "failed_questions": []
+  },
+  "retrieval": {
+    "ordered_lists_identical": 60,
+    "ranked_positions_identical": 300,
+    "identical_generator_prompts": 60,
+    "prompt_map_sha256": "09fba48624dc9d14ceda4f62c0fbc55f8b4a46c04856edec6ec5af7f718bfabd",
+    "recall": [
+      18,
+      46
+    ],
+    "answerable_kept": [
+      46,
+      46
+    ],
+    "unanswerable_rejected": [
+      0,
+      14
+    ],
+    "gained_hits": [],
+    "lost_hits": []
+  },
+  "student_usage": {
+    "cost_usd": 0.0,
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0
+  },
+  "generator": {
+    "new_runs": 0,
+    "new_calls": 0,
+    "new_cost_usd": 0,
+    "accuracy_reference": [
+      33,
+      60
+    ],
+    "accuracy_status": "inherited from V1; no V2 measurement"
+  },
+  "tests_passed": 18,
+  "artifacts_sha256": {
+    "offline.json": "1c4aa75c4078288123e26884d205767f42e2a94b06a26a2c7e5c46a4684a936b",
+    "parsed.json": "065c4ef9499b8664b32049b168d03bd486465e9b282305b91e1025ee6a2e0b42"
+  }
+}
