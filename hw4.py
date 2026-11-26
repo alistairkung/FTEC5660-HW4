@@ -33,11 +33,12 @@ load_dotenv()
 # Your code: add imports, constants and helper functions here.
 # =============================================================================
 
+from collections import defaultdict
 from collections.abc import Iterator
 from dataclasses import dataclass
 from textwrap import wrap
 
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup, Comment, NavigableString, Tag
 from langchain_text_splitters.character import RecursiveCharacterTextSplitter
 from rank_bm25 import BM25Okapi
 
@@ -596,6 +597,7 @@ def chunk_document(file_name: str, html: str) -> list[Document]:
     splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS, chunk_overlap=200)
     parents = splitter.create_documents([soup.get_text()], [metadata])
     children = [Document(page_content=text, metadata={**metadata, CELL_CHILD: True}) for text in child_texts]
+    attach_headings(soup, parents)
     return parents + children
 
 
@@ -646,6 +648,345 @@ def build_index(chunks: list[Document]) -> LexicalIndex:
     return LexicalIndex(parents, ranker, companies, children)
 
 
+CHUNK_OVERLAP = 200  # C+B RecursiveCharacterTextSplitter overlap setting.
+HISTORICAL_YEAR = re.compile(r"(?<![\d,.])(?:19|20)\d{2}(?!\d|[.,]\d)")
+SHORT_YEAR = re.compile(r"\bFY\s*['’]?(\d{2})(?!\d)", re.I)
+FINANCIAL = re.compile(
+    r"\b(?:revenue|sales|turnover|earnings|income|profit|loss|cash|assets?|liabilit\w*|equity|"
+    r"debt|borrow\w*|credit facilit\w*|receivables?|payables?|inventor\w*|expenses?|"
+    r"costs?|capex|expenditure|investments?|repurchas\w*|dividends?|refund\w*|"
+    r"rent|lease|balance sheet|financ\w*|monetary|amounts?|payout\w*|margin)\b", re.I,
+)
+UNIT = re.compile(r"\b(?:USD|HKD|EUR|GBP|US dollars?)\s+(?:millions?|billions?|thousands?)\b", re.I)
+NUMBER_TEXT = r"(?<![\w,.])(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?!\d|[.,]\d)"
+NUMBER = re.compile(NUMBER_TEXT)
+CURRENCY = re.compile(
+    rf"(?:\b(?:USD|HKD|EUR|GBP)\s*|[$€£]\s*)[(−-]?{NUMBER_TEXT}|"
+    rf"{NUMBER_TEXT}\s*(?:million|billion|thousand)?\s+(?:US dollars?|USD|HKD|EUR|GBP)\b", re.I,
+)
+SCALE = re.compile(rf"{NUMBER_TEXT}\s+(?:million|billion|thousand)\b", re.I)
+COUNT_UNIT = re.compile(
+    r"^\s*(?:%|percent\b|bps\b|people\b|employees?\b|directors?\b|members?\b|"
+    r"sites?\b|stores?\b|units?\b|facilities\b|projects?\b|offices?\b|customers?\b|"
+    r"vehicles?\b|plant(?:s)?\b|weeks?\b|days?\b|hours?\b|months?\b|years?\b|"
+    r"tonnes?\b|ton\b|items?\b|countries\b|deliveries\b|orders\b|shares\b|locations?\b|"
+    r"branches\b|shipments?\b|contracts?\b|depots?\b|miles?\b|incidents?\b)", re.I,
+)
+UNRELATED = re.compile(
+    r"\b(?:director since|in role since|appointed|joined|reappointed|served|elected|tenure|"
+    r"found(?:ed|ing)|incorporated|established|headcount|employees?|staff|attendance|"
+    r"sites?|stores?|facilities|shipments?|units?|orders?|vehicles?|projects?|"
+    r"offices?|branches|countries|customers?|people|members|meetings|days|hours|"
+    r"tonnes|incidents|production volume)\b", re.I,
+)
+GOVERNANCE = re.compile(r"\b(?:corporate governance|board of directors|executive officers|board responsibilities)\b", re.I)
+CONTINUATION = re.compile(
+    r"^\s*(?:on |upon |at (?:that|the same) time\b|that (?:year|period|balance|amount)\b|"
+    r"in (?:that|the same) (?:year|period)\b|the (?:figure|amount|balance|total)\b|"
+    r"this (?:amount|figure|balance|included)\b|as a result\b|it (?:was|stood|totalled|amounted)\b)", re.I,
+)
+FISCAL_REFERENCE = r"(?:the\s+)?(?:(?:FY|fiscal(?:\s+year)?)\s*)?(?P<anchor>(?:19|20)\d{2})"
+DIRECTION = r"(?P<direction>before|preceding|prior to|after|following)"
+COUNT_WORD = r"(?P<count>one|two|three|four|five|six|seven|eight|nine|ten|[1-9])"
+COUNT_WORDS = dict(zip("one two three four five six seven eight nine ten".split(), range(1, 11)))
+RELATIVE_ANCHOR = re.compile(
+    rf"\b(?:{COUNT_WORD}\s+(?:full\s+)?(?:fiscal\s+|financial\s+)?years?\s+|"
+    rf"(?:the\s+)?(?:first\s+)?(?:full\s+)?(?:fiscal\s+|financial\s+|reporting\s+)?"
+    rf"year\s+(?:immediately\s+)?){DIRECTION}\s+{FISCAL_REFERENCE}", re.I,
+)
+RELATIVE_FILING = re.compile(
+    rf"\b{COUNT_WORD}\s+(?:fiscal\s+|financial\s+)?years?\s+{DIRECTION}\s+"
+    r"(?:this|the)\s+(?:report(?:ing)?|filing|current fiscal)\s+(?:year|period)\b", re.I,
+)
+PRIOR_FILING = re.compile(r"\b(?:prior|previous|preceding|comparable|comparative)\s+(?:fiscal\s+|financial\s+)?(?:year|period)\b", re.I)
+EVENT_PERIOD = re.compile(
+    r"\b(?:historical (?:baseline|balance|figure|results?)|inception|back then|"
+    r"(?:fiscal |financial |full )?year (?:in which|of (?:the|his|her)|(?:immediately )?(?:before|after|following|preceding))|"
+    r"(?:first|last) (?:full )?(?:year|reporting period) (?:of|in|before|after|following)|"
+    r"years? (?:ago|earlier|before|after|prior)|at (?:the time of|appointment)|"
+    r"(?:before|after|upon) (?:the |our |his |her )?(?:appointment|refinanc\w*|commission\w*|"
+    r"restructur\w*|divest\w*|merger|acquisition|takeover|reorganisation))\b", re.I,
+)
+SENTENCE = re.compile(r"(?<=[.!?])\s+(?=[A-Z“])")
+SECTION = re.compile(r"^\s*\d{1,2}\.\s+")
+NON_ACTUAL = re.compile(r"\b(?:forecast|projected|estimate)\b", re.I)
+DAY_MONTH = re.compile(rf"\b(?:\d{{1,2}}\s+{MONTH}|{MONTH}\s+\d{{1,2}})\b", re.I)
+
+
+@dataclass(frozen=True)
+class HistoricalDecision:
+    reason: str | None
+    route: str
+    source: str = ""
+    passage: str = ""
+
+
+def period(text: str, filing_year: int) -> tuple[set[int], bool]:
+    """Identify printed periods and a few anchored relative constructions."""
+    years = set()
+    remaining = text
+    for pattern in (RELATIVE_ANCHOR, RELATIVE_FILING):
+        matches = list(pattern.finditer(remaining))
+        for match in matches:
+            offset = match["count"] or "one"
+            offset = int(offset) if offset.isdigit() else COUNT_WORDS[offset.lower()]
+            anchor = int(match["anchor"]) if pattern is RELATIVE_ANCHOR else filing_year
+            earlier = match["direction"].lower() in {"before", "preceding", "prior to"}
+            years.add(anchor - offset if earlier else anchor + offset)
+        remaining = pattern.sub(" ", remaining)
+    years.update(int(match[0]) for match in HISTORICAL_YEAR.finditer(remaining))
+    years.update(filing_year // 100 * 100 + int(match[1]) for match in SHORT_YEAR.finditer(remaining))
+    # A printed year owns its sentence. Read bare comparative language relative
+    # to the filing only when the sentence supplies no competing time anchor.
+    unresolved = bool(EVENT_PERIOD.search(remaining)) and not years
+    if not years and not unresolved and PRIOR_FILING.search(remaining):
+        years.add(filing_year - 1)
+    return years, unresolved
+
+
+def reconstructed(chunks: list[Document]) -> str:
+    """Join original source-ordered parents for internal analysis only."""
+    parts = []
+    previous = ""
+    for chunk in chunks:
+        text = chunk.page_content
+        overlap = next((n for n in range(min(len(previous), len(text), CHUNK_OVERLAP), 39, -1)
+                        if previous.endswith(text[:n])), 0)
+        parts.append(text[overlap:] if overlap else "\n" + text)
+        previous = text
+    return "".join(parts)
+
+
+def heading(text: str) -> bool:
+    return len(text) <= 150 and (bool(SECTION.match(text)) or not text.endswith((".", "?", "!", ";")))
+
+
+def money(text: str, monetary_heading: bool, financial_context: bool) -> bool:
+    if CURRENCY.search(text):
+        return True
+    if not financial_context:
+        return False
+    if any(not COUNT_UNIT.match(text[m.end():]) for m in SCALE.finditer(text)):
+        return True
+    if not monetary_heading:
+        return False
+    without_dates = DAY_MONTH.sub(" ", SHORT_YEAR.sub(" ", HISTORICAL_YEAR.sub(" ", text)))
+    return any(not COUNT_UNIT.match(without_dates[m.end():]) for m in NUMBER.finditer(without_dates))
+
+
+def table_years(line: str) -> set[int]:
+    years = set()
+    for field in line.split("|")[1:]:
+        if FINANCIAL_CELL.fullmatch(field):
+            label = field.partition(":")[0]
+            for year, suffix in YEAR.findall(label):
+                if suffix.upper() in {"", "A"} and not NON_ACTUAL.search(label):
+                    years.add(int(year))
+    return years
+
+
+def scan_source(text: str, filing_year: int, wanted: int) -> tuple[str, bool, bool]:
+    """Return a veto passage, an unclear old-year mention, and comparative coverage."""
+    in_governance = False
+    monetary_heading = financial_heading = False
+    heading_period: tuple[set[int], bool] = (set(), False)
+    previous_period: tuple[set[int], bool] = (set(), False)
+    unclear = coverage = False
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if "|" in line:
+            years = table_years(line)
+            financial_row = financial_heading or bool(FINANCIAL.search(line.partition("|")[0]))
+            coverage |= financial_row and {filing_year - 1, filing_year} <= years
+            if wanted in years and financial_row:
+                return line, unclear, coverage
+            if HISTORICAL_YEAR.search(line) and wanted in period(line, filing_year)[0]:
+                unclear |= not (in_governance or UNRELATED.search(line))
+            previous_period = (set(), False)
+            continue
+        if heading(line):
+            if SECTION.match(line) or GOVERNANCE.search(line):
+                in_governance = bool(GOVERNANCE.search(line))
+            monetary_heading = bool(UNIT.search(line))
+            financial_heading = bool(FINANCIAL.search(line)) or monetary_heading
+            heading_period = period(line, filing_year)
+            previous_period = (set(), False)
+            # A short line may itself contain a dated amount.
+        for sentence in SENTENCE.split(line):
+            dates, unresolved = period(sentence, filing_year)
+            if not dates and not unresolved:
+                dates, unresolved = previous_period if CONTINUATION.search(sentence) and any(previous_period) else heading_period
+            financial_context = financial_heading or bool(FINANCIAL.search(sentence))
+            if (wanted in dates or unresolved) and money(sentence, monetary_heading, financial_context):
+                return sentence, unclear, coverage
+            if wanted in dates and not (in_governance or UNRELATED.search(sentence)):
+                unclear = True
+            previous_period = dates, unresolved
+    return "", unclear, coverage
+
+
+def historical_gap_policy(index: LexicalIndex, question: str, parsed: dict,
+                      eligible: set[int] | None, resolution: str) -> HistoricalDecision:
+    year = explicit_year(question, parsed)
+    if year is None or resolution != "resolved" or len(parsed["companies"]) != 1 or parsed["doc_type"] != "annual_report":
+        return HistoricalDecision(abstention_reason(index, question, parsed, resolution), "existing")
+    documents = defaultdict(list)
+    for position in sorted(eligible or ()):
+        chunk = index.chunks[position]
+        documents[chunk.metadata["source"]].append(chunk)
+    filings = {source: (chunks[0].metadata["doc_type"], chunks[0].metadata["fiscal_year"])
+               for source, chunks in documents.items()}
+    annuals = sorted(year for kind, year in filings.values() if kind == "annual_report")
+    if not annuals or year >= annuals[0] - 1:
+        return HistoricalDecision(abstention_reason(index, question, parsed, resolution), "existing")
+    unclear = False
+    covered_annuals = 0
+    for source, chunks in documents.items():
+        kind, reporting_year = filings[source]
+        hit, possible, coverage = scan_source(reconstructed(chunks), reporting_year, year)
+        if hit:
+            # This branch precedes even the evaluation of the original veto.
+            return HistoricalDecision(None, "historical_evidence_veto", source, hit)
+        unclear |= possible
+        covered_annuals += kind == "annual_report" and coverage
+    complete = (len(annuals) == 2 and annuals[1] == annuals[0] + 1 and covered_annuals == 2
+                and len(filings) == 4 and set(filings.values()) ==
+                {("annual_report", annuals[0]), ("annual_report", annuals[1]),
+                 ("earnings_call", annuals[1]), ("research_report", annuals[1])})
+    if complete and not unclear and (FINANCIAL.search(question) or UNIT.search(question)):
+        return HistoricalDecision("unsupported_historical_period", "verified_historical_gap")
+    return HistoricalDecision(abstention_reason(index, question, parsed, resolution), "existing")
+
+HEADING_TAGS = ("h2", "h3", "h4", "h5", "h6")
+SIDECAR = "_historical_heading_context"
+HeadingPairs = tuple[tuple[str, str], ...]
+CURRENT = re.compile(r"\b(?:this|current)\s+(?:fiscal\s+|financial\s+|reporting\s+)?(?:year|period)\b", re.I)
+AMOUNT_STATEMENT = re.compile(
+    r"\b(?:stood at|amounted to|totall?ed|figure|amount|balance|recorded|equalled|(?:was|were)\s+[-(]?\d)\b", re.I,
+)
+
+
+def heading_pairs(soup: BeautifulSoup) -> HeadingPairs:
+    """A heading may pass only intervening whitespace and comments to its next paragraph."""
+    pairs = []
+    for tag in soup.find_all(HEADING_TAGS):
+        for sibling in tag.next_siblings:
+            if isinstance(sibling, Comment) or isinstance(sibling, NavigableString) and not sibling.strip():
+                continue
+            if isinstance(sibling, Tag) and sibling.name == "p":
+                pairs.append((tag.get_text(" ", strip=True), sibling.get_text(" ", strip=True)))
+            break
+    return tuple(pairs)
+
+
+def attach_headings(soup: BeautifulSoup, parents: list[Document]) -> None:
+    if parents:
+        # Private annotation survives in-process indexing and leaves Document fields
+        # and metadata exactly as C+B emitted them.
+        setattr(parents[0], SIDECAR, heading_pairs(soup))
+
+
+def adjacent_evidence(pairs: HeadingPairs, filing_year: int, wanted: int) -> str:
+    for title, paragraph in pairs:
+        title_financial = bool(FINANCIAL.search(title))
+        if GOVERNANCE.search(title) or UNRELATED.search(title) and not title_financial:
+            continue
+        in_units = bool(UNIT.search(title))
+        title_years, title_unresolved = period(title, filing_year)
+        previous_period = title_years, title_unresolved
+        for offset, sentence in enumerate(SENTENCE.split(paragraph)):
+            sentence_years, sentence_unresolved = period(sentence, filing_year)
+            if not sentence_years and not sentence_unresolved and CURRENT.search(sentence):
+                sentence_years = {filing_year}
+            local_financial = bool(FINANCIAL.search(sentence))
+            continuation = bool(CONTINUATION.search(sentence))
+            if sentence_years or sentence_unresolved:
+                dates, unresolved = sentence_years, sentence_unresolved
+            else:
+                dates, unresolved = previous_period if continuation else (title_years, title_unresolved)
+            # Subsequent statements need either a local historical date or an
+            # explicit reference to the immediately preceding statement.
+            if offset and not continuation and not (wanted in sentence_years and local_financial):
+                previous_period = sentence_years, sentence_unresolved
+                continue
+            previous_period = dates, unresolved
+            if wanted not in dates and not unresolved:
+                continue
+            if UNRELATED.search(sentence) and not local_financial and not CURRENCY.search(sentence):
+                continue
+            financial_context = title_financial or local_financial or (in_units and AMOUNT_STATEMENT.search(sentence))
+            if money(sentence, in_units, bool(financial_context)):
+                return title + "\n" + sentence
+    return ""
+
+
+def historical_heading_policy(index: LexicalIndex, question: str, parsed: dict,
+                      eligible: set[int] | None, resolution: str) -> HistoricalDecision:
+    wanted = explicit_year(question, parsed)
+    if wanted is not None and resolution == "resolved" and len(parsed["companies"]) == 1 and parsed["doc_type"] == "annual_report":
+        parents = [index.chunks[pos] for pos in sorted(eligible or ())]
+        years = [c.metadata["fiscal_year"] for c in parents if c.metadata["doc_type"] == "annual_report"]
+        if years and wanted < min(years) - 1:
+            for chunk in parents:
+                pairs = getattr(chunk, SIDECAR, ())
+                if pairs:
+                    evidence = adjacent_evidence(pairs, chunk.metadata["fiscal_year"], wanted)
+                    if evidence:
+                        return HistoricalDecision(None, "adjacent_heading_veto", chunk.metadata["source"], evidence)
+    return historical_gap_policy(index, question, parsed, eligible, resolution)
+
+ROLE = (
+    r"\b(?:c[efotir]o|chief\s+(?:executive|financial|finance|operating|technology|"
+    r"technical|information|risk|legal|accounting|people)\s+officer|"
+    r"finance\s+(?:chief|director)|(?:board\s+)?chair(?:man|woman|person)?|"
+    r"president|treasurer|director|officer)\b"
+)
+OFFICER = re.compile(ROLE, re.I)
+IDENTITY = re.compile(
+    r"^\s*(?:who\b|which\s+(?:person|individual|executive|officer|director)\b|"
+    rf"(?:which|name(?:\s+the)?)\s+{ROLE}|"
+    r"(?:what|give)\b[^?]*?\b(?:name\s+of|(?:officer|director|cfo|ceo|chair|president)['’]s\s+name)\b)",
+    re.I,
+)
+TIME_REQUEST = re.compile(
+    r"^\s*(?:when\b|(?:in |on |at )?(?:what|which)\s+(?:date|year|month|day)\b|"
+    r"how\s+(?:long|many\s+(?:days|months|years))\b)", re.I,
+)
+TENURE_REQUEST = re.compile(
+    r"^\s*what\s+(?:is|was|were)\b[^?]*?\b(?:tenure|term in office|years in office|"
+    r"appointment date|departure date|start date|succession date|retirement date)\b", re.I,
+)
+ROLE_EVENT = re.compile(
+    r"\b(?:serv\w*|held|hold\w*|tenure|appoint\w*|succeed\w*|replace\w*|"
+    r"resign\w*|retir\w*|stepp?\w*\s+down|took office|take office|left office|"
+    r"assum\w*\s+office|became|become)\b", re.I,
+)
+MONETARY_REQUEST = re.compile(
+    r"^\s*how much\b|\b(?:salary|compensation|remuneration|pay package|"
+    r"severance|payout|appointment bonus|in (?:usd|hkd|eur|gbp)\b)\b", re.I,
+)
+
+
+def officer_intent(question: str) -> bool:
+    if not OFFICER.search(question):
+        return False
+    if IDENTITY.search(question):
+        return True
+    if MONETARY_REQUEST.search(question):
+        return False
+    return bool(TENURE_REQUEST.search(question) or TIME_REQUEST.search(question) and ROLE_EVENT.search(question))
+
+
+def historical_policy(index: LexicalIndex, question: str, parsed: dict,
+                      eligible: set[int] | None, resolution: str) -> HistoricalDecision:
+    decision = historical_heading_policy(index, question, parsed, eligible, resolution)
+    if decision.route == "verified_historical_gap" and officer_intent(question):
+        return HistoricalDecision(abstention_reason(index, question, parsed, resolution), "officer_intent_exemption")
+    return decision
+
+
 def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     """Tasks 2 and 3: at most MAX_RETRIEVED of the chunks given to build_index, best first.
 
@@ -655,7 +996,7 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     parsed = parse_query(question)
     subjects = parsed["companies"]
     eligible, resolution = company_candidates(index, subjects)
-    if abstention_reason(index, question, parsed, resolution) is not None:
+    if historical_policy(index, question, parsed, eligible, resolution).reason is not None:
         return []
     ranking = ranked_positions(index, question)
     if eligible is None:

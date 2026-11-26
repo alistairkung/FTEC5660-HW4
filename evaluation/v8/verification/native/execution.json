@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python",
+    "hw4.py",
+    "--data-folder",
+    "public_test",
+    "--output",
+    "evaluation/v8/verification/native/results.csv"
+  ],
+  "deadline_seconds": 120,
+  "exit_code": 0,
+  "process_wall_seconds": 5.562355249887332,
+  "source_sha256": "9ca0116dbab2c96baa916e6c0e9cf0a01e276110b930704917a6fab98531001e",
+  "timed_out": false
+}

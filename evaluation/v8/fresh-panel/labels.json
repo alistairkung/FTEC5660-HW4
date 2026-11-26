@@ -1,0 +1,546 @@
+{
+  "q001": {
+    "answerable": true,
+    "answer": "Omar Kessler",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "cfo",
+      "identity",
+      "tenure_inference"
+    ],
+    "rationale": "The March 2021 appointment and continuous service through FY2024 or June 2025 cover the end of FY2021.",
+    "evidence": [
+      [
+        [
+          "doc_012.html",
+          "Omar Kessler"
+        ],
+        [
+          "doc_003.html",
+          "Omar Kessler"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_012.html",
+        "text": "Omar Kessler was appointed Chief Financial Officer in March 2021 and remained in that office through 31 December 2024."
+      },
+      {
+        "source": "doc_003.html",
+        "text": "Omar Kessler served as Chief Financial Officer from March 2021 through 30 June 2025. Hana Malik succeeded him as Chief Financial Officer effective 1 July 2025."
+      }
+    ]
+  },
+  "q002": {
+    "answerable": true,
+    "answer": "Omar Kessler",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "cfo",
+      "identity",
+      "tenure_inference",
+      "wording_variant"
+    ],
+    "rationale": "The same term covers the end of FY2022, even though both annual reports postdate that year.",
+    "evidence": [
+      [
+        [
+          "doc_012.html",
+          "Omar Kessler"
+        ],
+        [
+          "doc_003.html",
+          "Omar Kessler"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_012.html",
+        "text": "Omar Kessler was appointed Chief Financial Officer in March 2021 and remained in that office through 31 December 2024."
+      },
+      {
+        "source": "doc_003.html",
+        "text": "Omar Kessler served as Chief Financial Officer from March 2021 through 30 June 2025. Hana Malik succeeded him as Chief Financial Officer effective 1 July 2025."
+      }
+    ]
+  },
+  "q003": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "cfo",
+      "identity",
+      "missing_office_holder",
+      "wording_variant"
+    ],
+    "rationale": "The reports name the officer who took office on 1 January 2023. They do not name the predecessor.",
+    "evidence": [],
+    "passages": []
+  },
+  "q004": {
+    "answerable": true,
+    "answer": "Greta Voss",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "non_cfo",
+      "coo",
+      "identity",
+      "tenure_inference"
+    ],
+    "rationale": "The FY2024 report places Greta Voss in the role from January 2022 continuously through the FY2024 reporting year.",
+    "evidence": [
+      [
+        [
+          "doc_012.html",
+          "Greta Voss"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_012.html",
+        "text": "The board appointed Greta Voss Chief Operating Officer on 3 January 2022. She continued in that position through the end of the reporting year."
+      }
+    ]
+  },
+  "q005": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "non_cfo",
+      "coo",
+      "identity",
+      "missing_office_holder"
+    ],
+    "rationale": "The FY2024 table gives Jude Sato for FY2023 and Finn Harlow for FY2024. The 2024 handover provides no date for Sato first taking office.",
+    "evidence": [],
+    "passages": []
+  },
+  "q006": {
+    "answerable": true,
+    "answer": 2025,
+    "cohort": "template",
+    "tags": [
+      "cfo",
+      "tenure_end",
+      "year_answer"
+    ],
+    "rationale": "The transition note explicitly ends Kessler’s term on 30 June 2025.",
+    "evidence": [
+      [
+        [
+          "doc_003.html",
+          "30 June 2025"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_003.html",
+        "text": "Omar Kessler served as Chief Financial Officer from March 2021 through 30 June 2025. Hana Malik succeeded him as Chief Financial Officer effective 1 July 2025."
+      }
+    ]
+  },
+  "q007": {
+    "answerable": true,
+    "answer": "Hana Malik",
+    "cohort": "template",
+    "tags": [
+      "cfo",
+      "identity",
+      "succession"
+    ],
+    "rationale": "The FY2025 governance note identifies Malik as Kessler’s successor.",
+    "evidence": [
+      [
+        [
+          "doc_003.html",
+          "Hana Malik"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_003.html",
+        "text": "Omar Kessler served as Chief Financial Officer from March 2021 through 30 June 2025. Hana Malik succeeded him as Chief Financial Officer effective 1 July 2025."
+      }
+    ]
+  },
+  "q008": {
+    "answerable": true,
+    "answer": 1,
+    "cohort": "stress",
+    "tags": [
+      "cfo",
+      "succession_date",
+      "day_answer"
+    ],
+    "rationale": "The governance note gives the effective appointment date as 1 July 2025.",
+    "evidence": [
+      [
+        [
+          "doc_003.html",
+          "1 July 2025"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_003.html",
+        "text": "Omar Kessler served as Chief Financial Officer from March 2021 through 30 June 2025. Hana Malik succeeded him as Chief Financial Officer effective 1 July 2025."
+      }
+    ]
+  },
+  "q009": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "non_cfo",
+      "ceo",
+      "identity",
+      "missing_office_holder"
+    ],
+    "rationale": "The FY2024 governance note mentions the retired predecessor without naming them and places Ives in office from the first day of 2022.",
+    "evidence": [],
+    "passages": []
+  },
+  "q010": {
+    "answerable": true,
+    "answer": "Grant Ives",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "non_cfo",
+      "ceo",
+      "identity",
+      "tenure_inference"
+    ],
+    "rationale": "Both reports place Ives in office continuously from the first day of 2022 through the end of that year.",
+    "evidence": [
+      [
+        [
+          "doc_020.html",
+          "Grant Ives"
+        ],
+        [
+          "doc_010.html",
+          "Grant Ives"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_020.html",
+        "text": "Grant Ives took office as Chief Executive Officer on 1 January 2022 after the outgoing chief executive retired. He continued to serve in that role through the end of FY2024."
+      },
+      {
+        "source": "doc_010.html",
+        "text": "Grant Ives has served as Chief Executive Officer without interruption since 1 January 2022."
+      }
+    ]
+  },
+  "q011": {
+    "answerable": true,
+    "answer": 5,
+    "cohort": "stress",
+    "tags": [
+      "cfo",
+      "tenure_duration",
+      "role_specific"
+    ],
+    "rationale": "The FY2025 governance note states the completed fiscal years of service in the CFO role.",
+    "evidence": [
+      [
+        [
+          "doc_010.html",
+          "five full fiscal years"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_010.html",
+        "text": "At 31 December 2025, Priya Naylor had completed five full fiscal years as Chief Financial Officer, having taken office on 1 January 2021."
+      }
+    ]
+  },
+  "q012": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "stress",
+    "tags": [
+      "cfo",
+      "tenure_duration",
+      "tenure_scope",
+      "missing_dates"
+    ],
+    "rationale": "The CFO appointment date is disclosed. Solis already worked at the company before her promotion, and no report gives her hire date.",
+    "evidence": [],
+    "passages": []
+  },
+  "q013": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "cfo",
+      "identity",
+      "role_scope",
+      "missing_office_holder"
+    ],
+    "rationale": "The only named CFO took office in May 2023. His role in FY2021 was finance director, and the reports do not name the FY2021 CFO.",
+    "evidence": [],
+    "passages": []
+  },
+  "q014": {
+    "answerable": true,
+    "answer": "Paul Metz",
+    "cohort": "template",
+    "tags": [
+      "comparative_year",
+      "cfo",
+      "identity",
+      "wording_variant"
+    ],
+    "rationale": "The comparative executive table directly names Metz under 2023 and the transition note confirms that his term spans the end of FY2023.",
+    "evidence": [
+      [
+        [
+          "doc_013.html",
+          "Paul Metz"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_013.html",
+        "text": "Executive officers as at fiscal year end Office 2024 2023 Chief Executive Officer Nadia Baines Nadia Baines Chief Financial Officer Elise Okoro Paul Metz Chief Operating Officer Luca Patel Luca Patel"
+      },
+      {
+        "source": "doc_013.html",
+        "text": "Paul Metz served as Chief Financial Officer from 1 February 2022 through 31 August 2024, a tenure of 31 months. Elise Okoro became Chief Financial Officer on 1 September 2024."
+      }
+    ]
+  },
+  "q015": {
+    "answerable": true,
+    "answer": 2022,
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "cfo",
+      "tenure_start",
+      "year_answer"
+    ],
+    "rationale": "The transition note dates his first day in the position to 1 February 2022.",
+    "evidence": [
+      [
+        [
+          "doc_013.html",
+          "1 February 2022"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_013.html",
+        "text": "Paul Metz served as Chief Financial Officer from 1 February 2022 through 31 August 2024, a tenure of 31 months. Elise Okoro became Chief Financial Officer on 1 September 2024."
+      }
+    ]
+  },
+  "q016": {
+    "answerable": true,
+    "answer": 31,
+    "cohort": "stress",
+    "tags": [
+      "historical",
+      "cfo",
+      "tenure_duration"
+    ],
+    "rationale": "The transition note states Metz’s tenure as 31 months.",
+    "evidence": [
+      [
+        [
+          "doc_013.html",
+          "31 months"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_013.html",
+        "text": "Paul Metz served as Chief Financial Officer from 1 February 2022 through 31 August 2024, a tenure of 31 months. Elise Okoro became Chief Financial Officer on 1 September 2024."
+      }
+    ]
+  },
+  "q017": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "historical",
+      "financial",
+      "operating_income",
+      "cfo_distractor",
+      "missing_year"
+    ],
+    "rationale": "The governance note links Park’s finance director role to operating income budgets, but the earliest company operating income figure in the corpus is FY2023.",
+    "evidence": [],
+    "passages": []
+  },
+  "q018": {
+    "answerable": false,
+    "answer": "NOT_FOUND",
+    "cohort": "template",
+    "tags": [
+      "comparative_year",
+      "financial",
+      "compensation",
+      "cfo_distractor",
+      "missing_disclosure"
+    ],
+    "rationale": "The FY2024 report identifies the FY2023 CFO and mentions compensation oversight but supplies no individual compensation amount.",
+    "evidence": [],
+    "passages": []
+  },
+  "q019": {
+    "answerable": true,
+    "answer": 106.4,
+    "cohort": "template",
+    "tags": [
+      "comparative_year",
+      "financial",
+      "operating_income"
+    ],
+    "rationale": "The FY2024 consolidated income statement supplies the FY2023 figure in its comparative column.",
+    "evidence": [
+      [
+        [
+          "doc_005.html",
+          "106.4"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_005.html",
+        "text": "Consolidated income statement for the year ended 31 December (USD millions) Line item 2024 2023 Revenue 1,031.5 977.2 Cost of revenue and operating expenses (909.3) (870.8) Operating income 122.2 106.4"
+      }
+    ]
+  },
+  "q020": {
+    "answerable": true,
+    "answer": "Sundial Grid",
+    "cohort": "template",
+    "tags": [
+      "financial",
+      "comparison",
+      "similar_names",
+      "cash"
+    ],
+    "rationale": "Sundial Grid held USD 241.6 million and Sundial Metering held USD 148.2 million. Each amount is repeated in the issuer’s FY2025 comparative column.",
+    "evidence": [
+      [
+        [
+          "doc_012.html",
+          "241.6"
+        ],
+        [
+          "doc_003.html",
+          "241.6"
+        ]
+      ],
+      [
+        [
+          "doc_006.html",
+          "148.2"
+        ],
+        [
+          "doc_018.html",
+          "148.2"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_012.html",
+        "text": "Consolidated balance sheet as at 31 December (USD millions) Line item 31 December 2024 31 December 2023 Cash and cash equivalents 241.6 217.4"
+      },
+      {
+        "source": "doc_003.html",
+        "text": "Consolidated balance sheet as at 31 December (USD millions) Line item 31 December 2025 31 December 2024 Cash and cash equivalents 257.0 241.6"
+      },
+      {
+        "source": "doc_006.html",
+        "text": "Consolidated balance sheet as at 31 December (USD millions) Line item 31 December 2024 31 December 2023 Cash and cash equivalents 148.2 132.6"
+      },
+      {
+        "source": "doc_018.html",
+        "text": "Consolidated balance sheet as at 31 December (USD millions) Line item 31 December 2025 31 December 2024 Cash and cash equivalents 162.3 148.2"
+      }
+    ]
+  },
+  "q021": {
+    "answerable": true,
+    "answer": 37.5,
+    "cohort": "template",
+    "tags": [
+      "financial",
+      "target_price",
+      "research_report"
+    ],
+    "rationale": "The broker labels USD 37.50 as the target price and USD 31.80 as the contemporaneous share price.",
+    "evidence": [
+      [
+        [
+          "doc_004.html",
+          "37.50"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_004.html",
+        "text": "Rating: BUY 12-month target price: USD 37.50 Share price: USD 31.80"
+      }
+    ]
+  },
+  "q022": {
+    "answerable": true,
+    "answer": 55,
+    "cohort": "template",
+    "tags": [
+      "financial",
+      "repurchase",
+      "earnings_call",
+      "cfo_speaker"
+    ],
+    "rationale": "Elise Okoro announces an authorised USD 55 million repurchase programme in the management presentation.",
+    "evidence": [
+      [
+        [
+          "doc_008.html",
+          "55"
+        ]
+      ]
+    ],
+    "passages": [
+      {
+        "source": "doc_008.html",
+        "text": "Elise Okoro, Chief Financial Officer: The board has authorised a USD 55 million share repurchase programme."
+      }
+    ]
+  }
+}
