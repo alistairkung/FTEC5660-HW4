@@ -76,6 +76,32 @@ def ranked_positions(index: LexicalIndex, question: str) -> list[int]:
     return index.ranker.get_top_n(question.lower().split(), positions, n=len(positions))
 
 
+def allocate_comparison(index: LexicalIndex, ranking: list[int]) -> list[int]:
+    """Reserve the first chunk per company when all companies fit in the budget."""
+    first_by_company: dict[str, int] = {}
+    unique_positions: list[int] = []
+    seen: set[int] = set()
+    for position in ranking:
+        chunk = index.chunks[position]
+        if id(chunk) in seen:
+            continue
+        seen.add(id(chunk))
+        unique_positions.append(position)
+        company = squash(chunk.metadata["company"]).removesuffix(".")
+        first_by_company.setdefault(company, position)
+
+    if len(first_by_company) < 2:
+        return ranking[:MAX_RETRIEVED]
+    if len(first_by_company) > MAX_RETRIEVED:
+        # The full union stays eligible when there are too few slots to guarantee coverage.
+        return unique_positions[:MAX_RETRIEVED]
+
+    reserved = set(first_by_company.values())
+    remaining = [position for position in unique_positions if position not in reserved]
+    selected = reserved.union(remaining[:MAX_RETRIEVED - len(reserved)])
+    return [position for position in unique_positions if position in selected]
+
+
 def report_metadata(file_name: str, soup: BeautifulSoup) -> dict[str, str | int]:
     title = soup.title.get_text(" ", strip=True)
     company = soup.h1.get_text(" ", strip=True).split(" (", 1)[0]
@@ -307,10 +333,13 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     Return [] when the corpus cannot answer the question: the generator then answers NOT_FOUND.
     """
     ### YOUR CODE HERE
-    eligible, _ = company_candidates(index, parse_query(question)["companies"])
+    subjects = parse_query(question)["companies"]
+    eligible, _ = company_candidates(index, subjects)
     ranking = ranked_positions(index, question)
     if eligible is not None:
         ranking = [position for position in ranking if position in eligible]
+        if len(subjects) > 1:
+            ranking = allocate_comparison(index, ranking)
     return [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
 
 

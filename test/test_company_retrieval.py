@@ -24,17 +24,47 @@ class CompanyRetrieval(unittest.TestCase):
         self.assertIs(result[0], second)
         self.assertIs(result[1], first)
 
-    def test_comparison_uses_both_companies_without_reserving_slots(self):
+    def test_comparison_reserves_best_chunk_and_fills_in_global_order(self):
         fir = [chunk("Fir Group", str(i), "needle " * 2) for i in range(6)]
         elm = chunk("Elm Group", "elm")
+        elm_evidence = chunk("Elm Group", "evidence", "cash 97.2")
         other = [chunk("Other", str(i), "background") for i in range(12)]
-        index = hw4.build_index([*fir, elm, *other])
+        index = hw4.build_index([*fir, elm, elm_evidence, *other])
         question = "Which held more needle: Fir Group or Elm Group?"
         actual = hw4.retrieve(index, question)
-        self.assertEqual(len(actual), 5)
-        self.assertTrue(all(any(doc is original for original in fir) for doc in actual))
-        self.assertCountEqual(hw4.retrieve(hw4.build_index([fir[0], elm, *other]), question),
-                         [fir[0], elm])
+        ranking = [doc for doc in index.ranker.get_top_n(question.lower().split(), index.chunks,
+                                                          len(index.chunks))
+                   if doc.metadata["company"] != "Other"]
+        self.assertTrue(all(doc.metadata["company"] == "Fir Group" for doc in ranking[:5]))
+        reserved = next(doc for doc in ranking if doc.metadata["company"] == "Elm Group")
+        self.assertIs(reserved, elm)
+        expected = [doc for doc in ranking if doc is reserved or any(doc is d for d in ranking[:4])]
+        self.assertEqual([id(doc) for doc in actual], [id(doc) for doc in expected])
+        self.assertFalse(any("97.2" in doc.page_content for doc in actual))
+
+    def test_existing_coverage_and_duplicate_object_provenance(self):
+        first = chunk("Alder Group", "first")
+        second = chunk("Alder Group Holdings", "second")
+        docs = [first, chunk("Other", "outside"), second]
+        self.assertEqual(retrieve_for(hw4.build_index(docs), "cash", "Alder Group", "Alder Group Holdings"),
+                         [second, first])
+        docs.insert(0, first)
+        result = retrieve_for(hw4.build_index(docs), "cash", "Alder Group", "Alder Group Holdings")
+        self.assertEqual([id(doc) for doc in result], [id(second), id(first)])
+
+    def test_more_than_two_subjects_and_over_capacity_fallback(self):
+        companies = ["Alder", "Birch", "Cedar", "Elm", "Fir", "Grove"]
+        docs = [chunk("Alder", str(i), "needle needle") for i in range(8)]
+        docs += [chunk(name, name) for name in companies[1:]]
+        docs += [chunk("Other", str(i), "background") for i in range(20)]
+        index = hw4.build_index(docs)
+        for count in (3, 5):
+            result = retrieve_for(index, "needle", *companies[:count])
+            self.assertEqual(len(result), 5)
+            self.assertEqual({doc.metadata["company"] for doc in result}, set(companies[:count]))
+        expected = [doc for doc in index.ranker.get_top_n(["needle"], docs, len(docs))
+                    if doc.metadata["company"] in companies][:5]
+        self.assertEqual(retrieve_for(index, "needle", *companies), expected)
 
     def test_unresolved_ambiguous_or_missing_subject_preserves_global_order(self):
         docs = [chunk("Alder Group Inc.", "a"), chunk("Alder Group Ltd.", "b"),

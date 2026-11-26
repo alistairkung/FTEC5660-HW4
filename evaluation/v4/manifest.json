@@ -1,0 +1,155 @@
+{
+  "experiment": "V4",
+  "code_revision": "0fcc9a10f50a297a77283a99ffc398c344de3b3b",
+  "v3_merge_commit": "f1db852b9d197ec4ed1fc336839091449878b20d",
+  "configuration": {
+    "changed_component": "comparison allocation",
+    "rule": "Reserve the highest global-ranked chunk per resolved company for two to five distinct identities. Fill with the highest-ranked remaining unique objects, then return in global rank order. Over capacity, take global top five unique objects from the full eligible union.",
+    "other_settings": "../v3/manifest.json"
+  },
+  "source_sha256": "8c5372ed8496bef1972f0da55af7bd287d117791b0f9a61311569af3a7626246",
+  "protected_suffix_sha256": "5c938c489015a0dec728dbc21cb442a7e60539e7b0bc21544525dc25fea796c2",
+  "runtime": {
+    "python": "3.14.0",
+    "platform": "Darwin arm64",
+    "direct_dependencies": {
+      "langchain-core": "1.8.5",
+      "langchain-community": "0.4.2",
+      "langchain-text-splitters": "1.2.0",
+      "langchain-deepseek": "1.2.1",
+      "beautifulsoup4": "4.15.0",
+      "lxml": "6.1.3",
+      "rank-bm25": "0.2.2",
+      "python-dotenv": "1.2.4"
+    },
+    "lock_sha256": "57b96da74fd4130f65d1fdcd883ba3cc84619a569fa703dbd8e7dd4e9aad2511"
+  },
+  "fixture_tree": "9a8fd75d2a359c9852724e8c300f116f049c0a8b",
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "offline": {
+    "metrics": {
+      "chunks": 330,
+      "documents_passed": [
+        40,
+        40
+      ],
+      "longest_chunk": 1499,
+      "parse_mean": 1.0,
+      "recall": [
+        25,
+        46
+      ],
+      "recall_by_category": {
+        "comparison": [
+          4,
+          12
+        ],
+        "fact": [
+          10,
+          12
+        ],
+        "table": [
+          11,
+          22
+        ]
+      },
+      "rejected": [
+        0,
+        14
+      ],
+      "student_usage": {
+        "cost_usd": 0.0,
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0
+      },
+      "table_mean": 1.0,
+      "valid_nonempty": [
+        46,
+        46
+      ]
+    },
+    "parse_fields_correct": {
+      "companies": 60,
+      "fiscal_year": 60,
+      "doc_type": 60
+    },
+    "company_coverage": {
+      "v3": 7,
+      "v4": 12
+    },
+    "comparison_outcomes": {
+      "complete": 4,
+      "represented_company_missing_required_evidence": 8
+    },
+    "single_company_identical": 48,
+    "fallback_identical": 5,
+    "gained_hits": [],
+    "lost_hits": [],
+    "tests_passed": 26,
+    "identical_runs": 2
+  },
+  "live": {
+    "runs": 1,
+    "accuracy": [
+      40,
+      60
+    ],
+    "by_category": {
+      "comparison": [
+        5,
+        12
+      ],
+      "fact": [
+        10,
+        12
+      ],
+      "table": [
+        11,
+        22
+      ],
+      "unanswerable": [
+        14,
+        14
+      ]
+    },
+    "changed_correctness_answers_v3_v4": {
+      "q023": [
+        "NOT_FOUND",
+        "Sablewood Retail"
+      ],
+      "q055": [
+        "456.2",
+        "NOT_FOUND"
+      ]
+    },
+    "correct_with_incomplete_evidence": [
+      "q023"
+    ],
+    "incorrect_with_complete_evidence": [],
+    "student_usage": {
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "generator_usage": {
+      "llm_calls": 60,
+      "llm_input_tokens": 108622,
+      "llm_output_tokens": 188,
+      "cost_usd": 0.0164
+    },
+    "runner_seconds": 7.1,
+    "wall_seconds": 7.812,
+    "estimated_public_points": [
+      44.96,
+      75
+    ]
+  },
+  "artifact_sha256": {
+    "offline.json": "1c21d7ed784ab0823eb519291436165000cbb9ca470c72ed3d7fc48a0e4f5d72",
+    "comparisons.json": "358d692ec6b8e5a2b1524150d5691faea61fa7c3b58ae701a2601675a5ea13c7",
+    "results.csv": "2da6802eed8fb1eb54a4145ff6a0a6c573d15dbf14ecf7cd3248c11b7a15ee0b",
+    "runner.txt": "474f771f00fa7ab74ffa8a0e4dc8533a3c00d3efa189341ca05c4d39e968aa4c"
+  }
+}
