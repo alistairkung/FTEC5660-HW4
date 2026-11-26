@@ -1,0 +1,1607 @@
+{
+  "fixtures_sha256": "ccf74963de4ba0b09064a91c8375eb4970dae833072e44fc6492198521aee21a",
+  "metrics": {
+    "chunks": 278,
+    "documents_passed": [
+      40,
+      40
+    ],
+    "longest_chunk": 1499,
+    "parse_mean": 0.0,
+    "recall": [
+      13,
+      46
+    ],
+    "recall_by_category": {
+      "comparison": [
+        0,
+        12
+      ],
+      "fact": [
+        10,
+        12
+      ],
+      "table": [
+        3,
+        22
+      ]
+    },
+    "rejected": [
+      0,
+      14
+    ],
+    "student_usage": {
+      "cost_usd": 0.0,
+      "llm_calls": 0,
+      "llm_input_tokens": 0,
+      "llm_output_tokens": 0
+    },
+    "table_mean": 0.0,
+    "valid_nonempty": [
+      46,
+      46
+    ]
+  },
+  "questions": {
+    "q001": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_028.html",
+          1
+        ],
+        [
+          "doc_028.html",
+          4
+        ],
+        [
+          "doc_038.html",
+          2
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_038.html",
+          1
+        ]
+      ]
+    },
+    "q002": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_032.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_027.html",
+          1
+        ]
+      ]
+    },
+    "q003": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          1
+        ],
+        [
+          "doc_039.html",
+          0
+        ],
+        [
+          "doc_011.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_025.html",
+          1
+        ]
+      ]
+    },
+    "q004": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_017.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          1
+        ],
+        [
+          "doc_029.html",
+          1
+        ],
+        [
+          "doc_019.html",
+          1
+        ]
+      ]
+    },
+    "q005": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_005.html",
+          4
+        ],
+        [
+          "doc_004.html",
+          4
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_032.html",
+          4
+        ],
+        [
+          "doc_003.html",
+          4
+        ]
+      ]
+    },
+    "q006": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_026.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_005.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          4
+        ],
+        [
+          "doc_008.html",
+          4
+        ]
+      ]
+    },
+    "q007": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          1
+        ]
+      ]
+    },
+    "q008": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_033.html",
+          0
+        ],
+        [
+          "doc_024.html",
+          1
+        ],
+        [
+          "doc_031.html",
+          1
+        ],
+        [
+          "doc_024.html",
+          2
+        ],
+        [
+          "doc_009.html",
+          1
+        ]
+      ]
+    },
+    "q009": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_004.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          1
+        ],
+        [
+          "doc_007.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          0
+        ]
+      ]
+    },
+    "q010": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_038.html",
+          6
+        ],
+        [
+          "doc_026.html",
+          6
+        ],
+        [
+          "doc_032.html",
+          6
+        ],
+        [
+          "doc_031.html",
+          6
+        ],
+        [
+          "doc_034.html",
+          1
+        ]
+      ]
+    },
+    "q011": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_016.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          1
+        ],
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_030.html",
+          1
+        ],
+        [
+          "doc_016.html",
+          2
+        ]
+      ]
+    },
+    "q012": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_028.html",
+          2
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_028.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          1
+        ]
+      ]
+    },
+    "q013": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_037.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          1
+        ],
+        [
+          "doc_022.html",
+          1
+        ]
+      ]
+    },
+    "q014": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_030.html",
+          1
+        ],
+        [
+          "doc_038.html",
+          6
+        ],
+        [
+          "doc_032.html",
+          6
+        ],
+        [
+          "doc_026.html",
+          6
+        ],
+        [
+          "doc_031.html",
+          6
+        ]
+      ]
+    },
+    "q015": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_036.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          0
+        ],
+        [
+          "doc_011.html",
+          6
+        ],
+        [
+          "doc_004.html",
+          6
+        ],
+        [
+          "doc_016.html",
+          6
+        ]
+      ]
+    },
+    "q016": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_024.html",
+          1
+        ],
+        [
+          "doc_031.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          0
+        ],
+        [
+          "doc_009.html",
+          2
+        ],
+        [
+          "doc_029.html",
+          2
+        ]
+      ]
+    },
+    "q017": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_032.html",
+          0
+        ],
+        [
+          "doc_006.html",
+          1
+        ],
+        [
+          "doc_032.html",
+          10
+        ]
+      ]
+    },
+    "q018": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_012.html",
+          0
+        ],
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_015.html",
+          0
+        ],
+        [
+          "doc_025.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ]
+      ]
+    },
+    "q019": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_005.html",
+          4
+        ],
+        [
+          "doc_032.html",
+          4
+        ],
+        [
+          "doc_003.html",
+          4
+        ],
+        [
+          "doc_031.html",
+          4
+        ],
+        [
+          "doc_024.html",
+          4
+        ]
+      ]
+    },
+    "q020": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_019.html",
+          0
+        ],
+        [
+          "doc_032.html",
+          2
+        ],
+        [
+          "doc_003.html",
+          2
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          1
+        ]
+      ]
+    },
+    "q021": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_015.html",
+          1
+        ],
+        [
+          "doc_038.html",
+          0
+        ],
+        [
+          "doc_028.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          0
+        ]
+      ]
+    },
+    "q022": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_037.html",
+          1
+        ],
+        [
+          "doc_012.html",
+          1
+        ],
+        [
+          "doc_010.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          1
+        ]
+      ]
+    },
+    "q023": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_015.html",
+          1
+        ],
+        [
+          "doc_036.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_040.html",
+          0
+        ]
+      ]
+    },
+    "q024": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_002.html",
+          2
+        ],
+        [
+          "doc_001.html",
+          2
+        ],
+        [
+          "doc_001.html",
+          1
+        ],
+        [
+          "doc_002.html",
+          1
+        ]
+      ]
+    },
+    "q025": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_033.html",
+          0
+        ],
+        [
+          "doc_031.html",
+          1
+        ],
+        [
+          "doc_009.html",
+          1
+        ],
+        [
+          "doc_031.html",
+          0
+        ],
+        [
+          "doc_024.html",
+          0
+        ]
+      ]
+    },
+    "q026": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_016.html",
+          0
+        ],
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_008.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          10
+        ]
+      ]
+    },
+    "q027": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_008.html",
+          0
+        ],
+        [
+          "doc_016.html",
+          0
+        ],
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_030.html",
+          1
+        ],
+        [
+          "doc_030.html",
+          0
+        ]
+      ]
+    },
+    "q028": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_018.html",
+          4
+        ],
+        [
+          "doc_008.html",
+          4
+        ],
+        [
+          "doc_016.html",
+          4
+        ],
+        [
+          "doc_018.html",
+          8
+        ]
+      ]
+    },
+    "q029": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_015.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          0
+        ]
+      ]
+    },
+    "q030": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_023.html",
+          8
+        ],
+        [
+          "doc_002.html",
+          8
+        ],
+        [
+          "doc_001.html",
+          8
+        ],
+        [
+          "doc_032.html",
+          8
+        ]
+      ]
+    },
+    "q031": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_035.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_034.html",
+          1
+        ],
+        [
+          "doc_027.html",
+          0
+        ],
+        [
+          "doc_020.html",
+          0
+        ]
+      ]
+    },
+    "q032": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          1
+        ],
+        [
+          "doc_002.html",
+          1
+        ],
+        [
+          "doc_022.html",
+          1
+        ],
+        [
+          "doc_002.html",
+          2
+        ]
+      ]
+    },
+    "q033": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_028.html",
+          2
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          2
+        ],
+        [
+          "doc_004.html",
+          2
+        ],
+        [
+          "doc_011.html",
+          2
+        ]
+      ]
+    },
+    "q034": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_026.html",
+          1
+        ],
+        [
+          "doc_005.html",
+          4
+        ],
+        [
+          "doc_004.html",
+          4
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_032.html",
+          4
+        ]
+      ]
+    },
+    "q035": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_017.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          0
+        ],
+        [
+          "doc_012.html",
+          0
+        ]
+      ]
+    },
+    "q036": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_038.html",
+          1
+        ],
+        [
+          "doc_028.html",
+          1
+        ],
+        [
+          "doc_011.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          4
+        ]
+      ]
+    },
+    "q037": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_035.html",
+          1
+        ],
+        [
+          "doc_014.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          0
+        ],
+        [
+          "doc_037.html",
+          1
+        ],
+        [
+          "doc_011.html",
+          6
+        ]
+      ]
+    },
+    "q038": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_018.html",
+          4
+        ],
+        [
+          "doc_016.html",
+          4
+        ],
+        [
+          "doc_008.html",
+          4
+        ],
+        [
+          "doc_001.html",
+          4
+        ],
+        [
+          "doc_005.html",
+          4
+        ]
+      ]
+    },
+    "q039": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_016.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          1
+        ],
+        [
+          "doc_030.html",
+          1
+        ],
+        [
+          "doc_016.html",
+          2
+        ]
+      ]
+    },
+    "q040": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_011.html",
+          2
+        ],
+        [
+          "doc_032.html",
+          2
+        ],
+        [
+          "doc_020.html",
+          2
+        ],
+        [
+          "doc_005.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          0
+        ]
+      ]
+    },
+    "q041": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_023.html",
+          8
+        ],
+        [
+          "doc_001.html",
+          8
+        ],
+        [
+          "doc_002.html",
+          8
+        ],
+        [
+          "doc_032.html",
+          8
+        ]
+      ]
+    },
+    "q042": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_032.html",
+          6
+        ],
+        [
+          "doc_031.html",
+          6
+        ],
+        [
+          "doc_026.html",
+          6
+        ],
+        [
+          "doc_038.html",
+          6
+        ],
+        [
+          "doc_034.html",
+          1
+        ]
+      ]
+    },
+    "q043": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_035.html",
+          0
+        ],
+        [
+          "doc_016.html",
+          2
+        ],
+        [
+          "doc_008.html",
+          2
+        ],
+        [
+          "doc_016.html",
+          1
+        ],
+        [
+          "doc_030.html",
+          1
+        ]
+      ]
+    },
+    "q044": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_037.html",
+          0
+        ],
+        [
+          "doc_001.html",
+          1
+        ],
+        [
+          "doc_002.html",
+          1
+        ],
+        [
+          "doc_022.html",
+          1
+        ],
+        [
+          "doc_037.html",
+          1
+        ]
+      ]
+    },
+    "q045": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_023.html",
+          1
+        ],
+        [
+          "doc_036.html",
+          1
+        ],
+        [
+          "doc_023.html",
+          2
+        ],
+        [
+          "doc_040.html",
+          1
+        ],
+        [
+          "doc_036.html",
+          2
+        ]
+      ]
+    },
+    "q046": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_004.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          1
+        ],
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_009.html",
+          2
+        ],
+        [
+          "doc_029.html",
+          2
+        ]
+      ]
+    },
+    "q047": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_031.html",
+          1
+        ],
+        [
+          "doc_005.html",
+          4
+        ],
+        [
+          "doc_004.html",
+          4
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_032.html",
+          4
+        ]
+      ]
+    },
+    "q048": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_032.html",
+          6
+        ],
+        [
+          "doc_038.html",
+          6
+        ],
+        [
+          "doc_031.html",
+          6
+        ],
+        [
+          "doc_026.html",
+          6
+        ],
+        [
+          "doc_014.html",
+          1
+        ]
+      ]
+    },
+    "q049": {
+      "hit": null,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_021.html",
+          0
+        ],
+        [
+          "doc_032.html",
+          1
+        ],
+        [
+          "doc_003.html",
+          1
+        ],
+        [
+          "doc_027.html",
+          1
+        ],
+        [
+          "doc_018.html",
+          4
+        ]
+      ]
+    },
+    "q050": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_027.html",
+          2
+        ],
+        [
+          "doc_020.html",
+          2
+        ],
+        [
+          "doc_028.html",
+          2
+        ],
+        [
+          "doc_038.html",
+          2
+        ],
+        [
+          "doc_032.html",
+          2
+        ]
+      ]
+    },
+    "q051": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_018.html",
+          9
+        ],
+        [
+          "doc_008.html",
+          9
+        ],
+        [
+          "doc_016.html",
+          9
+        ],
+        [
+          "doc_032.html",
+          9
+        ],
+        [
+          "doc_003.html",
+          9
+        ]
+      ]
+    },
+    "q052": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_026.html",
+          1
+        ],
+        [
+          "doc_005.html",
+          4
+        ],
+        [
+          "doc_004.html",
+          4
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_032.html",
+          4
+        ]
+      ]
+    },
+    "q053": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          1
+        ],
+        [
+          "doc_019.html",
+          1
+        ],
+        [
+          "doc_032.html",
+          0
+        ],
+        [
+          "doc_003.html",
+          0
+        ],
+        [
+          "doc_033.html",
+          1
+        ]
+      ]
+    },
+    "q054": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_015.html",
+          0
+        ],
+        [
+          "doc_023.html",
+          1
+        ],
+        [
+          "doc_036.html",
+          1
+        ],
+        [
+          "doc_023.html",
+          2
+        ],
+        [
+          "doc_040.html",
+          1
+        ]
+      ]
+    },
+    "q055": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          0
+        ],
+        [
+          "doc_018.html",
+          1
+        ],
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_037.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          1
+        ]
+      ]
+    },
+    "q056": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_015.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          1
+        ]
+      ]
+    },
+    "q057": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_027.html",
+          4
+        ],
+        [
+          "doc_018.html",
+          4
+        ],
+        [
+          "doc_008.html",
+          4
+        ],
+        [
+          "doc_016.html",
+          4
+        ],
+        [
+          "doc_018.html",
+          8
+        ]
+      ]
+    },
+    "q058": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_010.html",
+          1
+        ],
+        [
+          "doc_033.html",
+          1
+        ],
+        [
+          "doc_021.html",
+          1
+        ],
+        [
+          "doc_013.html",
+          1
+        ],
+        [
+          "doc_008.html",
+          10
+        ]
+      ]
+    },
+    "q059": {
+      "hit": true,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_009.html",
+          1
+        ],
+        [
+          "doc_038.html",
+          6
+        ],
+        [
+          "doc_031.html",
+          6
+        ],
+        [
+          "doc_032.html",
+          6
+        ],
+        [
+          "doc_026.html",
+          6
+        ]
+      ]
+    },
+    "q060": {
+      "hit": false,
+      "parse_score": 0.0,
+      "ranked_chunks": [
+        [
+          "doc_026.html",
+          1
+        ],
+        [
+          "doc_017.html",
+          0
+        ],
+        [
+          "doc_033.html",
+          1
+        ],
+        [
+          "doc_015.html",
+          1
+        ],
+        [
+          "doc_005.html",
+          1
+        ]
+      ]
+    }
+  }
+}
