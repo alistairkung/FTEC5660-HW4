@@ -94,6 +94,71 @@ def table_headers(rows: list[list[Tag]]) -> dict[int, str]:
     return {i: " ".join(parts) for i, parts in labels.items()}
 
 
+# Allow name-internal punctuation and legal suffixes without consulting the corpus.
+NAME_WORD = r"[A-Z][\w]*(?:[-'’][A-Z][\w]*)*"
+COMPANY_MENTION = re.compile(
+    rf"\b{NAME_WORD}(?:\s+(?:(?:&|of(?: the)?)\s+)?{NAME_WORD})*"
+    r"(?:,?\s+(?i:plc|ltd|inc|corp|llc)\b)?\.?"
+)
+MONTH = r"(?:January|February|March|April|May|June|July|August|September|October|November|December)"
+FISCAL_YEAR = re.compile(
+    rf"\b(?:FY\s*|fiscal\s+year\s+|\d{{1,2}}\s+{MONTH}\s+|{MONTH}\s+\d{{1,2}},?\s+|"
+    r"(?:in|for|of|during)\s+|(?<=['’]s )|(?<=s['’] )|"
+    r"(?=(?:19|20)\d{2}\s+(?:revenue|income|profit|cash|sales|assets|earnings)\b))"
+    r"((?:19|20)\d{2})\b", re.I
+)
+EARNINGS_CALL = r"earnings[- ](?:conference[- ])?calls?"
+REPORT_NOUN = rf"(?:annual report|results review|{EARNINGS_CALL})"
+
+
+def subject_companies(question: str) -> list[str]:
+    # Mask time, units and interrogative framing before matching capitalized spans.
+    text = FISCAL_YEAR.sub(" ", question)
+    text = re.sub(r"\b(?:Q[1-4]|USD|HKD|EUR|GBP|CEO|CFO)\b", " ", text)
+    text = re.sub(r"^\s*(?:who|what|when|where|which|how|compare|between|using|at|in|on|"
+                  r"did|does|is|were|was|has|have)\b", "", text, flags=re.I)
+
+    mentions = []
+    for match in COMPANY_MENTION.finditer(text):
+        before, after = text[:match.start()], text[match.end():]
+        # Names acting as the source of a rating, forecast or audit are intermediaries.
+        if re.search(r"\b(?:according to|audited by|issued by|rated by)\s*$", before, re.I):
+            continue
+        intermediary_verb = re.match(r"\s+(?:audit(?:s|ed)?|forecast(?:s|ed)?|predict(?:s|ed)?|"
+                                     r"rat(?:es|ed)|gives?|sets?|assigns?)\b", after, re.I)
+        if intermediary_verb and COMPANY_MENTION.search(after):
+            continue
+        if re.match(r"['’]s\s+(?:target price|price target|rating|forecast|audit opinion)"
+                    r"\b.*?\b(?:for|on|of)\b", after, re.I):
+            continue
+        mentions.append(match)
+
+    if not mentions:
+        return []
+    # A comparison can introduce its subjects after a colon. Otherwise look for
+    # coordination at the first name to avoid collecting lists of segments or regions.
+    comparison = re.search(r"\b(?:which|between|compare|versus|vs|more|higher|lower|fewer)\b",
+                           question, re.I)
+    for start in range(len(mentions) if comparison else 1):
+        group = [mentions[start][0]]
+        for left, right in zip(mentions[start:], mentions[start + 1:]):
+            separator = text[left.end():right.start()].strip().lower()
+            if separator == ",":
+                group.append(right[0])
+            elif separator.lstrip(",").strip() in {"or", "and", "versus", "vs", "vs."}:
+                return [*group, right[0]]
+            else:
+                break
+
+    for match in mentions:
+        if re.match(r"['’](?:s\b|(?=\s))", text[match.end():]):
+            return [match[0]]
+    for match in mentions:
+        if re.search(r"\b(?:did|does|is|was|for|audited|give|of)\s*$", text[:match.start()], re.I):
+            return [match[0]]
+    return [mentions[0][0]]
+
+
 def table_to_text(table_html: str) -> str:
     """Task 1.1: turn one HTML <table> into text that keeps every value with its row and its column.
 
@@ -173,7 +238,20 @@ def parse_query(question: str) -> dict:
     The rules for each field are under Task 2.2 in the handout. You may use make_llm() here.
     """
     ### YOUR CODE HERE
-    return {}
+    years = list(FISCAL_YEAR.finditer(question))
+    # A dated source can introduce a question about a different reporting period.
+    requested = next((y for y in years if not re.match(rf"\s+{REPORT_NOUN}\b",
+                                                       question[y.end():], re.I)), None)
+    year = requested or next(iter(years), None)
+    if re.search(rf"\b{EARNINGS_CALL}\b", question, re.I):
+        kind = "earnings_call"
+    elif re.search(r"\b(?:ratings?|target prices?|price targets?|forecast(?:s|ed)?|predict(?:s|ed)?|results reviews?)\b",
+                   question, re.I):
+        kind = "research_report"
+    else:
+        kind = "annual_report"
+    return {"companies": subject_companies(question), "fiscal_year": int(year[1]) if year else None,
+            "doc_type": kind}
 
 
 def build_index(chunks: list[Document]) -> LexicalIndex:
