@@ -45,6 +45,35 @@ from rank_bm25 import BM25Okapi
 class LexicalIndex:
     chunks: list[Document]
     ranker: BM25Okapi | None
+    company_positions: dict[str, dict[str, list[int]]]
+
+
+# Strip a single trailing legal suffix while preserving punctuation inside names.
+COMPANY_SUFFIX = re.compile(r",? (?:inc|corp|corporation|ltd|limited|plc|llc|co)$")
+
+
+def company_candidates(index: LexicalIndex, subjects: list[str]) -> tuple[set[int] | None, str]:
+    """Return the union of positions, or a reason to use the global candidate pool."""
+    if not subjects:
+        return None, "no_subject"
+    eligible: set[int] = set()
+    for subject in subjects:
+        key = COMPANY_SUFFIX.sub("", squash(subject).removesuffix("."))
+        identities = index.company_positions.get(key, {})
+        if not identities:
+            return None, "unresolved"
+        if len(identities) > 1:
+            return None, "ambiguous"
+        eligible.update(next(iter(identities.values())))
+    return eligible, "resolved"
+
+
+def ranked_positions(index: LexicalIndex, question: str) -> list[int]:
+    positions = range(len(index.chunks))
+    if index.ranker is None:
+        return list(positions)
+    # The global sort also inherits BM25's tie order before candidate restriction.
+    return index.ranker.get_top_n(question.lower().split(), positions, n=len(positions))
 
 
 def report_metadata(file_name: str, soup: BeautifulSoup) -> dict[str, str | int]:
@@ -262,7 +291,14 @@ def build_index(chunks: list[Document]) -> LexicalIndex:
     ### YOUR CODE HERE
     tokens = [chunk.page_content.lower().split() for chunk in chunks]
     ranker = BM25Okapi(tokens) if any(tokens) else None
-    return LexicalIndex(list(chunks), ranker)
+    companies: dict[str, dict[str, list[int]]] = {}
+    for position, chunk in enumerate(chunks):
+        company = chunk.metadata.get("company")
+        if isinstance(company, str) and company.strip():
+            identity = squash(company).removesuffix(".")
+            key = COMPANY_SUFFIX.sub("", identity)
+            companies.setdefault(key, {}).setdefault(identity, []).append(position)
+    return LexicalIndex(list(chunks), ranker, companies)
 
 
 def retrieve(index: LexicalIndex, question: str) -> list[Document]:
@@ -271,9 +307,11 @@ def retrieve(index: LexicalIndex, question: str) -> list[Document]:
     Return [] when the corpus cannot answer the question: the generator then answers NOT_FOUND.
     """
     ### YOUR CODE HERE
-    if index.ranker is None:
-        return index.chunks[:MAX_RETRIEVED]
-    return index.ranker.get_top_n(question.lower().split(), index.chunks, n=MAX_RETRIEVED)
+    eligible, _ = company_candidates(index, parse_query(question)["companies"])
+    ranking = ranked_positions(index, question)
+    if eligible is not None:
+        ranking = [position for position in ranking if position in eligible]
+    return [index.chunks[position] for position in ranking[:MAX_RETRIEVED]]
 
 
 # =============================================================================
