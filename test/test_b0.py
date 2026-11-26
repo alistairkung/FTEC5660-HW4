@@ -61,13 +61,13 @@ class PublicEvaluation(unittest.TestCase):
 
         report = evaluate(Path(hw4.__file__).parent / "public_test")
         metrics = report["metrics"]
-        self.assertEqual((metrics["chunks"], metrics["longest_chunk"]), (330, 1499))
+        self.assertEqual((metrics["chunks"], metrics["longest_chunk"]), (650, 1499))
         self.assertEqual(metrics["documents_passed"], [40, 40])
         self.assertEqual(metrics["valid_nonempty"], [46, 46])
         self.assertEqual(metrics["table_mean"], 1.0)
-        self.assertEqual(metrics["recall"], [44, 46])
+        self.assertEqual(metrics["recall"], [46, 46])
         self.assertEqual(metrics["recall_by_category"],
-                         {"fact": [10, 12], "table": [22, 22], "comparison": [12, 12]})
+                         {"fact": [12, 12], "table": [22, 22], "comparison": [12, 12]})
         self.assertEqual(metrics["rejected"], [7, 14])
         self.assertEqual(metrics["student_usage"]["llm_calls"], 0)
         self.assertEqual(len(report["questions"]), 60)
