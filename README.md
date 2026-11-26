@@ -96,3 +96,66 @@ V8 earned the full 8/8 for table rendering, 7/7 for chunking, 5/5 for valid retr
 
 Taken together, the experiments changed how I think about RAG. Rather than treating it as one similarity search, I now think in terms of **representation → candidate selection → evidence coverage → answer interpretation → abstention**, with a distinct failure mode and measurement at each stage. These conclusions are supported by the public tests; they do not establish equivalent performance on the unseen private set.
 
+## Task 6 reflection
+
+### Who I Want to Be in an AI-Driven World
+
+I originally left financial auditing to become a software engineer because I wanted the opportunity to make a real impact on where the world was going. Today, it seems clear to me that AI will fundamentally reshape our world, and I want to be part of that transformation.
+
+I hope that even in 2036, humans will still have a meaningful role in helping AI systems improve. However, even if AI agents can independently organize themselves, build software, improve their own capabilities and create economic value, I believe I would still find joy in building things myself.
+
+I've always been fascinated by how processes help humans organize and build software together. Throughout my engineering career, I've been particularly interested in reliability, testing and the confidence to release changes safely. In the AI era, I'm equally fascinated by how we can organize increasingly autonomous agents to build software that we can understand and trust. This is already influencing the projects I choose to explore, from using particle filtering to evaluate deployment risks to designing adversarial evaluations for AI-generated work.
+
+Even if AI eventually becomes better than me at all of these activities, I would still want to experiment because I enjoy the process.
+
+### Ambition and the Value of Trying
+
+I don't think AI becoming more capable will prevent humans from thinking, exploring or trying new ideas.
+
+Even before AI, it was common to have an idea, search online and discover that somebody had already built something similar. That didn't stop people from developing their own products, approaching problems differently or trying to compete in existing markets.
+
+I would be content pursuing engineering out of curiosity, regardless of whether an AI could produce the same result in seconds.
+
+I also don't believe AI will necessarily eliminate struggle. The Theory of Constraints suggests that when one bottleneck disappears, another becomes more important. If implementing software becomes almost effortless, perhaps the greater challenge will be identifying problems worth solving.
+
+I suspect Lean and Agile principles will remain relevant. People will still have needs, and businesses will still need to test whether their products deliver value. AI could dramatically accelerate the process of testing ideas and business hypotheses.
+
+On the other hand, I can imagine a future where autonomous agents continuously discover opportunities, launch products and test competing ideas in parallel. Competing as an individual human might become almost impossible.
+
+I don't know what entrepreneurship would look like in that world. But I'd like to believe I would at least try.
+
+For me, making the effort to discover and pursue an idea would still be worthwhile, even without a realistic guarantee of commercial success.
+
+### Responsibility and Human Value
+
+I believe taking responsibility will remain incredibly important.
+
+If AI agents can design, build and deploy software autonomously, who is responsible when something goes wrong? Real human money will still be exchanged, businesses will make commitments, and people will face the consequences of failures. Someone needs to be accountable.
+
+This is why I'm particularly interested in verifiability. Giving AI agents greater autonomy should go hand in hand with our ability to evaluate their work, understand their behaviour and determine whether the resulting systems are trustworthy.
+
+I hope my experience in engineering reliable software will remain valuable, even as the technical work becomes increasingly automated.
+
+However, I wouldn't want my identity to depend entirely on those skills remaining valuable. If AI can eventually do everything I can do, I would rather define myself by how hard I try than by what I achieve.
+
+I want to remain curious, willing to experiment and prepared to pursue difficult ideas, even if my contributions are no longer unique or economically necessary.
+
+### Beyond Professional Achievement
+
+Beyond my career, I hope to be remembered as a father who encouraged curiosity and creativity.
+
+I'm incredibly excited about introducing AI tools to my son. I believe these technologies will lower the barrier to creation, and I can't wait to build things together from his imagination.
+
+Those creations don't need to be commercially useful or technically impressive. I hope we can have fun experimenting, making ridiculous things and seeing what happens.
+
+More than anything, I hope my son remembers the fun we had messing around with these tools together.
+
+Reflecting on this has also made me recognize an important risk in my current life.
+
+When it comes to AI and finding my place in this changing world, I think I'm already doing much of what I should be doing. I've returned to university, I'm exploring ideas that genuinely interest me, and I'm organizing my time around learning and building.
+
+But the danger is becoming so absorbed in those ambitions that I forget to be the father I want to be.
+
+Starting tomorrow, I want to be more deliberate about protecting time for uninterrupted play with my son. That means putting aside my work, studies and distractions, and simply being present.
+
+I'm excited about helping shape the future. But I don't want to become so preoccupied with that future that I miss the experiences happening right in front of me.
