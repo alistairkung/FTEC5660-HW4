@@ -87,7 +87,7 @@ def chunk_document(file_name: str, html: str) -> list[Document]:
     ### YOUR CODE HERE
     soup = BeautifulSoup(html, "html.parser")
     metadata = report_metadata(file_name, soup)
-    splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=MAX_CHUNK_CHARS, chunk_overlap=200)
     return splitter.create_documents([soup.get_text()], [metadata])
 
 
